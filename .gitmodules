@@ -1,0 +1,6 @@
+[submodule "DandD"]
+	path = DandD
+	url = git@github.com:crpalmer/DandD.git
+[submodule "GameEngine"]
+	path = GameEngine
+	url = git@github.com:crpalmer/tile-game-engine.git
