@@ -11,4 +11,4 @@ entry_point = "Home/ByBed"
 fade_animation = "/root/Main/FadeCanvas/Fade/AnimationPlayer"
 pixels_per_foot = 16.0
 game_start_time_in_hours = 8.0
-currency = [  ]
+currency = [ "res://DandD/Currency/SilverPiece.tscn", "res://DandD/Currency/CopperPiece.tscn", "res://DandD/Currency/GoldPiece.tscn" ]

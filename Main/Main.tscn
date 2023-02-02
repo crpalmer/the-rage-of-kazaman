@@ -91,11 +91,12 @@ color = Color( 0.152941, 0.137255, 0.137255, 1 )
 anims/Fade = SubResource( 1 )
 
 [node name="Conversation" parent="." index="7" instance=ExtResource( 2 )]
-visible = false
-offset = Vector2( 640, 450 )
-transform = Transform2D( 1, 0, 0, 1, 640, 450 )
+offset = Vector2( 515, 450 )
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 515, 450 )
 
 [node name="Node2D" type="Node2D" parent="." index="8"]
+visible = false
 
 [connection signal="timeout" from="Splash/Timer" to="." method="_on_Splash_Timer_timeout"]
 [connection signal="pressed" from="MainMenu/NewGame" to="." method="_on_NewGame_pressed"]

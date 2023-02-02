@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://GameEngine/Objects/StaticThing.tscn" type="PackedScene" id=2]
+[ext_resource path="res://DandD/Things/Door-32-flipped.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GameEngine/EntryPoint.tscn" type="PackedScene" id=4]
+[ext_resource path="res://DandD/Things/Door-32.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Town/bed.png" type="Texture" id=8]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 15, 18 )
+
+[node name="Home" type="Node2D"]
+
+[node name="StartingInventoryPosition" type="Position2D" parent="."]
+position = Vector2( 1313, 163 )
+
+[node name="ByBed" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1542, 253 )
+
+[node name="FrontDoor1" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1424, 296 )
+display_name = "front door"
+long_description = "your front door"
+
+[node name="FrontDoor2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1456, 296 )
+
+[node name="ClosetDoor" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1328, 200 )
+rotation = 3.14159
+display_name = "closet door"
+long_description = "your closet door"
+
+[node name="BedThing" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1572, 269 )
+display_name = "bed"
+long_description = "your cozy bed"
+
+[node name="Bed" type="Sprite" parent="BedThing"]
+rotation = 3.14159
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BedThing"]
+position = Vector2( -1, 0 )
+shape = SubResource( 4 )
