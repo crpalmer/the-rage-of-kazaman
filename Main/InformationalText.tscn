@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Main/informational-text.png" type="Texture" id=1]
+[ext_resource path="res://close.png" type="Texture" id=2]
+[ext_resource path="res://Main/InformationalText.gd" type="Script" id=3]
+[ext_resource path="res://Fonts/Dungeon.TTF" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 4 )
+
+[node name="InformationalText" type="CanvasLayer"]
+layer = 2
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 661.5, 401.75 )
+scale = Vector2( 2.88775, 1.42138 )
+texture = ExtResource( 1 )
+
+[node name="Close" type="Button" parent="."]
+margin_left = 983.0
+margin_top = 130.0
+margin_right = 1047.0
+margin_bottom = 194.0
+
+[node name="Sprite" type="Sprite" parent="Close"]
+position = Vector2( 32, 32 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Text" type="RichTextLabel" parent="."]
+margin_left = 301.0
+margin_top = 161.0
+margin_right = 1014.0
+margin_bottom = 664.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "This is sample text.
+
+akdfjalfdjkfjlkdajlakfj afjl kajl kafj lkasjdl kafjlaj
+fdalk
+"

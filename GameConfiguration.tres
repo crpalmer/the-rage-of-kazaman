@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://GameEngine/GameConfiguration.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+root = "res://GameEngine"
+player = "res://Main/Player.tscn"
+entry_scene = "res://Town/Town.tscn"
+entry_point = "Home/ByBed"
+fade_animation = "/root/Main/FadeCanvas/Fade/AnimationPlayer"
+pixels_per_foot = 16.0
+game_start_time_in_hours = 8.0
+currency = [  ]
