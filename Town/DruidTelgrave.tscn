@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://GameEngine/Actors/ConversationalActor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Lively_NPCs_v3.0/individual sprites/medieval/shady_guy/shady_guy_00.png" type="Texture" id=2]
 [ext_resource path="res://Town/DruidTelgrave.gd" type="Script" id=3]
+[ext_resource path="res://GameEngine/Actors/Attack.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 8.0
@@ -10,6 +11,11 @@ height = 18.0
 
 [node name="DruidTelgrave" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+display_name = "Druid Telgrave"
+hp = 50
+max_hp = 50
+to_hit_modifier = 5
+xp_value = 500
 seconds_per_interation = 15
 
 [node name="Sprite" type="Sprite" parent="." index="6"]
@@ -17,3 +23,12 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="7"]
 shape = SubResource( 1 )
+
+[node name="Attack" parent="." index="8" instance=ExtResource( 4 )]
+display_name = "tree branch"
+to_hit_modifier = 10
+damage_dice = {
+"d": 10,
+"n": 1,
+"plus": 2
+}
