@@ -12,6 +12,7 @@ height = 18.0
 [node name="DruidTelgrave" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 display_name = "Druid Telgrave"
+long_description = "a dark man that looks like he spends a lot of time in nature"
 hp = 50
 max_hp = 50
 to_hit_modifier = 5

@@ -12,7 +12,7 @@
 [ext_resource path="res://Town/MayorDelrin.tscn" type="PackedScene" id=10]
 [ext_resource path="res://GameEngine/Objects/Portal.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Town/DruidTelgrave.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Town/BlackSmith.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Town/Blacksmith.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 15, 18 )
