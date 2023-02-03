@@ -1,7 +1,7 @@
 extends ConversationalActor
 
 func _ready():
-	for_sale = [
+	services_for_sale = [
 		{ "name": "cure light wounds", "cost": 10.23 },
 		{ "name": "cure serious wounds", "cost": 50.01 },
 		{ "name": "cure poison", "cost":100.5}
@@ -29,7 +29,7 @@ func heal(dice):
 	GameEngine.player.give_hit_points(hp)
 	return "You are healed %d hit points." % hp
 
-func sell(sale):
+func sell_service(sale):
 	if sale.name == "cure light wounds": return heal(GameEngine.Dice(1, 8, +4))
 	elif sale.name == "cure serious wounds": return heal(GameEngine.Dice(3, 8, +4))
 	elif sale.name == "cure poison": return "You are all better now"
