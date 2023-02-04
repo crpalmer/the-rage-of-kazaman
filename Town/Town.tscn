@@ -140,8 +140,8 @@ position = Vector2( -25, 25 )
 
 [node name="EastGatePortal" parent="." instance=ExtResource( 11 )]
 position = Vector2( 430, 352 )
-scene = "TravelToGoblins"
-entry_point = "EnterFromTown"
+scene = "res://Wilderness/Wilderness.tscn"
+entry_point = "EnterFromTownEastGate"
 
 [node name="ReturnPoint" type="Position2D" parent="EastGatePortal"]
 
