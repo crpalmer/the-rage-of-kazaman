@@ -64,9 +64,9 @@ func _on_Save_pressed():
 
 func on_new_player():
 	var items = GameEngine.player.create_character("res://DandD/Classes/Fighter.tscn", false)
-	var item_pos = GameEngine.get_scene_node("Home/StartingInventoryPosition").position
+	var item_pos = GameEngine.get_scene_node("Home/StartingInventoryPosition").global_position
 	for i in items:
-		i.position = item_pos
+		i.global_position = item_pos
 		GameEngine.current_scene.add_child(i)
 		item_pos.x += 32
 
