@@ -86,4 +86,9 @@ margin_bottom = 48.24
 [node name="AnimatedSprite" type="AnimatedSprite" parent="More" index="0"]
 position = Vector2( 24, 24 )
 frames = SubResource( 5 )
+frame = 2
 playing = true
+
+[node name="Timer" type="Timer" parent="More" index="1"]
+wait_time = 0.5
+one_shot = true
