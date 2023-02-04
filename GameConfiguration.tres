@@ -6,10 +6,10 @@
 script = ExtResource( 1 )
 root = "res://GameEngine"
 player = "res://Main/Player.tscn"
-entry_scene = "res://Town/Town.tscn"
-entry_point = "Home/ByBed"
-scene_change_color = Color( 0, 0, 0, 1 )
-resting_color = Color( 0, 0, 0, 1 )
-pixels_per_foot = 16.0
+entry_scene = "res://Wilderness/Wilderness.tscn"
+entry_point = "EnterFromTownEastGate"
+fade_color = Color( 0, 0, 0, 1 )
+resting_alpha = 0.75
+pixels_per_foot = 8.0
 game_start_time_in_hours = 2.0
 currency = [ "res://DandD/Currency/SilverPiece.tscn", "res://DandD/Currency/CopperPiece.tscn", "res://DandD/Currency/GoldPiece.tscn" ]

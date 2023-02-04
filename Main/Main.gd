@@ -1,6 +1,7 @@
 extends Node2D
 
 var game_in_progress = false
+var fighter
 
 func _ready():
 	OS.set_window_maximized(true)
@@ -11,7 +12,8 @@ func _ready():
 #	$Splash/Music.play(10)
 	$Splash/Timer.start(0.01)
 	GameEngine.modulate(false)
-	var _err = GameEngine.connect("new_player", self, "on_new_player")
+	fighter = load("res://DandD/Classes/Fighter.tscn").instance()
+
 
 func show_menu():
 	$MainMenu.show()
@@ -46,6 +48,14 @@ func _on_NewGame_pressed():
 	hide_menu()
 	GameEngine.new_game()
 	enter_game()
+	var items = GameEngine.player.create_character(fighter)
+	GameEngine.enter_scene(GameEngine.config.entry_scene, GameEngine.config.entry_point)
+	var item_pos_node = GameEngine.get_scene_node("Home/StartingInventoryPosition")
+	var item_pos = item_pos_node.global_position if item_pos_node else Vector2.ZERO
+	for i in items:
+		i.global_position = item_pos
+		GameEngine.current_scene.add_child(i)
+		item_pos.x += 32
 #	$InformationalText.message("You awake in a fright.\n\nYou hear a commotion outside your house.  What could be happening in the middle of the night??\n\nMaybe it would be wise to go investigate.")
 
 func _on_Load_pressed():
@@ -60,14 +70,6 @@ func _on_Save_pressed():
 		# This isn't currently shown, need a popup
 		GameEngine.message("Failed to save game")
 	hide_menu()
-
-func on_new_player():
-	var items = GameEngine.player.create_character("res://DandD/Classes/Fighter.tscn", false)
-	var item_pos = GameEngine.get_scene_node("Home/StartingInventoryPosition").global_position
-	for i in items:
-		i.global_position = item_pos
-		GameEngine.current_scene.add_child(i)
-		item_pos.x += 32
 
 func on_player_died():
 	$MainMenu/Save.disabled = true

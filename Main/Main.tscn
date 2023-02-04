@@ -70,9 +70,9 @@ text = "Save Game"
 [node name="InformationalText" parent="." index="5" instance=ExtResource( 3 )]
 
 [node name="Conversation" parent="." index="6" instance=ExtResource( 2 )]
-offset = Vector2( 515, 450 )
+offset = Vector2( 515, 499 )
 scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 515, 450 )
+transform = Transform2D( 1, 0, 0, 1, 515, 499 )
 
 [connection signal="timeout" from="Splash/Timer" to="." method="_on_Splash_Timer_timeout"]
 [connection signal="pressed" from="MainMenu/NewGame" to="." method="_on_NewGame_pressed"]
