@@ -153,6 +153,7 @@ rotation = -0.00110415
 [node name="BlackSmith" parent="Smithy" instance=ExtResource( 13 )]
 position = Vector2( 29.9889, 10.0331 )
 rotation = 0.00110415
+long_description = "a  very strong man wearing a leather apron"
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Smithy"]
 occluder = SubResource( 11 )
