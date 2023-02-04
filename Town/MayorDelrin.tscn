@@ -10,7 +10,7 @@ radius = 16.0
 [node name="MayorDelrin" instance=ExtResource( 2 )]
 script = ExtResource( 3 )
 display_name = "Mayor Delrin"
-long_description = "an obesce middle aged man wearing fancy clothes"
+long_description = "an obese middle aged man wearing fancy clothes"
 seconds_per_interation = 15
 
 [node name="Sprite" type="Sprite" parent="." index="5"]
