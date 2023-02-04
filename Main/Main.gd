@@ -6,7 +6,6 @@ func _ready():
 	OS.set_window_maximized(true)
 	$Splash.show()
 	$HUD.hide()
-	$FadeCanvas.hide()
 	$MainMenu.hide()
 	$InformationalText.hide()
 #	$Splash/Music.play(10)
@@ -47,8 +46,8 @@ func _on_NewGame_pressed():
 	hide_menu()
 	GameEngine.new_game()
 	enter_game()
-	#	$InformationalText.message("You awake in a fright.\n\nYou hear a commotion outside your house.  What could be happening in the middle of the night??\n\nMaybe it would be wise to go investigate.")
-	
+#	$InformationalText.message("You awake in a fright.\n\nYou hear a commotion outside your house.  What could be happening in the middle of the night??\n\nMaybe it would be wise to go investigate.")
+
 func _on_Load_pressed():
 	hide_menu()
 	if not GameEngine.load_saved_game("res://savegame.tres"):

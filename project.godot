@@ -79,6 +79,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://GameEngine/Actors/Player.gd"
 }, {
+"base": "Node2D",
+"class": "SceneConfiguration",
+"language": "GDScript",
+"path": "res://GameEngine/SceneConfiguration.gd"
+}, {
 "base": "PhysicsBody2D",
 "class": "Thing",
 "language": "GDScript",
@@ -104,6 +109,7 @@ _global_script_class_icons={
 "Messages": "",
 "Monster": "",
 "Player": "",
+"SceneConfiguration": "",
 "Thing": "",
 "TrackingArea": ""
 }
