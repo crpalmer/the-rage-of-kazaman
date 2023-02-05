@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://GameEngine/EntryPoint.tscn" type="PackedScene" id=1]
 [ext_resource path="res://DandD/Things/Door-32-flipped.tscn" type="PackedScene" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://Town/DruidTelgrave.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Town/Blacksmith.tscn" type="PackedScene" id=13]
 [ext_resource path="res://GameEngine/Scene.tscn" type="PackedScene" id=14]
+[ext_resource path="res://GameEngine/Actors/RandomEncounters.tscn" type="PackedScene" id=15]
+[ext_resource path="res://DandD/Monsters/Kobold.tscn" type="PackedScene" id=16]
 
 [sub_resource type="NavigationPolygon" id=6]
 vertices = PoolVector2Array( -123, 237, -192, 257, -189, 168, 172, 56, -449, -277, -410, -276, -418, -204, -445, -207, -444, -110, -419, -111, 395, 537, -192, 534, -179, 309, -98, 273, -240, 126, -199, -41, 169, -62, 321, 56, 398, -275, 318, -81, -218, -276, -219, -114, -409, -55, -411, 166, -457, 165, -514, 535, -515, -110, -458, 535 )
@@ -74,26 +76,34 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -1114144, 24, 131074, -1114143, 24, 131075, -1114135, 24, 131074, -1114134, 24, 131075, -1048608, 24, 65536, -1048607, 24, 65537, -1048606, 24, 131074, -1048605, 24, 131075, -1048601, 24, 131074, -1048600, 24, 131075, -1048599, 24, 65538, -1048598, 24, 65537, -983072, 24, 131072, -983071, 24, 131073, -983070, 24, 65536, -983069, 24, 65537, -983065, 24, 65536, -983064, 24, 65537, -983063, 24, 131072, -983062, 24, 131073, -983050, 24, 131074, -983049, 24, 131075, -917536, 24, 196608, -917535, 24, 196609, -917534, 24, 131072, -917533, 24, 131073, -917529, 24, 131072, -917528, 24, 131073, -917527, 24, 196608, -917526, 24, 196609, -917514, 24, 65536, -917513, 24, 65537, -983032, 24, 131074, -983031, 24, 131075, -851998, 24, 196608, -851997, 24, 196609, -851993, 24, 196608, -851992, 24, 196609, -851978, 24, 131072, -851977, 24, 131073, -917496, 24, 65536, -917495, 24, 65537, -786442, 24, 196608, -786441, 24, 196609, -851960, 24, 131072, -851959, 24, 131073, -851946, 24, 131074, -851945, 24, 131075, -786424, 24, 196608, -786423, 24, 196609, -786410, 24, 65536, -786409, 24, 65537, -720874, 24, 131072, -720873, 24, 131073, -655338, 24, 196608, -655337, 24, 196609, -262157, 24, 131074, -262156, 24, 131075, -196621, 24, 65536, -196620, 24, 65537, -131085, 24, 131072, -131084, 24, 131073, -65549, 24, 196608, -65548, 24, 196609, 65523, 24, 131074, 65524, 24, 131075, 131059, 24, 65536, 131060, 24, 65537, 196595, 24, 131072, 196596, 24, 131073, 262131, 24, 196608, 262132, 24, 196609, 196629, 24, 131074, 196630, 24, 131075, 262165, 24, 65536, 262166, 24, 65537, 327701, 24, 131072, 327702, 24, 131073, 393237, 24, 196608, 393238, 24, 196609, 589820, 24, 131074, 589821, 24, 131075, 655356, 24, 65536, 655357, 24, 65537, 720892, 24, 131072, 720893, 24, 131073, 786428, 24, 196608, 786429, 24, 196609, 851980, 24, 131074, 851981, 24, 131075, 917516, 24, 65536, 917517, 24, 65537, 983052, 24, 131072, 983053, 24, 131073, 1048588, 24, 196608, 1048589, 24, 196609 )
 
-[node name="MayorDelrin" parent="ActorsAndNavigation" index="1" instance=ExtResource( 10 )]
+[node name="MayorDelrin" parent="." index="4" instance=ExtResource( 10 )]
 position = Vector2( -347, 367 )
 
-[node name="DruidTelgrave" parent="ActorsAndNavigation" index="2" instance=ExtResource( 12 )]
+[node name="DruidTelgrave" parent="." index="5" instance=ExtResource( 12 )]
 position = Vector2( -434, -252 )
 
-[node name="BlackSmith" parent="ActorsAndNavigation" index="3" instance=ExtResource( 13 )]
+[node name="BlackSmith" parent="." index="6" instance=ExtResource( 13 )]
 position = Vector2( 279, -7.00002 )
 long_description = "a  very strong man wearing a leather apron"
 
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="ActorsAndNavigation" index="4"]
+[node name="RandomEncounters" parent="." index="7" instance=ExtResource( 15 )]
+
+[node name="Kobold" parent="." index="8" instance=ExtResource( 16 )]
+position = Vector2( 82, 217 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="ActorsAndNavigation" index="0"]
 navpoly = SubResource( 6 )
+enabled = false
 
-[node name="NavigationPolygonInstance2" type="NavigationPolygonInstance" parent="ActorsAndNavigation" index="5"]
+[node name="NavigationPolygonInstance2" type="NavigationPolygonInstance" parent="ActorsAndNavigation" index="1"]
 navpoly = SubResource( 7 )
+enabled = false
 
-[node name="NavigationPolygonInstance3" type="NavigationPolygonInstance" parent="ActorsAndNavigation" index="6"]
+[node name="NavigationPolygonInstance3" type="NavigationPolygonInstance" parent="ActorsAndNavigation" index="2"]
 navpoly = SubResource( 8 )
+enabled = false
 
-[node name="Home" type="Node2D" parent="." index="6"]
+[node name="Home" type="Node2D" parent="." index="10"]
 position = Vector2( -324, 34 )
 
 [node name="StartingInventoryPosition" type="Position2D" parent="Home" index="0"]
@@ -133,7 +143,7 @@ rotation = 1.5708
 [node name="WallOccluder" type="LightOccluder2D" parent="Home" index="6"]
 occluder = SubResource( 2 )
 
-[node name="MayorHouse" type="Node2D" parent="." index="7"]
+[node name="MayorHouse" type="Node2D" parent="." index="11"]
 position = Vector2( -322, 342 )
 
 [node name="Door-32-flipped" parent="MayorHouse" index="0" instance=ExtResource( 2 )]
@@ -168,7 +178,7 @@ scale = Vector2( 1.5, 2 )
 position = Vector2( -49, -91 )
 rotation = -0.785398
 
-[node name="EastGatePortal" parent="." index="8" instance=ExtResource( 11 )]
+[node name="EastGatePortal" parent="." index="12" instance=ExtResource( 11 )]
 position = Vector2( 430, 352 )
 scene = "res://Wilderness/Wilderness.tscn"
 entry_point = "EnterFromTownEastGate"
@@ -179,7 +189,7 @@ position = Vector2( -32, -1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EastGatePortal" index="1"]
 shape = SubResource( 4 )
 
-[node name="Smithy" type="Node2D" parent="." index="9"]
+[node name="Smithy" type="Node2D" parent="." index="13"]
 position = Vector2( 249, -17 )
 rotation = -0.00110415
 

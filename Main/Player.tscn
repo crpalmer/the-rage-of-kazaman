@@ -6,9 +6,8 @@
 [ext_resource path="res://Main/player1.png" type="Texture" id=4]
 [ext_resource path="res://Main/player2.png" type="Texture" id=5]
 
-[sub_resource type="CapsuleShape2D" id=15]
-radius = 7.0
-height = 18.0
+[sub_resource type="CircleShape2D" id=7]
+radius = 15.0
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
@@ -24,7 +23,7 @@ animations = [ {
 offset = Vector2( 212, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="6"]
-shape = SubResource( 15 )
+shape = SubResource( 7 )
 
 [node name="Inventory" parent="." index="7" instance=ExtResource( 2 )]
 visible = false
@@ -35,7 +34,7 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="9"]
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.9, 0.45 )
 frames = SubResource( 6 )
 animation = "walk"
 playing = true
