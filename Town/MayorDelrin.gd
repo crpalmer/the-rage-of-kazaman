@@ -37,7 +37,7 @@ func say_hello():
 	if waiting_for_yes_for != 0:
 		propose_first_available_quest()
 	else:
-		say("Hi Flash.  What's up?")
+		say("What's up?")
 
 func player_said(what, words):
 	if waiting_for_yes_for != 0:
