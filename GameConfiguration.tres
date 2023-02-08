@@ -9,6 +9,7 @@ player = "res://Main/Player.tscn"
 entry_scene = "res://Wilderness/Wilderness.tscn"
 entry_point = "EnterFromTownEastGate"
 fade_color = Color( 0, 0, 0, 1 )
+rest_time_accelerator = 600.0
 resting_alpha = 0.75
 pixels_per_foot = 10.666
 game_start_time_in_hours = 2.0

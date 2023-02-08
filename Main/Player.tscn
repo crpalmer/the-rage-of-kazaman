@@ -44,4 +44,3 @@ path_desired_distance = 1.0
 target_desired_distance = 1.0
 path_max_distance = 16.0
 avoidance_enabled = false
-radius = 16.0

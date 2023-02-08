@@ -19,6 +19,9 @@ to_hit_modifier = 5
 xp_value = 500
 seconds_per_interation = 15
 
+[node name="Navigation" parent="." index="5"]
+radius = 32.0
+
 [node name="Sprite" type="Sprite" parent="." index="6"]
 texture = ExtResource( 2 )
 
