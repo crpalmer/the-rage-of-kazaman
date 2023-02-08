@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://DandD/Monsters/Kobold.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Wilderness/ForestBattleScene.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameEngine/EntryPoint.gd" type="Script" id=3]
+
+[node name="TestSubScene" instance=ExtResource( 2 )]
+
+[node name="Kobold" parent="." index="5" instance=ExtResource( 1 )]
+position = Vector2( 367, 186 )
+
+[node name="EntryPoint" type="Node2D" parent="." index="6"]
+position = Vector2( 220, 193 )
+script = ExtResource( 3 )

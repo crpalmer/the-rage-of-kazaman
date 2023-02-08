@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://GameEngine/Actors/Actor.gd"
 }, {
+"base": "Area2D",
+"class": "ActorRandomMovement",
+"language": "GDScript",
+"path": "res://GameEngine/Actors/ActorRandomMovement.gd"
+}, {
 "base": "Thing",
 "class": "Attack",
 "language": "GDScript",
@@ -82,7 +87,17 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "SceneConfiguration",
 "language": "GDScript",
-"path": "res://GameEngine/SceneConfiguration.gd"
+"path": "res://GameEngine/Scenes/SceneConfiguration.gd"
+}, {
+"base": "Node2D",
+"class": "SubScene",
+"language": "GDScript",
+"path": "res://GameEngine/Scenes/SubScene.gd"
+}, {
+"base": "Node2D",
+"class": "SubSceneTrigger",
+"language": "GDScript",
+"path": "res://GameEngine/Scenes/SubSceneTrigger.gd"
 }, {
 "base": "PhysicsBody2D",
 "class": "Thing",
@@ -96,6 +111,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Actor": "",
+"ActorRandomMovement": "",
 "Attack": "",
 "Class": "",
 "Conversation": "",
@@ -110,6 +126,8 @@ _global_script_class_icons={
 "Monster": "",
 "Player": "",
 "SceneConfiguration": "",
+"SubScene": "",
+"SubSceneTrigger": "",
 "Thing": "",
 "TrackingArea": ""
 }
