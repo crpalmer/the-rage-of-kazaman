@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://DandD/Tilesets/tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://GameEngine/EntryPoint.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameEngine/Scenes/Scene.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GameEngine/Objects/Portal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://DandD/Things/Door-32.tscn" type="PackedScene" id=5]
+[ext_resource path="res://DandD/Things/Door-32-flipped.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 48 )
+
+[node name="GarrisonLevel1" instance=ExtResource( 3 )]
+
+[node name="RandomEncounters" parent="." index="1"]
+monsters = [ "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/GiantRat.tscn" ]
+check_every_hours = 4.0
+test_roll = 15
+
+[node name="TileMap" type="TileMap" parent="." index="2"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -327680, 32, 65537, -262144, 32, 65537, -196608, 32, 65537, -131072, 29, 0, -65536, 29, 0, 0, 29, 0, 65536, 32, 65537, 131072, 32, 65537, 196608, 32, 65537 )
+
+[node name="EntryFromWilderness" parent="." index="3" instance=ExtResource( 2 )]
+position = Vector2( -16, 0 )
+
+[node name="ExitToWilderness" parent="." index="4" instance=ExtResource( 4 )]
+position = Vector2( -32, 0 )
+
+[node name="Area2D" type="Area2D" parent="ExitToWilderness" index="0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitToWilderness/Area2D" index="0"]
+position = Vector2( 32, -16 )
+shape = SubResource( 1 )
+
+[node name="Entryway" type="Node2D" parent="." index="5"]
+
+[node name="Door-32" parent="Entryway" index="0" instance=ExtResource( 5 )]
+position = Vector2( 16, 8 )
+rotation = -1.5708
+scale = Vector2( 1.5, 1.5 )
+is_closed = false
+
+[node name="Door-32-flipped" parent="Entryway" index="1" instance=ExtResource( 6 )]
+position = Vector2( 16, -40 )
+rotation = -1.5708
+scale = Vector2( 1.5, 1.5 )
+is_closed = false
