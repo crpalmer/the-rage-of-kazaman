@@ -8,7 +8,6 @@ func _ready():
 	$Splash.show()
 	$HUD.hide()
 	$MainMenu.hide()
-	$InformationalText.hide()
 #	$Splash/Music.play(10)
 	$Splash/Timer.start(0.01)
 	GameEngine.modulate(false)

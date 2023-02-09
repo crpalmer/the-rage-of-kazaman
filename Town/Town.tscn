@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://GameEngine/EntryPoint.tscn" type="PackedScene" id=1]
 [ext_resource path="res://DandD/Things/Door-32-flipped.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Town/DruidTelgrave.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Town/Blacksmith.tscn" type="PackedScene" id=13]
 [ext_resource path="res://GameEngine/Scenes/Scene.tscn" type="PackedScene" id=14]
+[ext_resource path="res://InformationalText.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Town/Villager.tscn" type="PackedScene" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -22,6 +23,9 @@ extents = Vector2( 15, 18 )
 [sub_resource type="OccluderPolygon2D" id=2]
 closed = false
 polygon = PoolVector2Array( 84, -59, 84, -114, -76, -114, -76, 112, 83, 111, 84, 0 )
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 32.0
 
 [sub_resource type="OccluderPolygon2D" id=3]
 closed = false
@@ -88,6 +92,14 @@ rotation = 1.5708
 
 [node name="WallOccluder" type="LightOccluder2D" parent="Home" index="6"]
 occluder = SubResource( 2 )
+
+[node name="WelcomeText" parent="Home" index="7" instance=ExtResource( 15 )]
+position = Vector2( 14, 57 )
+
+[node name="Area2D" type="Area2D" parent="Home/WelcomeText" index="1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Home/WelcomeText/Area2D" index="0"]
+shape = SubResource( 6 )
 
 [node name="MayorHouse" type="Node2D" parent="." index="5"]
 position = Vector2( -322, 342 )

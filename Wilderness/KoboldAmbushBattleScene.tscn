@@ -12,32 +12,5 @@ keep_items_on_exit = true
 [node name="EntryPoint" parent="." index="3" instance=ExtResource( 3 )]
 position = Vector2( 219, 190 )
 
-[node name="StartSceneTimer" type="Timer" parent="." index="4"]
-wait_time = 0.5
-one_shot = true
-autostart = true
-
-[node name="EndSceneTimer" type="Timer" parent="." index="5"]
-wait_time = 0.5
-one_shot = true
-
 [node name="Kobold" parent="." index="6" instance=ExtResource( 2 )]
 position = Vector2( 311, 187 )
-
-[node name="StartSceneTimer" type="Timer" parent="." index="7"]
-wait_time = 0.5
-one_shot = true
-autostart = true
-
-[node name="EndSceneTimer" type="Timer" parent="." index="8"]
-wait_time = 0.5
-one_shot = true
-
-[node name="StartSceneTimer" type="Timer" parent="." index="9"]
-wait_time = 0.5
-one_shot = true
-autostart = true
-
-[node name="EndSceneTimer" type="Timer" parent="." index="10"]
-wait_time = 0.5
-one_shot = true

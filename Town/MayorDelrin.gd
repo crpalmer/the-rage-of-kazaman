@@ -2,6 +2,7 @@ extends ConversationalActor
 
 const QUEST_KOBOLDS = 1
 const QUEST_KOBOLD_NOTE = 2
+const QUEST_KOBOLDS_DIE = 4
 
 var available_quests = QUEST_KOBOLDS
 var accepted_quests = 0
@@ -43,6 +44,14 @@ func say_hello():
 		GameEngine.message("You show the mayor the kobold note.")
 		GameEngine.player.add_xp(100)
 		say("Oh, that note is very interesting.  The kobolds sound like an organized group.  Please investigate the Garrison and see if you can find out who's behind it all.")
+	elif not quest_is_accepted(QUEST_KOBOLDS_DIE) and GameEngine.has_completed_milestone("found-eastern-garrison"):
+		accept_quest(QUEST_KOBOLDS_DIE)
+		GameEngine.message("You tell the mayor about the kobolds and their military demeanor.")
+		say_in_parts([
+			"These kobolds must be trying to muster an army to invade the village.  You must enter the Garrison and eradicate the threat!",
+			"Take this magic sword and helmet to help you in your battles."
+		])
+		# TODO add items to inventory
 	else:
 		say("What's up?")
 
