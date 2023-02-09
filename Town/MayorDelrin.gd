@@ -51,7 +51,8 @@ func say_hello():
 			"These kobolds must be trying to muster an army to invade the village.  You must enter the Garrison and eradicate the threat!",
 			"Take this magic sword and helmet to help you in your battles."
 		])
-		# TODO add items to inventory
+		GameEngine.player.add_to_inventory(load("res://DandD/Armor/HelmetPlus1.tscn").instance())
+		GameEngine.player.add_to_inventory(load("res://DandD/Weapons/LongSwordPlus1.tscn").instance())
 	else:
 		say("What's up?")
 
