@@ -3,30 +3,51 @@ extends Node2D
 var game_in_progress = false
 var fighter
 
+export var debugging_startup = true
+onready var splash = $Splash
+onready var splash_timer = $Splash/Timer
+onready var splash_music = $Splash/Music
+onready var hud = $HUD
+onready var main_menu = $MainMenu
+onready var save = $MainMenu/Save
+
 func _ready():
 	OS.set_window_maximized(true)
-	$Splash.show()
-	$HUD.hide()
-	$MainMenu.hide()
-#	$Splash/Music.play(10)
-	$Splash/Timer.start(0.01)
+	splash.show()
+	hud.hide()
+	main_menu.hide()
+#	splash_music.play(10)
+	splash_timer.start(0.01)
 	GameEngine.modulate(false)
 	fighter = load("res://DandD/Classes/Fighter.tscn").instance()
+	if debugging_startup:
+		call_deferred("debugging_ready")
 
+func debugging_ready():
+	splash_timer.stop()
+	main_menu.visible = false
+	hud.visible = true
+	GameEngine.complete_milestone("found-eastern-garrison")
+	_on_NewGame_pressed()
+	GameEngine.player.add_to_inventory(load("res://DandD/Armor/HelmetPlus1.tscn").instance())
+	GameEngine.player.add_to_inventory(load("res://DandD/Armor/Chainmail.tscn").instance())
+	GameEngine.player.add_to_inventory(load("res://DandD/Weapons/LongSword.tscn").instance())
+	GameEngine.player.add_to_inventory(load("res://DandD/Weapons/LongSwordPlus1.tscn").instance())
+	GameEngine.enter_scene("res://Wilderness/Wilderness.tscn", "GarrisonClearing/FoundGarrisonText")
 
 func show_menu():
-	$MainMenu.show()
-#	$Splash/Music.play(10)
-	$Splash.show()
+	main_menu.show()
+#	splash_music.play(10)
+	splash.show()
 
 func hide_menu():
-	$MainMenu.hide()
-	$Splash/Music.stop()
-	$Splash.hide()
+	main_menu.hide()
+	splash_music.stop()
+	splash.hide()
 
 func enter_game():
 	connect_player_death()
-	$HUD.show()
+	hud.show()
 	GameEngine.modulate(true)
 
 func connect_player_death():
@@ -35,13 +56,13 @@ func connect_player_death():
 
 func _process(_delta):
 	if Input.is_action_just_released("menu") and game_in_progress and not GameEngine.is_paused():
-		if $MainMenu.visible: hide_menu()
+		if main_menu.visible: hide_menu()
 		else: show_menu()
 
 func _on_Splash_Timer_timeout():
-	$Splash/Timer.stop()
-	$MainMenu/Save.disabled = true
-	$MainMenu.show()
+	splash_timer.stop()
+	save.disabled = true
+	main_menu.show()
 
 func _on_NewGame_pressed():
 	hide_menu()
@@ -55,7 +76,6 @@ func _on_NewGame_pressed():
 		i.global_position = item_pos
 		GameEngine.current_scene.add_child(i)
 		item_pos.x += 32
-#	$InformationalText.message("You awake in a fright.\n\nYou hear a commotion outside your house.  What could be happening in the middle of the night??\n\nMaybe it would be wise to go investigate.")
 
 func _on_Load_pressed():
 	hide_menu()
@@ -71,7 +91,7 @@ func _on_Save_pressed():
 	hide_menu()
 
 func on_player_died():
-	$MainMenu/Save.disabled = true
+	save.disabled = true
 	show_menu()
 	game_in_progress = false
 	GameEngine.modulate(false)
