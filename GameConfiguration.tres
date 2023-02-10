@@ -6,6 +6,7 @@
 script = ExtResource( 1 )
 root = "res://GameEngine"
 player = "res://Main/Player.tscn"
+conversation_path = "Conversation"
 entry_scene = "res://Town/Town.tscn"
 entry_point = "Home/ByBed"
 fade_color = Color( 0, 0, 0, 1 )

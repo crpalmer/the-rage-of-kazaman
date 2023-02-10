@@ -1,4 +1,4 @@
-extends ConversationalActor
+extends ActorConversation
 
 const QUEST_KOBOLDS = 1
 const QUEST_KOBOLD_NOTE = 2
@@ -18,9 +18,6 @@ const kobolds_quest = [
 		"I need a brave adventurer to investigate and report back to me."
 	]
 
-func wants_to_initiate_conversation():
-	return available_quests != 0
-	
 func get_persistent_data():
 	return {
 		"available_quests": available_quests,
@@ -34,6 +31,12 @@ func load_persistent_data(p):
 	waiting_for_yes_for = p.waiting_for_yes_for
 	accepted_quests = p.accepted_quests
 	completed_quests = p.completed_quests
+
+func _ready():
+	add_to_group("PersistentNodes")
+
+func wants_to_initiate_conversation():
+	return available_quests != 0
 
 func say_hello():
 	print_debug("Accepted: ", quest_is_accepted(QUEST_KOBOLD_NOTE), " has: ", GameEngine.player.has_a("kobold note"))

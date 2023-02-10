@@ -26,15 +26,16 @@ func _ready():
 func debugging_ready():
 	splash_timer.stop()
 	hide_menu()
-	GameEngine.complete_milestone("found-eastern-garrison")
 	GameEngine.new_game()
 	enter_game()
 	var items = GameEngine.player.create_character(fighter)
+	GameEngine.complete_milestone("found-eastern-garrison")
 	GameEngine.player.add_xp(500)
 	GameEngine.player.add_to_inventory(load("res://DandD/Armor/HelmetPlus1.tscn").instance(), true)
 	GameEngine.player.add_to_inventory(load("res://DandD/Weapons/LongSwordPlus1.tscn").instance(), true)
 	for item in items: GameEngine.player.add_to_inventory(item, true)
-	GameEngine.enter_scene("res://Garrison/GarrisonLevel1.tscn", "DebugPoint")
+	#GameEngine.enter_scene("res://Garrison/GarrisonLevel1.tscn", "DebugPoint")
+	GameEngine.enter_scene("res://Town/Town.tscn", "DebugPoint")
 
 func show_menu():
 	main_menu.show()
@@ -49,6 +50,7 @@ func hide_menu():
 func enter_game():
 	connect_player_death()
 	hud.show()
+	save.disabled = false
 	GameEngine.modulate(true)
 
 func connect_player_death():

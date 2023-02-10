@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://GameEngine/Actors/Actor.gd"
 }, {
+"base": "Node2D",
+"class": "ActorConversation",
+"language": "GDScript",
+"path": "res://GameEngine/Actors/ActorConversation.gd"
+}, {
 "base": "Area2D",
 "class": "ActorRandomMovement",
 "language": "GDScript",
@@ -28,16 +33,6 @@ _global_script_classes=[ {
 "class": "Class",
 "language": "GDScript",
 "path": "res://GameEngine/Actors/Class.gd"
-}, {
-"base": "CanvasLayer",
-"class": "Conversation",
-"language": "GDScript",
-"path": "res://GameEngine/Conversation.gd"
-}, {
-"base": "Actor",
-"class": "ConversationalActor",
-"language": "GDScript",
-"path": "res://GameEngine/Actors/ConversationalActor.gd"
 }, {
 "base": "Thing",
 "class": "Currency",
@@ -111,11 +106,10 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Actor": "",
+"ActorConversation": "",
 "ActorRandomMovement": "",
 "Attack": "",
 "Class": "",
-"Conversation": "",
-"ConversationalActor": "",
 "Currency": "",
 "Door": "",
 "EntryPoint": "",

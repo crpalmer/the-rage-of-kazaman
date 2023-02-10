@@ -1,4 +1,4 @@
-extends ConversationalActor
+extends ActorConversation
 
 func _ready():
 	services_for_sale = [

@@ -151,3 +151,6 @@ long_description = "a  very strong man wearing a leather apron"
 
 [node name="Villager" parent="." index="8" instance=ExtResource( 16 )]
 position = Vector2( -32, 72 )
+
+[node name="DebugPoint" parent="." index="9" instance=ExtResource( 1 )]
+position = Vector2( -280, 448 )
