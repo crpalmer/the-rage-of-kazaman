@@ -18,14 +18,14 @@
 
 [sub_resource type="OccluderPolygon2D" id=2]
 closed = false
-polygon = PoolVector2Array( 84, -59, 84, -114, -76, -114, -76, 112, 83, 111, 84, 0 )
+polygon = PoolVector2Array( 84, -66, 84, -114, -76, -114, -76, 112, 83, 111, 84, -2 )
 
 [sub_resource type="CircleShape2D" id=6]
 radius = 32.0
 
 [sub_resource type="OccluderPolygon2D" id=3]
 closed = false
-polygon = PoolVector2Array( 82, -23, 83, -135, -110, -134, -110, 154, 82, 153, 83, 43 )
+polygon = PoolVector2Array( 82, -23, 83, -135, -110, -134, -110, 154, 82, 153, 82, 41 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 13.5, 33 )
@@ -56,9 +56,9 @@ position = Vector2( -324, 34 )
 position = Vector2( -43, -47 )
 
 [node name="FrontDoor" parent="Home" index="1" instance=ExtResource( 3 )]
-position = Vector2( 85, -35 )
+position = Vector2( 84, -34 )
 rotation = 1.5708
-scale = Vector2( 2.1, 2 )
+scale = Vector2( 2, 2 )
 display_name = "front door"
 long_description = "your front door"
 
@@ -92,16 +92,14 @@ shape = SubResource( 6 )
 position = Vector2( -322, 342 )
 
 [node name="Door-32-flipped" parent="MayorHouse" index="0" instance=ExtResource( 2 )]
-position = Vector2( 83, 25 )
+position = Vector2( 82, 26 )
 rotation = 1.5708
-scale = Vector2( 1.1, 1 )
 display_name = ""
 long_description = ""
 
 [node name="Door-32" parent="MayorHouse" index="1" instance=ExtResource( 3 )]
-position = Vector2( 83, -6 )
+position = Vector2( 82, -6 )
 rotation = 1.5708
-scale = Vector2( 1.1, 1 )
 
 [node name="WallOccluder" type="LightOccluder2D" parent="MayorHouse" index="2"]
 position = Vector2( 0, 1 )
