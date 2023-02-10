@@ -1,11 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Wilderness/kobold-scroll.png" type="Texture" id=1]
 [ext_resource path="res://GameEngine/Inventory/InventoryThing.tscn" type="PackedScene" id=2]
 
+[sub_resource type="CircleShape2D" id=1]
+resource_local_to_scene = true
+radius = 13.0
+
 [node name="KoboldNote" instance=ExtResource( 2 )]
 display_name = "kobold note"
 long_description = "the note reads: Guard the path from the village.  Kill anyone that approaches the Garrison."
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 scale = Vector2( 0.05, 0.05 )

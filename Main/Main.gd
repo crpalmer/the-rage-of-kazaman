@@ -25,15 +25,16 @@ func _ready():
 
 func debugging_ready():
 	splash_timer.stop()
-	main_menu.visible = false
-	hud.visible = true
+	hide_menu()
 	GameEngine.complete_milestone("found-eastern-garrison")
-	_on_NewGame_pressed()
-	GameEngine.player.add_to_inventory(load("res://DandD/Armor/HelmetPlus1.tscn").instance())
-	GameEngine.player.add_to_inventory(load("res://DandD/Armor/Chainmail.tscn").instance())
-	GameEngine.player.add_to_inventory(load("res://DandD/Weapons/LongSword.tscn").instance())
-	GameEngine.player.add_to_inventory(load("res://DandD/Weapons/LongSwordPlus1.tscn").instance())
-	GameEngine.enter_scene("res://Wilderness/Wilderness.tscn", "GarrisonClearing/FoundGarrisonText")
+	GameEngine.new_game()
+	enter_game()
+	var items = GameEngine.player.create_character(fighter)
+	GameEngine.player.add_xp(500)
+	GameEngine.player.add_to_inventory(load("res://DandD/Armor/HelmetPlus1.tscn").instance(), true)
+	GameEngine.player.add_to_inventory(load("res://DandD/Weapons/LongSwordPlus1.tscn").instance(), true)
+	for item in items: GameEngine.player.add_to_inventory(item, true)
+	GameEngine.enter_scene("res://Garrison/GarrisonLevel1.tscn", "DebugPoint")
 
 func show_menu():
 	main_menu.show()

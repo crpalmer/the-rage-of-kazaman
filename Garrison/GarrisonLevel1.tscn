@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://DandD/Tilesets/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://GameEngine/EntryPoint.tscn" type="PackedScene" id=2]
@@ -6,9 +6,58 @@
 [ext_resource path="res://GameEngine/Objects/Portal.tscn" type="PackedScene" id=4]
 [ext_resource path="res://DandD/Things/Door-32.tscn" type="PackedScene" id=5]
 [ext_resource path="res://DandD/Things/Door-32-flipped.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Garrison/carpet.png" type="Texture" id=7]
+[ext_resource path="res://DandD/Things/Chair.tscn" type="PackedScene" id=8]
+[ext_resource path="res://DandD/Monsters/Kobold.tscn" type="PackedScene" id=9]
+[ext_resource path="res://GameEngine/Objects/StaticThing.tscn" type="PackedScene" id=10]
+[ext_resource path="res://DandD/Things/Bed.tscn" type="PackedScene" id=11]
+[ext_resource path="res://DandD/Things/Desk.tscn" type="PackedScene" id=12]
+[ext_resource path="res://DandD/Things/Note.tscn" type="PackedScene" id=13]
+[ext_resource path="res://GameEngine/MessageArea.tscn" type="PackedScene" id=14]
+[ext_resource path="res://DandD/Things/Toilet.tscn" type="PackedScene" id=15]
+[ext_resource path="res://DandD/Monsters/KoboldWarrior.tscn" type="PackedScene" id=16]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="OccluderPolygon2D" id=3]
+closed = false
+polygon = PoolVector2Array( -128, 40, -128, 152, -16, 152 )
+
+[sub_resource type="OccluderPolygon2D" id=4]
+closed = false
+polygon = PoolVector2Array( 48, 152, 160, 152, 160, 40 )
+
+[sub_resource type="OccluderPolygon2D" id=5]
+closed = false
+polygon = PoolVector2Array( 160, -24, 160, -168, 48, -168 )
+
+[sub_resource type="OccluderPolygon2D" id=6]
+closed = false
+polygon = PoolVector2Array( -16, -168, -128, -168, -128, -56 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 84, 64 )
+
+[sub_resource type="RectangleShape2D" id=8]
+resource_local_to_scene = true
 extents = Vector2( 16, 48 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 32, 10 )
+
+[sub_resource type="OccluderPolygon2D" id=9]
+closed = false
+polygon = PoolVector2Array( -304, -144, -304, 80, 176, 80, 176, 16, 272, 16, 272, -144, -128, -144 )
+
+[sub_resource type="OccluderPolygon2D" id=10]
+closed = false
+polygon = PoolVector2Array( 176, -144, 176, -64 )
+
+[sub_resource type="OccluderPolygon2D" id=11]
+closed = false
+polygon = PoolVector2Array( 176, 0, 176, 16 )
+
+[sub_resource type="OccluderPolygon2D" id=12]
+closed = false
+polygon = PoolVector2Array( -80, -168, 112, -168, 112, 152 )
 
 [node name="GarrisonLevel1" instance=ExtResource( 3 )]
 
@@ -20,31 +69,245 @@ test_roll = 15
 [node name="TileMap" type="TileMap" parent="." index="2"]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
+bake_navigation = true
 format = 1
-tile_data = PoolIntArray( -327680, 32, 65537, -262144, 32, 65537, -196608, 32, 65537, -131072, 29, 0, -65536, 29, 0, 0, 29, 0, 65536, 32, 65537, 131072, 32, 65537, 196608, 32, 65537 )
+tile_data = PoolIntArray( -393216, 32, 0, -393215, -1073741792, 65537, -393214, -1073741792, 65537, -393213, -1073741792, 65537, -393212, 29, 0, -393211, 29, 0, -393210, -1073741792, 65537, -393209, -1073741792, 65537, -393208, -1073741792, 65537, -393207, 32, 0, -393206, -1073741792, 65537, -393205, -1073741792, 65537, -393204, -1073741792, 65537, -393203, -1073741792, 65537, -393202, -1073741792, 65537, -393201, 32, 0, -327680, 32, 65537, -327679, 29, 0, -327678, 29, 0, -327677, 29, 0, -327676, 29, 0, -327675, 29, 0, -327674, 29, 0, -327673, 29, 0, -327672, 29, 0, -327671, 32, 65537, -327670, 29, 0, -327669, 29, 0, -327668, 29, 0, -327667, 29, 0, -327666, 29, 0, -327665, 32, 65537, -262144, 32, 65537, -262143, 29, 0, -262142, 29, 0, -262141, 29, 0, -262140, 29, 0, -262139, 29, 0, -262138, 29, 0, -262137, 29, 0, -262136, 29, 0, -262135, 32, 65537, -262134, 29, 0, -262133, 29, 0, -262132, 29, 0, -262131, 29, 0, -262130, 29, 0, -262129, 32, 65537, -131073, 28, 262144, -196608, 32, 65537, -196607, 29, 0, -196606, 29, 0, -196605, 29, 0, -196604, 29, 0, -196603, 29, 0, -196602, 29, 0, -196601, 29, 0, -196600, 29, 0, -196599, 32, 65537, -196598, 29, 0, -196597, 29, 0, -196596, 29, 0, -196595, 29, 0, -196594, 29, 0, -196593, 32, 65537, -65537, 28, 262144, -131072, 29, 0, -131071, 29, 0, -131070, 29, 0, -131069, 29, 0, -131068, 29, 0, -131067, 29, 0, -131066, 29, 0, -131065, 29, 0, -131064, 29, 0, -131063, 32, 65537, -131062, 29, 0, -131061, 29, 0, -131060, 29, 0, -131059, 29, 0, -131058, 29, 0, -131057, 32, 65537, -1, 28, 262144, -65536, 29, 0, -65535, 29, 0, -65534, 29, 0, -65533, 29, 0, -65532, 29, 0, -65531, 29, 0, -65530, 29, 0, -65529, 29, 0, -65528, 29, 0, -65527, 29, 0, -65526, 29, 0, -65525, 29, 0, -65524, 29, 0, -65523, 29, 0, -65522, 29, 0, -65521, 32, 65537, 65535, 28, 262144, 0, 29, 0, 1, 29, 0, 2, 29, 0, 3, 29, 0, 4, 29, 0, 5, 29, 0, 6, 29, 0, 7, 29, 0, 8, 29, 0, 9, 29, 0, 10, 29, 0, 11, 29, 0, 12, 29, 0, 13, 29, 0, 14, 29, 0, 15, 32, 65537, 131071, 28, 262144, 65536, 32, 65537, 65537, 29, 0, 65538, 29, 0, 65539, 29, 0, 65540, 29, 0, 65541, 29, 0, 65542, 29, 0, 65543, 29, 0, 65544, 29, 0, 65545, 32, 65537, 65546, 29, 0, 65547, 29, 0, 65548, 29, 0, 65549, 29, 0, 65550, 29, 0, 65551, 32, 65537, 131072, 32, 65537, 131073, 29, 0, 131074, 29, 0, 131075, 29, 0, 131076, 29, 0, 131077, 29, 0, 131078, 29, 0, 131079, 29, 0, 131080, 29, 0, 131081, 32, 65537, 131082, 29, 0, 131083, 29, 0, 131084, 29, 0, 131085, 29, 0, 131086, 29, 0, 131087, 32, 65537, 196608, 32, 65537, 196609, 29, 0, 196610, 29, 0, 196611, 29, 0, 196612, 29, 0, 196613, 29, 0, 196614, 29, 0, 196615, 29, 0, 196616, 29, 0, 196617, 32, 65537, 196618, 29, 0, 196619, 29, 0, 196620, 29, 0, 196621, 29, 0, 196622, 29, 0, 196623, 32, 65537, 262144, 32, 0, 262145, -1073741792, 65537, 262146, -1073741792, 65537, 262147, -1073741792, 65537, 262148, 29, 0, 262149, 29, 0, 262150, -1073741792, 65537, 262151, -1073741792, 65537, 262152, -1073741792, 65537, 262153, 32, 0, 262154, -1073741792, 65537, 262155, -1073741792, 65537, 262156, -1073741792, 65537, 262157, -1073741792, 65537, 262158, -1073741792, 65537, 262159, -1073741792, 0, 262160, -1073741792, 65537, 262161, -1073741792, 65537, 262162, 32, 0, 327680, 32, 65537, 327681, 29, 0, 327682, 29, 0, 327683, 29, 0, 327684, 29, 0, 327685, 29, 0, 327686, 29, 0, 327687, 29, 0, 327688, 29, 0, 327689, 29, 0, 327690, 29, 0, 327691, 29, 0, 327692, 29, 0, 327693, 29, 0, 327694, 29, 0, 327695, 32, 65537, 327696, 29, 0, 327697, 29, 0, 327698, 32, 65537, 393216, 32, 65537, 393217, 29, 0, 393218, 29, 0, 393219, 29, 0, 393220, 29, 0, 393221, 29, 0, 393222, 29, 0, 393223, 29, 0, 393224, 29, 0, 393225, 29, 0, 393226, 29, 0, 393227, 29, 0, 393228, 29, 0, 393229, 29, 0, 393230, 29, 0, 393231, 32, 65537, 393232, 29, 0, 393233, 29, 0, 393234, 32, 65537, 458752, 32, 65537, 458753, 29, 0, 458754, 29, 0, 458755, 29, 0, 458756, 29, 0, 458757, 29, 0, 458758, 29, 0, 458759, 29, 0, 458760, 29, 0, 458761, 29, 0, 458762, 29, 0, 458763, 29, 0, 458764, 29, 0, 458765, 29, 0, 458766, 29, 0, 458767, 29, 0, 458768, 29, 0, 458769, 29, 0, 458770, 32, 65537, 524288, 32, 65537, 524289, 29, 0, 524290, 29, 0, 524291, 29, 0, 524292, 29, 0, 524293, 29, 0, 524294, 29, 0, 524295, 29, 0, 524296, 29, 0, 524297, 29, 0, 524298, 29, 0, 524299, 29, 0, 524300, 29, 0, 524301, 29, 0, 524302, 29, 0, 524303, 29, 0, 524304, 29, 0, 524305, 29, 0, 524306, 32, 65537, 589824, 32, 65537, 589825, 29, 0, 589826, 29, 0, 589827, 29, 0, 589828, 29, 0, 589829, 29, 0, 589830, 29, 0, 589831, 29, 0, 589832, 29, 0, 589833, 29, 0, 589834, 29, 0, 589835, 29, 0, 589836, 29, 0, 589837, 29, 0, 589838, 29, 0, 589839, -1073741792, 0, 589840, -1073741792, 65537, 589841, -1073741792, 65537, 589842, 32, 0, 655360, 32, 65537, 655361, 29, 0, 655362, 29, 0, 655363, 29, 0, 655364, 29, 0, 655365, 29, 0, 655366, 29, 0, 655367, 29, 0, 655368, 29, 0, 655369, 29, 0, 655370, 29, 0, 655371, 29, 0, 655372, 29, 0, 655373, 29, 0, 655374, 29, 0, 655375, 32, 65537, 720896, -1073741792, 0, 720897, -1073741792, 65537, 720898, -1073741792, 65537, 720899, -1073741792, 65537, 720900, -1073741792, 65537, 720901, -1073741792, 65537, 720902, -1073741792, 65537, 720903, -1073741792, 65537, 720904, -1073741792, 65537, 720905, -1073741792, 65537, 720906, -1073741792, 65537, 720907, -1073741792, 65537, 720908, -1073741792, 65537, 720909, -1073741792, 65537, 720910, -1073741792, 65537, 720911, -1073741792, 0 )
 
 [node name="EntryFromWilderness" parent="." index="3" instance=ExtResource( 2 )]
-position = Vector2( -16, 0 )
+position = Vector2( 28, -12 )
 
-[node name="ExitToWilderness" parent="." index="4" instance=ExtResource( 4 )]
-position = Vector2( -32, 0 )
-
-[node name="Area2D" type="Area2D" parent="ExitToWilderness" index="0"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitToWilderness/Area2D" index="0"]
-position = Vector2( 32, -16 )
-shape = SubResource( 1 )
+[node name="DiningRoom" type="Node2D" parent="." index="4"]
 
 [node name="Entryway" type="Node2D" parent="." index="5"]
+position = Vector2( 144, -8 )
 
-[node name="Door-32" parent="Entryway" index="0" instance=ExtResource( 5 )]
-position = Vector2( 16, 8 )
+[node name="Occluders" type="Node2D" parent="Entryway" index="0"]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Entryway/Occluders" index="0"]
+occluder = SubResource( 3 )
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Entryway/Occluders" index="1"]
+occluder = SubResource( 4 )
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Entryway/Occluders" index="2"]
+occluder = SubResource( 5 )
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="Entryway/Occluders" index="3"]
+occluder = SubResource( 6 )
+
+[node name="Decoration" type="Node2D" parent="Entryway" index="1"]
+
+[node name="Chair" parent="Entryway/Decoration" index="0" instance=ExtResource( 8 )]
+position = Vector2( -48, -136 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Chair2" parent="Entryway/Decoration" index="1" instance=ExtResource( 8 )]
+position = Vector2( 80, -136 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Chair3" parent="Entryway/Decoration" index="2" instance=ExtResource( 8 )]
+position = Vector2( 128, -72 )
+rotation = 1.5708
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Chair4" parent="Entryway/Decoration" index="3" instance=ExtResource( 8 )]
+position = Vector2( 128, 64 )
+rotation = 1.5708
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Chair5" parent="Entryway/Decoration" index="4" instance=ExtResource( 8 )]
+position = Vector2( 80, 120 )
+rotation = -3.14159
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Chair6" parent="Entryway/Decoration" index="5" instance=ExtResource( 8 )]
+position = Vector2( -48, 120 )
+rotation = -3.14159
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Carpet" parent="Entryway/Decoration" index="6" instance=ExtResource( 10 )]
+collision_layer = 2
+collision_mask = 0
+display_name = "colorful carpet"
+long_description = "upon closer inspection, what originally appeared to be an ornate carpet appears to be a hopscotch carpet??"
+
+[node name="Sprite" type="Sprite" parent="Entryway/Decoration/Carpet" index="0"]
+position = Vector2( 8, -8 )
+rotation = 1.5708
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entryway/Decoration/Carpet" index="1"]
+position = Vector2( 4, -8 )
+shape = SubResource( 2 )
+
+[node name="ExitToWilderness" parent="Entryway" index="2" instance=ExtResource( 4 )]
+position = Vector2( -160, -4 )
+scene = "res://Wilderness/Wilderness.tscn"
+entry_point = "GarrisonClearing/ExitFromGarrison"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entryway/ExitToWilderness" index="0"]
+shape = SubResource( 8 )
+
+[node name="Kobold" parent="Entryway" index="3" instance=ExtResource( 9 )]
+position = Vector2( 96, 88 )
+
+[node name="Kobold2" parent="Entryway" index="4" instance=ExtResource( 9 )]
+position = Vector2( 104, -104 )
+
+[node name="FrontDoorBottom" parent="Entryway" index="5" instance=ExtResource( 5 )]
+position = Vector2( -128, 16 )
 rotation = -1.5708
 scale = Vector2( 1.5, 1.5 )
 is_closed = false
 
-[node name="Door-32-flipped" parent="Entryway" index="1" instance=ExtResource( 6 )]
-position = Vector2( 16, -40 )
+[node name="FrontDoorTop" parent="Entryway" index="6" instance=ExtResource( 6 )]
+position = Vector2( -128, -32 )
 rotation = -1.5708
 scale = Vector2( 1.5, 1.5 )
 is_closed = false
+
+[node name="DoorToBarracks" parent="Entryway" index="7" instance=ExtResource( 5 )]
+position = Vector2( 16, 152 )
+scale = Vector2( 2, 2 )
+
+[node name="DoorToMessHall" parent="Entryway" index="8" instance=ExtResource( 5 )]
+position = Vector2( 16, -168 )
+rotation = -3.14159
+scale = Vector2( 2, 2 )
+
+[node name="DoorToLeader" parent="Entryway" index="9" instance=ExtResource( 5 )]
+position = Vector2( 160, 8 )
+rotation = -1.5708
+scale = Vector2( 2, 2 )
+
+[node name="Barracks" type="Node2D" parent="." index="6"]
+position = Vector2( 320, 288 )
+
+[node name="Occluders" type="Node2D" parent="Barracks" index="0"]
+
+[node name="Decoration" type="Node2D" parent="Barracks" index="1"]
+
+[node name="Bed" parent="Barracks/Decoration" index="0" instance=ExtResource( 11 )]
+position = Vector2( -264, -104 )
+rotation = 3.14159
+
+[node name="Bed2" parent="Barracks/Decoration" index="1" instance=ExtResource( 11 )]
+position = Vector2( -216, -104 )
+rotation = 3.14159
+
+[node name="Bed3" parent="Barracks/Decoration" index="2" instance=ExtResource( 11 )]
+position = Vector2( -104, -104 )
+rotation = 3.14159
+
+[node name="Bed4" parent="Barracks/Decoration" index="3" instance=ExtResource( 11 )]
+position = Vector2( -56, -104 )
+rotation = 3.14159
+
+[node name="Bed5" parent="Barracks/Decoration" index="4" instance=ExtResource( 11 )]
+position = Vector2( -8, -104 )
+rotation = 3.14159
+
+[node name="Bed6" parent="Barracks/Decoration" index="5" instance=ExtResource( 11 )]
+position = Vector2( 40, -104 )
+rotation = 3.14159
+
+[node name="Bed7" parent="Barracks/Decoration" index="6" instance=ExtResource( 11 )]
+position = Vector2( 88, -104 )
+rotation = 3.14159
+
+[node name="Bed8" parent="Barracks/Decoration" index="7" instance=ExtResource( 11 )]
+position = Vector2( -264, 40 )
+
+[node name="Bed9" parent="Barracks/Decoration" index="8" instance=ExtResource( 11 )]
+position = Vector2( -216, 40 )
+
+[node name="Bed10" parent="Barracks/Decoration" index="9" instance=ExtResource( 11 )]
+position = Vector2( -168, 40 )
+
+[node name="Bed11" parent="Barracks/Decoration" index="10" instance=ExtResource( 11 )]
+position = Vector2( -120, 40 )
+
+[node name="Bed12" parent="Barracks/Decoration" index="11" instance=ExtResource( 11 )]
+position = Vector2( -72, 40 )
+
+[node name="Bed13" parent="Barracks/Decoration" index="12" instance=ExtResource( 11 )]
+position = Vector2( -24, 40 )
+
+[node name="Bed14" parent="Barracks/Decoration" index="13" instance=ExtResource( 11 )]
+position = Vector2( 24, 40 )
+
+[node name="Bed15" parent="Barracks/Decoration" index="14" instance=ExtResource( 11 )]
+position = Vector2( 72, 40 )
+
+[node name="Bed16" parent="Barracks/Decoration" index="15" instance=ExtResource( 11 )]
+position = Vector2( 120, 40 )
+
+[node name="Desk" parent="Barracks/Decoration" index="16" instance=ExtResource( 12 )]
+position = Vector2( 144, -96 )
+rotation = 1.5708
+
+[node name="Chair" parent="Barracks/Decoration" index="17" instance=ExtResource( 8 )]
+position = Vector2( 120, -96 )
+rotation = -1.5708
+
+[node name="Letter" parent="Barracks" index="2" instance=ExtResource( 13 )]
+visible = false
+position = Vector2( 140, -72 )
+rotation = 1.5708
+display_name = " half written letter"
+long_description = "Dear Mom,
+ 
+I miss you when I'm stationed here but the Sargent keeps us very busy so the time passes fast.
+
+I am very tired though, I keep waking up in the middle of the night hearing strange clanging noises coming from the Sargent's office.  I must sleep now but I'll write more in the morning.
+"
+reveal_text = "Searching the desk reveals a letter."
+
+[node name="DoorToBathroom" parent="Barracks" index="3" instance=ExtResource( 6 )]
+position = Vector2( 176, -32 )
+rotation = -1.5708
+scale = Vector2( 2, 2 )
+
+[node name="MessageArea" parent="Barracks" index="4" instance=ExtResource( 14 )]
+message = "You enter the Garrison's barracks.
+
+There is a great deal of dust like this area hasn't been used recently.
+"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barracks/MessageArea" index="0"]
+position = Vector2( -160, -128 )
+shape = SubResource( 7 )
+
+[node name="Toilet" parent="Barracks" index="5" instance=ExtResource( 15 )]
+position = Vector2( 224, -96 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Barracks" index="6"]
+occluder = SubResource( 9 )
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Barracks" index="7"]
+occluder = SubResource( 10 )
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Barracks" index="8"]
+occluder = SubResource( 11 )
+
+[node name="LeaderOffice" type="Node2D" parent="." index="7"]
+position = Vector2( 384, -8 )
+
+[node name="Desk" parent="LeaderOffice" index="0" instance=ExtResource( 12 )]
+position = Vector2( 48, 0 )
+rotation = 1.5708
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Chair" parent="LeaderOffice" index="1" instance=ExtResource( 8 )]
+position = Vector2( 76, -4 )
+rotation = 1.5708
+
+[node name="KoboldWarrior" parent="LeaderOffice" index="2" instance=ExtResource( 16 )]
+position = Vector2( -44, -108 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="LeaderOffice" index="3"]
+occluder = SubResource( 12 )
+
+[node name="DebugPoint" parent="." index="8" instance=ExtResource( 2 )]
+position = Vector2( 400, 232 )
