@@ -34,18 +34,21 @@ func debugging_ready():
 	GameEngine.player.add_to_inventory(load("res://DandD/Armor/HelmetPlus1.tscn").instance(), true)
 	GameEngine.player.add_to_inventory(load("res://DandD/Weapons/LongSwordPlus1.tscn").instance(), true)
 	for item in items: GameEngine.player.add_to_inventory(item, true)
-	#GameEngine.enter_scene("res://Garrison/GarrisonLevel1.tscn", "DebugPoint")
-	GameEngine.enter_scene("res://Town/Town.tscn", "DebugPoint")
+	#GameEngine.enter_scene("res://Town/Town.tscn", "DebugPoint")
+	#GameEngine.enter_scene("res://Wilderness/Wilderness.tscn", "DebugPoint")
+	GameEngine.enter_scene("res://Garrison/GarrisonLevel1.tscn", "DebugPoint")
 
 func show_menu():
 	main_menu.show()
 #	splash_music.play(10)
 	splash.show()
+	GameEngine.pause()
 
 func hide_menu():
 	main_menu.hide()
 	splash_music.stop()
 	splash.hide()
+	GameEngine.resume()
 
 func enter_game():
 	connect_player_death()
@@ -58,9 +61,9 @@ func connect_player_death():
 	game_in_progress = true
 
 func _process(_delta):
-	if Input.is_action_just_released("menu") and game_in_progress and not GameEngine.is_paused():
+	if Input.is_action_just_released("menu") and game_in_progress:
 		if main_menu.visible: hide_menu()
-		else: show_menu()
+		elif not GameEngine.is_paused(): show_menu()
 
 func _on_Splash_Timer_timeout():
 	splash_timer.stop()
