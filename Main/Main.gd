@@ -73,6 +73,7 @@ func _on_NewGame_pressed():
 	enter_game()
 	var items = GameEngine.player.create_character(fighter)
 	GameEngine.enter_scene(GameEngine.config.entry_scene, GameEngine.config.entry_point)
+	yield(get_tree(), "idle_frame")
 	var item_pos_node = GameEngine.get_scene_node("Home/StartingInventoryPosition")
 	var item_pos = item_pos_node.global_position if item_pos_node else Vector2.ZERO
 	for i in items:
