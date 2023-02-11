@@ -3,7 +3,7 @@ extends Node2D
 var game_in_progress = false
 var fighter
 
-export var debugging_startup = true
+export var debugging_startup = false
 onready var splash = $Splash
 onready var splash_timer = $Splash/Timer
 onready var splash_music = $Splash/Music
@@ -20,6 +20,7 @@ func _ready():
 	splash_timer.start(0.01)
 	GameEngine.modulate(false)
 	fighter = load("res://DandD/Classes/Fighter.tscn").instance()
+	GameEngine.connect("player_created", self, "on_player_created")
 	if debugging_startup:
 		call_deferred("debugging_ready")
 
@@ -51,14 +52,13 @@ func hide_menu():
 	GameEngine.resume()
 
 func enter_game():
-	connect_player_death()
 	hud.show()
 	save.disabled = false
+	game_in_progress = true
 	GameEngine.modulate(true)
 
-func connect_player_death():
+func on_player_created():
 	var _err = GameEngine.player.connect("player_died", self, "on_player_died")
-	game_in_progress = true
 
 func _process(_delta):
 	if Input.is_action_just_released("menu") and game_in_progress:
@@ -99,6 +99,6 @@ func _on_Save_pressed():
 
 func on_player_died():
 	save.disabled = true
-	show_menu()
+	call_deferred("show_menu")
 	game_in_progress = false
 	GameEngine.modulate(false)
