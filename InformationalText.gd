@@ -20,8 +20,8 @@ func load_persistent_data(p):
 
 func _ready():
 	add_to_group("PersistentNodes")
-	yield(get_tree(), "idle_frame")
 	canvas_layer.visible = false
+	yield(get_tree(), "idle_frame")
 	for c in get_children():
 		if c is Area2D:
 			c.connect("body_entered", self, "body_entered")
@@ -32,7 +32,6 @@ func should_show():
 func on_shown():
 	if show_once: may_show = false
 	if grants_milestone != "": GameEngine.complete_milestone(grants_milestone)
-	
 
 func body_entered(body):
 	if body == GameEngine.player and should_show():
@@ -46,3 +45,7 @@ func show_message():
 	yield(close, "pressed")
 	canvas_layer.visible = false
 	GameEngine.resume()
+
+func _process(_delta):
+	if visible and Input.is_action_just_released("exit"):
+		close.emit_signal("pressed")
