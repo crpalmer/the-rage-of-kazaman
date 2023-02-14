@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://DandD/Things/Note.tscn" type="PackedScene" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+resource_local_to_scene = true
+radius = 13.0
+
+[node name="LetterToMom" instance=ExtResource( 1 )]
+display_name = "half written letter"
+long_description = "Dear Mom,
+ 
+I miss you when I'm stationed here but the Sargent keeps us very busy so the time passes fast.
+
+I am very tired though, I keep waking up in the middle of the night hearing strange clanging noises coming from the Sargent's office.  I must sleep now but I'll write more in the morning.
+"
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource( 1 )
