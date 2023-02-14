@@ -1,29 +1,33 @@
 extends ActorConversation
 
-var initiate_conversation = true
 var bad_answers = 0
+var  teleported = false
 
 onready var transport = actor.get_node("../LeaderTransportPoint")
 
 func get_persistent_data():
 	return {
 		"bad_answers": bad_answers,
-		"initiate_conversation": initiate_conversation
+		"teleported": teleported
 	}
 
 func load_persistent_data(p):
 	bad_answers = p.bad_answers
-	initiate_conversation = p.initiate_conversation
+	teleported = p.teleported
 
 func _ready():
 	add_to_group("PersistentNodes")
 
 func wants_to_initiate_conversation():
-	return initiate_conversation
+	return true
 
 func say_hello():
-	say("What the @#$!%*&@ are you doing in my Garrison???")
-	initiate_conversation = false
+	if not teleported:
+		say("What the @#$!%*&@ are you doing in my Garrison???")
+	else:
+		say_bye("You really wish to be killed don't you?  I guess I'll do it myself if my guards can't handle it.", 2)
+		actor.make_hostile()
+		teleported = false
 
 func player_said(_text, words):
 	if (words.has("walk") or words.has("walked")) and words.has("bar"):
@@ -48,4 +52,5 @@ func player_said(_text, words):
 
 func spawn_guards(n):
 	transport.teleport(actor)
+	teleported = true
 	GameEngine.spawn_near_player("res://DandD/Monsters/Kobold.tscn", n)

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://DandD/Items/SilverKey.tscn" type="PackedScene" id=1]
+
+[node name="GarrisonKitchenKey" instance=ExtResource( 1 )]
+display_name = "silver key"
+group = "GarrisonKitchenKey"
