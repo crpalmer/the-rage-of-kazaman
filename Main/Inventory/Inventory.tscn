@@ -24,228 +24,231 @@ font_data = ExtResource( 7 )
 layer = 2
 
 [node name="Backpack" type="Node2D" parent="." index="0"]
+position = Vector2( -33, -17 )
 
 [node name="BackpackSprite" type="Sprite" parent="Backpack" index="0"]
-position = Vector2( 665, 253 )
+position = Vector2( 428, 251 )
 rotation = 0.0174533
-scale = Vector2( 1.32675, 1.14637 )
+scale = Vector2( 1.09773, 0.992116 )
 texture = ExtResource( 4 )
 
 [node name="IH1" parent="Backpack" index="1" instance=ExtResource( 3 )]
-margin_left = 540.0
-margin_top = 220.0
-margin_right = 540.0
-margin_bottom = 220.0
+margin_left = 298.0
+margin_top = 203.0
+margin_right = 334.0
+margin_bottom = 239.0
 rect_min_size = Vector2( 36, 36 )
 
 [node name="IH2" parent="Backpack" index="2" instance=ExtResource( 3 )]
-margin_left = 600.0
-margin_top = 220.0
-margin_right = 600.0
-margin_bottom = 220.0
+margin_left = 358.0
+margin_top = 203.0
+margin_right = 394.0
+margin_bottom = 239.0
 rect_min_size = Vector2( 36, 36 )
 
 [node name="IH3" parent="Backpack" index="3" instance=ExtResource( 3 )]
-margin_left = 660.0
-margin_top = 220.0
-margin_right = 660.0
-margin_bottom = 220.0
+margin_left = 418.0
+margin_top = 203.0
+margin_right = 454.0
+margin_bottom = 239.0
 rect_min_size = Vector2( 36, 36 )
 
 [node name="IH4" parent="Backpack" index="4" instance=ExtResource( 3 )]
-margin_left = 720.0
-margin_top = 220.0
-margin_right = 720.0
-margin_bottom = 220.0
+margin_left = 478.0
+margin_top = 203.0
+margin_right = 514.0
+margin_bottom = 239.0
 rect_min_size = Vector2( 36, 36 )
 
 [node name="IH5" parent="Backpack" index="5" instance=ExtResource( 3 )]
-margin_left = 780.0
-margin_top = 220.0
-margin_right = 780.0
-margin_bottom = 220.0
+margin_left = 538.0
+margin_top = 203.0
+margin_right = 574.0
+margin_bottom = 239.0
 rect_min_size = Vector2( 36, 36 )
 
 [node name="IH6" parent="Backpack" index="6" instance=ExtResource( 3 )]
-margin_left = 540.0
-margin_top = 280.0
-margin_right = 576.0
-margin_bottom = 316.0
+margin_left = 298.0
+margin_top = 263.0
+margin_right = 334.0
+margin_bottom = 299.0
 rect_min_size = Vector2( 36, 36 )
 
 [node name="IH7" parent="Backpack" index="7" instance=ExtResource( 3 )]
-margin_left = 600.0
-margin_top = 280.0
-margin_right = 600.0
-margin_bottom = 280.0
+margin_left = 358.0
+margin_top = 263.0
+margin_right = 394.0
+margin_bottom = 299.0
 rect_min_size = Vector2( 36, 36 )
 
 [node name="IH8" parent="Backpack" index="8" instance=ExtResource( 3 )]
-margin_left = 660.0
-margin_top = 280.0
-margin_right = 660.0
-margin_bottom = 280.0
+margin_left = 418.0
+margin_top = 263.0
+margin_right = 454.0
+margin_bottom = 299.0
 rect_min_size = Vector2( 36, 36 )
 
 [node name="IH9" parent="Backpack" index="9" instance=ExtResource( 3 )]
-margin_left = 720.0
-margin_top = 280.0
-margin_right = 720.0
-margin_bottom = 280.0
+margin_left = 478.0
+margin_top = 263.0
+margin_right = 514.0
+margin_bottom = 299.0
 rect_min_size = Vector2( 36, 36 )
 
 [node name="IH10" parent="Backpack" index="10" instance=ExtResource( 3 )]
-margin_left = 780.0
-margin_top = 280.0
-margin_right = 780.0
-margin_bottom = 280.0
+margin_left = 538.0
+margin_top = 263.0
+margin_right = 574.0
+margin_bottom = 299.0
 rect_min_size = Vector2( 36, 36 )
 
 [node name="IH11" parent="Backpack" index="11" instance=ExtResource( 3 )]
-margin_left = 540.0
-margin_top = 340.0
-margin_right = 540.0
-margin_bottom = 340.0
+margin_left = 298.0
+margin_top = 323.0
+margin_right = 334.0
+margin_bottom = 359.0
 rect_min_size = Vector2( 36, 36 )
 
 [node name="IH12" parent="Backpack" index="12" instance=ExtResource( 3 )]
-margin_left = 600.0
-margin_top = 340.0
-margin_right = 600.0
-margin_bottom = 340.0
+margin_left = 358.0
+margin_top = 323.0
+margin_right = 394.0
+margin_bottom = 359.0
 rect_min_size = Vector2( 36, 36 )
 
 [node name="IH13" parent="Backpack" index="13" instance=ExtResource( 3 )]
-margin_left = 660.0
-margin_top = 340.0
-margin_right = 660.0
-margin_bottom = 340.0
+margin_left = 418.0
+margin_top = 323.0
+margin_right = 454.0
+margin_bottom = 359.0
 rect_min_size = Vector2( 36, 36 )
 
 [node name="IH14" parent="Backpack" index="14" instance=ExtResource( 3 )]
-margin_left = 720.0
-margin_top = 340.0
-margin_right = 720.0
-margin_bottom = 340.0
+margin_left = 478.0
+margin_top = 323.0
+margin_right = 514.0
+margin_bottom = 359.0
 rect_min_size = Vector2( 36, 36 )
 
 [node name="IH15" parent="Backpack" index="15" instance=ExtResource( 3 )]
-margin_left = 780.0
-margin_top = 340.0
-margin_right = 780.0
-margin_bottom = 340.0
+margin_left = 538.0
+margin_top = 323.0
+margin_right = 574.0
+margin_bottom = 359.0
 rect_min_size = Vector2( 36, 36 )
 
 [node name="IH16" parent="Backpack" index="16" instance=ExtResource( 3 )]
-margin_left = 540.0
-margin_top = 400.0
-margin_right = 540.0
-margin_bottom = 400.0
+margin_left = 298.0
+margin_top = 383.0
+margin_right = 334.0
+margin_bottom = 419.0
 rect_min_size = Vector2( 36, 36 )
 
 [node name="IH17" parent="Backpack" index="17" instance=ExtResource( 3 )]
-margin_left = 600.0
-margin_top = 400.0
-margin_right = 600.0
-margin_bottom = 400.0
+margin_left = 358.0
+margin_top = 383.0
+margin_right = 394.0
+margin_bottom = 419.0
 rect_min_size = Vector2( 36, 36 )
 
 [node name="IH18" parent="Backpack" index="18" instance=ExtResource( 3 )]
-margin_left = 660.0
-margin_top = 400.0
-margin_right = 660.0
-margin_bottom = 400.0
+margin_left = 418.0
+margin_top = 383.0
+margin_right = 454.0
+margin_bottom = 419.0
 rect_min_size = Vector2( 36, 36 )
 
 [node name="IH19" parent="Backpack" index="19" instance=ExtResource( 3 )]
-margin_left = 720.0
-margin_top = 400.0
-margin_right = 720.0
-margin_bottom = 400.0
+margin_left = 478.0
+margin_top = 383.0
+margin_right = 514.0
+margin_bottom = 419.0
 rect_min_size = Vector2( 36, 36 )
 
 [node name="IH20" parent="Backpack" index="20" instance=ExtResource( 3 )]
-margin_left = 780.0
-margin_top = 400.0
-margin_right = 780.0
-margin_bottom = 400.0
+margin_left = 538.0
+margin_top = 383.0
+margin_right = 574.0
+margin_bottom = 419.0
 rect_min_size = Vector2( 36, 36 )
 
 [node name="Body" type="Node2D" parent="." index="1"]
 
 [node name="BodySprite" type="Sprite" parent="Body" index="0"]
-position = Vector2( 172, 321 )
+position = Vector2( 112, 221 )
 rotation = 0.0174533
-scale = Vector2( 0.695239, 0.749183 )
+scale = Vector2( 0.562263, 0.613092 )
 texture = ExtResource( 2 )
 
 [node name="LeftHand" parent="Body" index="1" instance=ExtResource( 3 )]
-margin_left = 264.0
-margin_top = 337.0
-margin_right = 300.0
-margin_bottom = 373.0
+margin_left = 182.0
+margin_top = 225.0
+margin_right = 218.0
+margin_bottom = 261.0
 rect_pivot_offset = Vector2( 16, 32 )
 is_equipped = true
 requires = 1
 
 [node name="RightHand" parent="Body" index="2" instance=ExtResource( 3 )]
-margin_left = 44.0
-margin_top = 338.0
-margin_right = 80.0
-margin_bottom = 374.0
+margin_left = 1.0
+margin_top = 221.0
+margin_right = 37.0
+margin_bottom = 257.0
 is_equipped = true
 requires = 1
 
 [node name="Head" parent="Body" index="3" instance=ExtResource( 3 )]
-margin_left = 150.0
-margin_top = 73.0
-margin_right = 186.0
-margin_bottom = 109.0
+margin_left = 89.0
+margin_top = 18.0
+margin_right = 125.0
+margin_bottom = 54.0
 is_equipped = true
 requires = 2
 
 [node name="Neck" parent="Body" index="4" instance=ExtResource( 3 )]
-margin_left = 150.0
-margin_top = 140.0
-margin_right = 186.0
-margin_bottom = 176.0
+margin_left = 89.0
+margin_top = 85.0
+margin_right = 125.0
+margin_bottom = 121.0
 is_equipped = true
 requires = 16
 
 [node name="Body" parent="Body" index="5" instance=ExtResource( 3 )]
-margin_left = 150.0
-margin_top = 210.0
-margin_right = 186.0
-margin_bottom = 246.0
+margin_left = 89.0
+margin_top = 155.0
+margin_right = 125.0
+margin_bottom = 191.0
 is_equipped = true
 requires = 4
 
 [node name="Feet" parent="Body" index="6" instance=ExtResource( 3 )]
-margin_left = 150.0
-margin_top = 538.0
-margin_right = 186.0
-margin_bottom = 574.0
+margin_left = 86.0
+margin_top = 389.0
+margin_right = 122.0
+margin_bottom = 425.0
 is_equipped = true
 requires = 8
 
 [node name="InventoryDrop" parent="." index="2" instance=ExtResource( 6 )]
-margin_left = 269.0
-margin_top = 117.0
-margin_right = 392.0
-margin_bottom = 202.0
+margin_left = 350.0
+margin_top = 65.0
+margin_right = 473.0
+margin_bottom = 150.0
+border_width = 7.0
 
 [node name="Label" type="Label" parent="InventoryDrop" index="0"]
 margin_left = -1.0
 margin_top = -1.0
 margin_right = 123.0
 margin_bottom = 85.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Drop"
 align = 1
 valign = 1
 
 [node name="Money" type="Node2D" parent="." index="3"]
-position = Vector2( -64, 8 )
+position = Vector2( -314, 2 )
 
 [node name="GoldLabel" type="Label" parent="Money" index="0"]
 margin_left = 350.0
