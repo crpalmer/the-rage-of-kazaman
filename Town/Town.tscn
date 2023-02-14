@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://GameEngine/EntryPoint.tscn" type="PackedScene" id=1]
 [ext_resource path="res://DandD/Things/Door-32-flipped.tscn" type="PackedScene" id=2]
 [ext_resource path="res://DandD/Things/Door-32.tscn" type="PackedScene" id=3]
 [ext_resource path="res://DandD/Tilesets/tileset.tres" type="TileSet" id=4]
+[ext_resource path="res://GameEngine/Actors/Actor.gd" type="Script" id=5]
 [ext_resource path="res://DandD/Things/WoodSign.tscn" type="PackedScene" id=7]
 [ext_resource path="res://DandD/Things/Desk.tscn" type="PackedScene" id=8]
 [ext_resource path="res://DandD/Things/Chair.tscn" type="PackedScene" id=9]
@@ -48,6 +49,7 @@ tile_data = PoolIntArray( -2293747, 24, 262144, -2293746, 24, 262144, -2293745, 
 
 [node name="DruidTelgrave" parent="." index="2" instance=ExtResource( 12 )]
 position = Vector2( -447, -243 )
+script = ExtResource( 5 )
 
 [node name="Home" type="Node2D" parent="." index="4"]
 position = Vector2( -324, 34 )
@@ -123,6 +125,7 @@ rotation = -0.785398
 
 [node name="MayorDelrin" parent="MayorHouse" index="6" instance=ExtResource( 10 )]
 position = Vector2( -25, 25 )
+script = ExtResource( 5 )
 
 [node name="EastGatePortal" parent="." index="6" instance=ExtResource( 11 )]
 position = Vector2( 430, 352 )
@@ -145,10 +148,12 @@ occluder = SubResource( 5 )
 [node name="BlackSmith" parent="Smithy" index="1" instance=ExtResource( 13 )]
 position = Vector2( 29.989, 10.0331 )
 rotation = 0.00110415
+script = ExtResource( 5 )
 long_description = "a  very strong man wearing a leather apron"
 
 [node name="Villager" parent="." index="8" instance=ExtResource( 16 )]
 position = Vector2( -32, 72 )
+script = ExtResource( 5 )
 
 [node name="DebugPoint" parent="." index="9" instance=ExtResource( 1 )]
 position = Vector2( -280, 448 )

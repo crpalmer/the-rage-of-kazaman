@@ -10,17 +10,19 @@ onready var splash_music = $Splash/Music
 onready var hud = $HUD
 onready var main_menu = $MainMenu
 onready var save = $MainMenu/Save
+onready var died = $MainMenu/Died
 
 func _ready():
 	OS.set_window_maximized(true)
 	splash.show()
 	hud.hide()
 	main_menu.hide()
+	died.visible = false
 #	splash_music.play(10)
-	splash_timer.start(0.01)
+	splash_timer.start(0.5)
 	GameEngine.modulate(false)
 	fighter = load("res://DandD/Classes/Fighter.tscn").instance()
-	GameEngine.connect("player_created", self, "on_player_created")
+	var _err = GameEngine.connect("player_created", self, "on_player_created")
 	if debugging_startup:
 		call_deferred("debugging_ready")
 
@@ -35,9 +37,9 @@ func debugging_ready():
 	GameEngine.player.add_to_inventory(load("res://DandD/Armor/HelmetPlus1.tscn").instance(), true)
 	GameEngine.player.add_to_inventory(load("res://DandD/Weapons/LongSwordPlus1.tscn").instance(), true)
 	for item in items: GameEngine.player.add_to_inventory(item, true)
-	#GameEngine.enter_scene("res://Town/Town.tscn", "DebugPoint")
+	GameEngine.enter_scene("res://Town/Town.tscn", "DebugPoint")
 	#GameEngine.enter_scene("res://Wilderness/Wilderness.tscn", "DebugPoint")
-	GameEngine.enter_scene("res://Garrison/GarrisonLevel1.tscn", "DebugPoint")
+	#GameEngine.enter_scene("res://Garrison/GarrisonLevel1.tscn", "DebugPoint")
 
 func show_menu():
 	main_menu.show()
@@ -55,6 +57,7 @@ func enter_game():
 	hud.show()
 	save.disabled = false
 	game_in_progress = true
+	died.visible = false
 	GameEngine.modulate(true)
 
 func on_player_created():
@@ -99,6 +102,7 @@ func _on_Save_pressed():
 
 func on_player_died():
 	save.disabled = true
-	call_deferred("show_menu")
 	game_in_progress = false
+	died.set_deferred("visible", true)
+	call_deferred("show_menu")
 	GameEngine.modulate(false)

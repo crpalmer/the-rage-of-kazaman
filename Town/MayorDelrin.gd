@@ -27,6 +27,7 @@ func get_persistent_data():
 	}
 
 func load_persistent_data(p):
+	.load_persistent_data(p)
 	available_quests = p.available_quests
 	waiting_for_yes_for = p.waiting_for_yes_for
 	accepted_quests = p.accepted_quests
@@ -44,12 +45,12 @@ func say_hello():
 		propose_first_available_quest()
 	elif not quest_is_accepted(QUEST_KOBOLD_NOTE) and GameEngine.player.has_a("kobold note"):
 		accept_quest(QUEST_KOBOLD_NOTE)
-		GameEngine.message("You show the mayor the kobold note.")
+		GameEngine.message("You show the mayor the kobold note.", true)
 		GameEngine.player.add_xp(100)
 		say("Oh, that note is very interesting.  The kobolds sound like an organized group.  Please investigate the Garrison and see if you can find out who's behind it all.")
 	elif not quest_is_accepted(QUEST_KOBOLDS_DIE) and GameEngine.has_completed_milestone("found-eastern-garrison"):
 		accept_quest(QUEST_KOBOLDS_DIE)
-		GameEngine.message("You tell the mayor about the kobolds and their military demeanor.")
+		GameEngine.message("You tell the mayor about the kobolds and their military demeanor.", true)
 		say_in_parts([
 			"These kobolds must be trying to muster an army to invade the village.  You must enter the Garrison and eradicate the threat!",
 			"Take this magic sword and helmet to help you in your battles."

@@ -43,7 +43,9 @@ position = Vector2( 500, 0 )
 monsters = [ "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Wolf.tscn", "res://DandD/Monsters/GiantRat.tscn", "res://DandD/Monsters/GiantRat.tscn", "res://DandD/Monsters/GiantRat.tscn" ]
 check_every_hours = 1.0
 test_roll = 10
-area_extents = Vector2( 500, 300 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RandomEncounters" index="0"]
+polygon = PoolVector2Array( -620, -88, -556, -272, -556, -504, 668, -512, 636, -1168, 924, -1608, 1900, -1600, 2276, -1368, 2276, -1272, 1892, -1128, 1900, 736, 268, 576, -548, 472, -548, 232, -620, 56 )
 
 [node name="EnterFromTownEastGate" parent="." index="3" instance=ExtResource( 2 )]
 position = Vector2( -112, 0 )
@@ -133,6 +135,7 @@ margin_bottom = -1276.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="FoundGarrisonText" parent="GarrisonClearing" index="2" instance=ExtResource( 6 )]
+visible = false
 position = Vector2( 1864, -1392 )
 message = "Peering through the trees, you see the eastern Garrison.
 The kobolds patrolling the grounds appear to be doing so in a surprisingly military fashion.  This is quite unlike normal kobolds.
@@ -182,3 +185,6 @@ shape = SubResource( 6 )
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="GarrisonClearing" index="8"]
 position = Vector2( 2112, -1368 )
+
+[node name="DebugPoint" parent="." index="12" instance=ExtResource( 2 )]
+position = Vector2( 1800, -1384 )

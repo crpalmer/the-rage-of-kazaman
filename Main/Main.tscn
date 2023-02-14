@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Main/HUD/HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Conversation/Conversation.tscn" type="PackedScene" id=2]
@@ -12,6 +12,12 @@
 size = 96
 font_data = ExtResource( 8 )
 
+[sub_resource type="DynamicFont" id=3]
+size = 96
+outline_size = 12
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 8 )
+
 [node name="Main" instance=ExtResource( 4 )]
 script = ExtResource( 5 )
 
@@ -21,18 +27,20 @@ margin_top = -3036.0
 margin_right = 2869.0
 margin_bottom = 2964.0
 
-[node name="Splash" type="Sprite" parent="." index="2"]
-visible = false
+[node name="Splash" type="CanvasLayer" parent="." index="2"]
+layer = 3
+
+[node name="Sprite" type="Sprite" parent="Splash" index="0"]
 texture = ExtResource( 6 )
 centered = false
 
-[node name="Timer" type="Timer" parent="Splash" index="0"]
+[node name="Timer" type="Timer" parent="Splash" index="1"]
 
-[node name="Music" type="AudioStreamPlayer2D" parent="Splash" index="1"]
+[node name="Music" type="AudioStreamPlayer2D" parent="Splash" index="2"]
 stream = ExtResource( 7 )
 
 [node name="MainMenu" type="CanvasLayer" parent="." index="3"]
-layer = 2
+layer = 3
 
 [node name="NewGame" type="Button" parent="MainMenu" index="0"]
 margin_left = 336.0
@@ -63,6 +71,16 @@ custom_colors/font_color_disabled = Color( 0.32549, 0.305882, 0.305882, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "Save Game"
+
+[node name="Died" type="Label" parent="MainMenu" index="3"]
+margin_left = 346.0
+margin_top = 104.0
+margin_right = 668.0
+margin_bottom = 260.0
+custom_fonts/font = SubResource( 3 )
+text = "You died!"
+align = 1
+valign = 1
 
 [node name="HUD" parent="." index="4" instance=ExtResource( 1 )]
 
