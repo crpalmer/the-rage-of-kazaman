@@ -46,6 +46,6 @@ func show_message():
 	canvas_layer.visible = false
 	GameEngine.resume()
 
-func _process(_delta):
-	if canvas_layer.visible and Input.is_action_just_released("exit"):
+func _input(event:InputEvent):
+	if canvas_layer.visible and event.is_action_pressed("exit"):
 		close.emit_signal("pressed")
