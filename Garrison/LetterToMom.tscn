@@ -14,6 +14,7 @@ I miss you when I'm stationed here but the Sargent keeps us very busy so the tim
 
 I am very tired though, I keep waking up in the middle of the night hearing strange clanging noises coming from the Sargent's office.  I must sleep now but I'll write more in the morning.
 "
+group = "letter-to-mom"
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource( 1 )

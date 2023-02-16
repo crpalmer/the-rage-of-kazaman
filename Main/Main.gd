@@ -3,7 +3,7 @@ extends Node2D
 var game_in_progress = false
 var fighter
 
-export var debugging_startup = false
+export var debugging_startup = true
 onready var splash = $Splash
 onready var splash_timer = $Splash/Timer
 onready var splash_music = $Splash/Music
@@ -38,8 +38,8 @@ func debugging_ready():
 	GameEngine.player.add_to_inventory(load("res://DandD/Weapons/LongSwordPlus1.tscn").instance(), true)
 	for item in items: GameEngine.player.add_to_inventory(item, true)
 	#GameEngine.enter_scene("res://Town/Town.tscn", "DebugPoint")
-	#GameEngine.enter_scene("res://Wilderness/Wilderness.tscn", "DebugPoint")
-	GameEngine.enter_scene("res://Garrison/GarrisonLevel1.tscn", "DebugPoint")
+	GameEngine.enter_scene("res://Wilderness/Wilderness.tscn", "DebugPoint")
+	#GameEngine.enter_scene("res://Garrison/GarrisonLevel1.tscn", "DebugPoint")
 
 func show_menu():
 	main_menu.show()

@@ -40,7 +40,6 @@ func wants_to_initiate_conversation():
 	return available_quests != 0
 
 func say_hello():
-	print_debug("Accepted: ", quest_is_accepted(QUEST_KOBOLD_NOTE), " has: ", GameEngine.player.has_a("kobold note"))
 	if waiting_for_yes_for != 0:
 		propose_first_available_quest()
 	elif not quest_is_accepted(QUEST_KOBOLD_NOTE) and GameEngine.player.has_a("kobold note"):
@@ -55,8 +54,13 @@ func say_hello():
 			"These kobolds must be trying to muster an army to invade the village.  You must enter the Garrison and eradicate the threat!",
 			"Take this magic sword and helmet to help you in your battles."
 		])
-		GameEngine.player.add_to_inventory(load("res://DandD/Armor/HelmetPlus1.tscn").instance())
-		GameEngine.player.add_to_inventory(load("res://DandD/Weapons/LongSwordPlus1.tscn").instance())
+		GameEngine.give_to_player("res://DandD/Armor/HelmetPlus1.tscn")
+		GameEngine.give_to_player("res://DandD/Weapons/LongSwordPlus1.tscn")
+	elif GameEngine.has_completed_milestone("explored-garrison") and not GameEngine.has_completed_milestone("sent-into-the-tunnels"):
+		GameEngine.message("You tell the major about the Kobold Warrior and the tunnel that the kobolds dug.")
+		say("Our brave garrison members must be kobold prisoners.  You must return to the Garrison and search the tunnels for the garrison team.")
+		GameEngine.player.add_xp(500)
+		GameEngine.complete_milestone("sent-into-the-tunnels")
 	else:
 		say("What's up?")
 
