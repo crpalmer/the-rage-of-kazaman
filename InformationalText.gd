@@ -46,6 +46,7 @@ func show_message():
 	canvas_layer.visible = false
 	GameEngine.resume()
 
-func _input(event:InputEvent):
+func _unhandled_input(event:InputEvent):
 	if canvas_layer.visible and event.is_action_pressed("exit"):
+		get_tree().set_input_as_handled()
 		close.emit_signal("pressed")

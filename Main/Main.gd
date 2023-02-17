@@ -3,7 +3,7 @@ extends Node2D
 var game_in_progress = false
 var fighter
 
-export var debugging_startup = true
+export var debugging_startup = false
 onready var splash = $Splash
 onready var splash_timer = $Splash/Timer
 onready var splash_music = $Splash/Music
@@ -63,12 +63,15 @@ func enter_game():
 func on_player_created():
 	var _err = GameEngine.player.connect("player_died", self, "on_player_died")
 
-func _input(event:InputEvent):
+func _unhandled_input(event:InputEvent):
 	if event.is_action_pressed("menu") and game_in_progress:
 		if main_menu.visible: hide_menu()
 		elif not GameEngine.is_paused(): show_menu()
+		else: return
 	elif not game_in_progress and event.is_action_pressed("new-game"):
 		_on_NewGame_pressed()
+	else: return
+	get_tree().set_input_as_handled()
 
 func _on_Splash_Timer_timeout():
 	splash_timer.stop()
