@@ -70,7 +70,11 @@ func player_said(what, words):
 			accepted_quests |= waiting_for_yes_for
 			available_quests &= ~waiting_for_yes_for
 			waiting_for_yes_for = 0
-			say("Thank you.  Travel East from the main gates.  The Garrison is on the other side of the river.  Please investigate and report back on what you find.")
+			say_in_parts([
+				"Thank you.\nTravel East from the main gates.  The Garrison is on the other side of the river.\nTake this potion of healing to help you in the wilderness.",
+				"Please investigate and report back on what you find."
+			])
+			GameEngine.give_to_player("res://DandD/Potions/PotionOfHealing.tscn")
 		elif words.has("no"):
 			waiting_for_yes_for = 0
 			say_bye("Sorry to hear that you're too afraid to help.", 1)
