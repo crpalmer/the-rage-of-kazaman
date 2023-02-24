@@ -88,6 +88,11 @@ occluder = SubResource( 2 )
 
 [node name="WelcomeText" parent="Home" index="7" instance=ExtResource( 15 )]
 position = Vector2( 14, 57 )
+message = "You awake from crazy dreams of battle and anger and fear.  What a fright!
+
+Wait!  You hear a commotion outside your house.  What could be happening in the middle of the night??
+
+Maybe it would be wise to go investigate."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Home/WelcomeText" index="1"]
 shape = SubResource( 6 )
