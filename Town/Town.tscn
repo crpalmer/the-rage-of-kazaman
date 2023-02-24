@@ -89,9 +89,7 @@ occluder = SubResource( 2 )
 [node name="WelcomeText" parent="Home" index="7" instance=ExtResource( 15 )]
 position = Vector2( 14, 57 )
 
-[node name="Area2D" type="Area2D" parent="Home/WelcomeText" index="1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Home/WelcomeText/Area2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Home/WelcomeText" index="1"]
 shape = SubResource( 6 )
 
 [node name="MayorHouse" type="Node2D" parent="." index="5"]

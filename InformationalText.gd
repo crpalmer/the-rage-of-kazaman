@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 
 export(String, MULTILINE) var message
 export(bool) var show_once = true
@@ -22,9 +22,7 @@ func _ready():
 	add_to_group("PersistentNodes")
 	canvas_layer.visible = false
 	yield(get_tree(), "idle_frame")
-	for c in get_children():
-		if c is Area2D:
-			c.connect("body_entered", self, "body_entered")
+	var _err = connect("body_entered", self, "body_entered")
 
 func should_show():
 	return may_show
