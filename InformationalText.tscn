@@ -3,10 +3,11 @@
 [ext_resource path="res://InformationalText.gd" type="Script" id=1]
 [ext_resource path="res://informational-text.png" type="Texture" id=2]
 [ext_resource path="res://close.png" type="Texture" id=3]
-[ext_resource path="res://Fonts/Dungeon.TTF" type="DynamicFontData" id=4]
+[ext_resource path="res://Fonts/Fondamento-Regular.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
-size = 48
+size = 20
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
 [node name="InformationalText" type="Area2D"]
