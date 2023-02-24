@@ -120,7 +120,7 @@ vertices = PoolVector2Array( 656, -100, 716, -100, 716, 0, 656, 0, 616, 104, 556
 polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7 ), PoolIntArray( 0, 3, 7, 6, 8, 9 ), PoolIntArray( 10, 9, 8, 11 ) ]
 outlines = [ PoolVector2Array( 600, -184, 592, -144, 556, -144, 556, 104, 616, 104, 628, 32, 656, 0, 716, 0, 716, -100, 656, -100, 636, -140, 616, -184 ) ]
 
-[node name="GarrisonLevel1" instance=ExtResource( 3 )]
+[node name="Garrison" instance=ExtResource( 3 )]
 
 [node name="TileMap" type="TileMap" parent="." index="1"]
 tile_set = ExtResource( 1 )
@@ -467,6 +467,8 @@ rotation = -3.14159
 
 [node name="Portal" parent="Kitchen" index="5" instance=ExtResource( 4 )]
 position = Vector2( 684, 68 )
+scene = "res://GoblinCaves/GoblinCaves.tscn"
+entry_point = "FromGarrison"
 required_milestone = "sent-into-the-tunnels"
 milestone_needed_message = "You should report the tunnel to the mayor before entering the tunnels."
 
@@ -486,6 +488,7 @@ message = "You see a hole broken through the floor.  As you approach the hole yo
 It appears that the kobolds tunneled into the garrison and must have taken the garrison members by surprise in the middle of the night.  Since only a skeleton crew of kobolds was left in the garrison, the prisoners and the kobolds must be somewhere down in the tunnels.
 
 You must report this to the major immediately and not fool-heartedly descend  into the tunnels!"
+grants_milestone = "explored-garrison"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Portal/InformationalText" index="1"]
 position = Vector2( -8, -20 )

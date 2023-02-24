@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://DandD/Monsters/Kobold.tscn" type="PackedScene" id=1]
+[ext_resource path="res://DandD/Monsters/Orc.tscn" type="PackedScene" id=2]
+[ext_resource path="res://DandD/Tilesets/tileset.tres" type="TileSet" id=3]
+[ext_resource path="res://GameEngine/EntryPoint.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GameEngine/Scenes/Scene.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GameEngine/Objects/Portal.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1000, 1000 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 48, 17 )
+
+[node name="GoblinCaves" instance=ExtResource( 5 )]
+
+[node name="SceneConfiguration" parent="." index="0"]
+day_light = 0.0
+night_light = 0.0
+
+[node name="RandomEncounters" parent="." index="1"]
+monsters = [ "res://DandD/Monsters/GiantRat.tscn", "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Orc.tscn" ]
+check_every_hours = 1.0
+test_roll = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RandomEncounters" index="0"]
+shape = SubResource( 2 )
+
+[node name="FromGarrison" parent="." index="2" instance=ExtResource( 4 )]
+position = Vector2( 16, 104 )
+
+[node name="TileMap" type="TileMap" parent="." index="3"]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+bake_navigation = true
+format = 1
+tile_data = PoolIntArray( -917506, 34, 131076, -917505, 34, 65536, -983040, 34, 131078, -851974, 34, 65540, -851973, 34, 65541, -851972, 34, 65541, -851971, 34, 65541, -851970, 34, 131080, -851969, 34, 65536, -917504, 34, 131079, -917503, 34, 65541, -917502, 34, 65541, -917501, 34, 65541, -917500, 34, 65541, -917499, 34, 65542, -786438, 34, 131076, -786437, 34, 65536, -786436, 34, 65536, -786435, 34, 65536, -786434, 34, 65536, -786433, 34, 65536, -851968, 34, 65536, -851967, 34, 65536, -851966, 34, 65536, -851965, 34, 65536, -851964, 34, 65536, -851963, 34, 131078, -720902, 34, 131076, -720901, 34, 65536, -720900, 34, 65536, -720899, 34, 65536, -720898, 34, 65536, -720897, 34, 65536, -786432, 34, 65536, -786431, 34, 65536, -786430, 34, 65536, -786429, 34, 65536, -786428, 34, 65536, -786427, 34, 131078, -655366, 34, 131076, -655365, 34, 65536, -655364, 34, 65536, -655363, 34, 65536, -655362, 34, 65536, -655361, 34, 65536, -720896, 34, 65536, -720895, 34, 65536, -720894, 34, 65536, -720893, 34, 65536, -720892, 34, 65536, -720891, 34, 131078, -589830, 34, 131076, -589829, 34, 65536, -589828, 34, 65536, -589827, 34, 65536, -589826, 34, 65536, -589825, 34, 65536, -655360, 34, 65536, -655359, 34, 65536, -655358, 34, 65536, -655357, 34, 65536, -655356, 34, 65536, -655355, 34, 131079, -655354, 34, 65541, -524294, 34, 131076, -524293, 34, 65536, -524292, 34, 65536, -524291, 34, 65536, -524290, 34, 65536, -524289, 34, 65536, -589824, 34, 65536, -589823, 34, 65536, -589822, 34, 65536, -589821, 34, 65536, -589820, 34, 65536, -589819, 34, 65536, -589818, 34, 65536, -458759, 34, 65541, -458758, 34, 131080, -458757, 34, 65536, -458756, 34, 65536, -458755, 34, 65536, -458754, 34, 65536, -458753, 34, 65536, -524288, 34, 65536, -524287, 34, 65536, -524286, 34, 65536, -524285, 34, 65536, -524284, 34, 65536, -524283, 34, 65543, -524282, 34, 196613, -393223, 34, 65536, -393222, 34, 65536, -393221, 34, 65536, -393220, 34, 65536, -393219, 34, 65536, -393218, 34, 65536, -393217, 34, 65536, -458752, 34, 65536, -458751, 34, 65536, -458750, 34, 65536, -458749, 34, 65536, -458748, 34, 65536, -458747, 34, 131078, -327687, 34, 196613, -327686, 34, 65544, -327685, 34, 65536, -327684, 34, 65536, -327683, 34, 65536, -327682, 34, 65536, -327681, 34, 65536, -393216, 34, 65536, -393215, 34, 65536, -393214, 34, 65536, -393213, 34, 65536, -393212, 34, 65536, -393211, 34, 131078, -262150, 34, 131076, -262149, 34, 65536, -262148, 34, 65536, -262147, 34, 65536, -262146, 34, 65536, -262145, 34, 65536, -327680, 34, 65536, -327679, 34, 65536, -327678, 34, 65536, -327677, 34, 65536, -327676, 34, 65536, -327675, 34, 131078, -196614, 34, 196612, -196613, 34, 196613, -196612, 34, 196613, -196611, 34, 65544, -196610, 34, 65536, -196609, 34, 65536, -262144, 34, 65536, -262143, 34, 65536, -262142, 34, 65543, -262141, 34, 196613, -262140, 34, 196613, -262139, 34, 196614, -131075, 34, 131076, -131074, 34, 65536, -131073, 34, 65536, -196608, 34, 65536, -196607, 34, 65536, -196606, 34, 131078, -65539, 34, 196612, -65538, 34, 196613, -65537, 34, 65544, -131072, 34, 65536, -131071, 34, 65543, -131070, 34, 196614, -1, 34, 131076, -65536, 34, 65536, -65535, 34, 131078, 65535, 34, 131076, 0, 34, 65536, 1, 34, 131078, 131071, 34, 131076, 65536, 34, 65536, 65537, 34, 131078, 196607, 34, 131076, 131072, 34, 65536, 131073, 34, 131078, 262143, 34, 131076, 196608, 34, 65536, 196609, 34, 131078, 327679, 34, 131076, 262145, 34, 131078 )
+
+[node name="Portal" parent="TileMap" index="0" instance=ExtResource( 6 )]
+position = Vector2( 16, 152 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Portal" index="0"]
+position = Vector2( 0, -7 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="TileMap/Portal" index="1"]
+margin_left = -24.0
+margin_top = -24.0
+margin_right = 24.0
+margin_bottom = 8.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Entrance" type="Node2D" parent="." index="4"]
+position = Vector2( 0, -256 )
+
+[node name="Kobold" parent="Entrance" index="0" instance=ExtResource( 1 )]
+position = Vector2( -176, 48 )
+
+[node name="Kobold2" parent="Entrance" index="1" instance=ExtResource( 1 )]
+position = Vector2( 184, -16 )
+
+[node name="Orc" parent="Entrance" index="2" instance=ExtResource( 2 )]
+position = Vector2( -16, -200 )

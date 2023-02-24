@@ -50,7 +50,7 @@ func say_hello():
 	elif not quest_is_accepted(QUEST_KOBOLDS_DIE) and GameEngine.has_completed_milestone("found-eastern-garrison"):
 		accept_quest(QUEST_KOBOLDS_DIE)
 		GameEngine.message("You tell the mayor about the kobolds and their military demeanor.", true)
-		say_in_parts([
+		say([
 			"These kobolds must be trying to muster an army to invade the village.  You must enter the Garrison and eradicate the threat!",
 			"Take this magic sword and helmet to help you in your battles."
 		])
@@ -70,14 +70,14 @@ func player_said(what, words):
 			accepted_quests |= waiting_for_yes_for
 			available_quests &= ~waiting_for_yes_for
 			waiting_for_yes_for = 0
-			say_in_parts([
+			yield(say([
 				"Thank you.\nTravel East from the main gates.  The Garrison is on the other side of the river.\nTake this potion of healing to help you in the wilderness.",
 				"Please investigate and report back on what you find."
-			])
+			]), "completed")
 			GameEngine.give_to_player("res://DandD/Potions/PotionOfHealing.tscn")
 		elif words.has("no"):
 			waiting_for_yes_for = 0
-			say_bye("Sorry to hear that you're too afraid to help.", 1)
+			say_and_end("Sorry to hear that you're too afraid to help.", 1)
 		else:
 			say("Yes or no, will you help?")
 	else:
@@ -100,7 +100,7 @@ func propose_first_available_quest():
 func propose_quest(quest, text_parts):
 	var text_and_question = text_parts.duplicate()
 	text_and_question.push_back(accept_quest_text)
-	say_in_parts(text_and_question)
+	say(text_and_question)
 	waiting_for_yes_for = quest
 
 func say_incomplete_quests():
@@ -108,7 +108,7 @@ func say_incomplete_quests():
 	if quest_is_incomplete(QUEST_KOBOLDS): quests.append_array(kobolds_quest)
 	if quest_is_incomplete(QUEST_KOBOLD_NOTE): quests.append("Investigate the source of the kobold note and find out who or what is in charge of the Garrison.")
 	if quests.size() > 0:
-		say_in_parts(quests)
+		say(quests)
 	else:
 		say("You've finished all your quests!")
 
