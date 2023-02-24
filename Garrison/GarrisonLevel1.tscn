@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://DandD/Tilesets/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://GameEngine/EntryPoint.tscn" type="PackedScene" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://DandD/Currency/GoldPiece.tscn" type="PackedScene" id=20]
 [ext_resource path="res://DandD/Currency/SilverPiece.tscn" type="PackedScene" id=21]
 [ext_resource path="res://DandD/Armor/ChainmailPlus1.tscn" type="PackedScene" id=22]
+[ext_resource path="res://InformationalText.tscn" type="PackedScene" id=23]
 [ext_resource path="res://DandD/Things/KitchenCounter.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Garrison/GarrisonKitchenKey.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Garrison/hole.png" type="Texture" id=26]
@@ -112,7 +113,7 @@ polygon = PoolVector2Array( 752, -176, 752, 144 )
 radius = 24.0
 
 [sub_resource type="CircleShape2D" id=19]
-radius = 44.1814
+radius = 50.0
 
 [sub_resource type="NavigationPolygon" id=24]
 vertices = PoolVector2Array( 656, -100, 716, -100, 716, 0, 656, 0, 616, 104, 556, 104, 556, -144, 628, 32, 592, -144, 636, -140, 616, -184, 600, -184 )
@@ -478,20 +479,19 @@ texture = ExtResource( 26 )
 position = Vector2( -4, -8 )
 shape = SubResource( 18 )
 
-[node name="MessageArea" parent="Kitchen" index="6" instance=ExtResource( 14 )]
-position = Vector2( 684, 68 )
+[node name="InformationalText" parent="Kitchen/Portal" index="2" instance=ExtResource( 23 )]
+visible = true
 message = "You see a hole broken through the floor.  As you approach the hole you can see the shape of a roughly carved tunnel leading down below the garrison.
 
 It appears that the kobolds tunneled into the garrison and must have taken the garrison members by surprise in the middle of the night.  Since only a skeleton crew of kobolds was left in the garrison, the prisoners and the kobolds must be somewhere down in the tunnels.
 
-You must report this to the major immediately and not fool-heartedly descent brashly into the tunnels!"
-milestone_granted = "explored-garrison"
+You must report this to the major immediately and not fool-heartedly descend  into the tunnels!"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/MessageArea" index="0"]
-position = Vector2( -4, -8 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Portal/InformationalText" index="1"]
+position = Vector2( -8, -20 )
 shape = SubResource( 19 )
 
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Kitchen" index="7"]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Kitchen" index="6"]
 navpoly = SubResource( 24 )
 
 [node name="RandomEncounters" parent="." index="10"]
