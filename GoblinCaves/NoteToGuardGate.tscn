@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://DandD/Things/Note.tscn" type="PackedScene" id=1]
+
+[node name="NoteToGuardGate" instance=ExtResource( 1 )]
+display_name = "note"
+long_description = "This note is written in goblin but you recognize a couple of words \"kill\" and \"gate\"."
