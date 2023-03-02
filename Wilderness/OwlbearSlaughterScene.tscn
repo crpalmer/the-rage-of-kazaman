@@ -1,16 +1,25 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://17ks7a0dqyio"]
 
-[ext_resource path="res://DandD/Monsters/OwlBear.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Wilderness/ForestBattleScene.tscn" type="PackedScene" id=2]
-[ext_resource path="res://GameEngine/EntryPoint.tscn" type="PackedScene" id=3]
+[ext_resource type="PackedScene" uid="uid://co6xw61g0dd" path="res://DandD/Monsters/OwlBear.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://nwhmgun2a0lu" path="res://Wilderness/ForestBattleScene.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://GameEngine/EntryPoint.tscn" id="3"]
 
-[node name="OwlbearSlaughterScene" instance=ExtResource( 2 )]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_gny3j"]
+vertices = PackedVector2Array(-127, -132, 23, -307, 139, -311, 284, -150, 150, 36, 3, 36)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-127, -132, 23, -307, 139, -311, 284, -150, 150, 36, 3, 36)])
 
-[node name="OwlBear" parent="." index="5" instance=ExtResource( 1 )]
-position = Vector2( 365, 187 )
+[node name="OwlbearSlaughterScene" instance=ExtResource("2")]
 
-[node name="OwlBear2" parent="." index="6" instance=ExtResource( 1 )]
-position = Vector2( 99, 190 )
+[node name="OwlBear" parent="." index="5" instance=ExtResource("1")]
+position = Vector2(61, -138)
 
-[node name="EntryPoint" parent="." index="7" instance=ExtResource( 3 )]
-position = Vector2( 222, 187 )
+[node name="OwlBear2" parent="." index="6" instance=ExtResource("1")]
+position = Vector2(-76, 138)
+
+[node name="EntryPoint" parent="." index="7" instance=ExtResource("3")]
+position = Vector2(-1, 2)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="8"]
+position = Vector2(-76, 138)
+navigation_polygon = SubResource("NavigationPolygon_gny3j")

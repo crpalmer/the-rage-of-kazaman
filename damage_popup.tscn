@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://oou7tuyaqjer"]
+
+[ext_resource type="PackedScene" uid="uid://coa53ryui42t7" path="res://GameEngine/Actors/DamagePopup.tscn" id="1_4voxs"]
+[ext_resource type="FontFile" uid="uid://xv4t5yvtsu38" path="res://Main/HUD/Pong Font.ttf" id="2_2ldpf"]
+[ext_resource type="FontFile" uid="uid://cr1qh7rdfmxv" path="res://Fonts/Fondamento-Regular.ttf" id="3_r41tg"]
+
+[node name="DamagePopup" instance=ExtResource("1_4voxs")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(7.15256e-07, 2.08616e-07)
+scale = Vector2(0.114695, 0.123552)
+
+[node name="Damage" parent="." index="1"]
+offset_left = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2ldpf")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hit" parent="." index="2"]
+offset_left = -16.0
+offset_right = 16.0
+offset_bottom = 14.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_r41tg")
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+
+[node name="Miss" parent="." index="3"]
+offset_top = -16.0
+offset_right = 17.0
+offset_bottom = 16.0
+theme_override_fonts/font = ExtResource("3_r41tg")
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+vertical_alignment = 1

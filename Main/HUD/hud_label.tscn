@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi58s2aor86eo"]
+
+[ext_resource type="FontFile" uid="uid://cr1qh7rdfmxv" path="res://Fonts/Fondamento-Regular.ttf" id="1_x23mh"]
+
+[node name="HUDLabel" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("1_x23mh")
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 2

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddp70ght614gx"]
+
+[ext_resource type="PackedScene" uid="uid://brik8d5m2tl2s" path="res://GameEngine/Actors/PlayerStat.tscn" id="1_licd1"]
+[ext_resource type="FontFile" uid="uid://xv4t5yvtsu38" path="res://Main/HUD/Pong Font.ttf" id="2_bepbj"]
+
+[node name="PlayerStat" instance=ExtResource("1_licd1")]
+offset_right = 32.0
+offset_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_bepbj")
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1

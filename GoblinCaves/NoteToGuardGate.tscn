@@ -4,4 +4,4 @@
 
 [node name="NoteToGuardGate" instance=ExtResource( 1 )]
 display_name = "note"
-long_description = "This note is written in goblin but you recognize a couple of words \"kill\" and \"gate\"."
+long_description = "This note is written in goblin but you _recognize a couple of words \"kill\" and \"gate\"."

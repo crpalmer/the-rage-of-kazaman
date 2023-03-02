@@ -16,11 +16,11 @@ func player_said(text, words):
 	elif words.has("name"):
 		say_hello()
 	else:
-		.player_said(text, words)
+		super.player_said(text, words)
 
 func is_sale_utterance(text, words):
 	if words.has("weapons") or words.has("armor") or words.has("goods"): return true
-	return .is_sale_utterance(text, words)
+	return super.is_sale_utterance(text, words)
 
 func sell_thing(thing):
 	GameEngine.player.add_to_inventory(thing)

@@ -3,17 +3,17 @@ extends Node2D
 var game_in_progress = false
 var fighter
 
-export var debugging_startup = false
-onready var splash = $Splash
-onready var splash_timer = $Splash/Timer
-onready var splash_music = $Splash/Music
-onready var hud = $HUD
-onready var main_menu = $MainMenu
-onready var save = $MainMenu/Save
-onready var died = $MainMenu/Died
+@export var debugging_startup = false
+@onready var splash = $Splash
+@onready var splash_timer = $Splash/Timer
+@onready var splash_music = $Splash/Music
+@onready var hud = $HUD
+@onready var main_menu = $MainMenu
+@onready var save = $MainMenu/Save
+@onready var died = $MainMenu/Died
 
 func _ready():
-	OS.set_window_maximized(true)
+	get_window().mode = Window.MODE_MAXIMIZED if (true) else Window.MODE_WINDOWED
 	splash.show()
 	hud.hide()
 	main_menu.hide()
@@ -21,21 +21,21 @@ func _ready():
 #	splash_music.play(10)
 	splash_timer.start(0.5)
 	GameEngine.modulate(false)
-	fighter = load("res://DandD/Classes/Fighter.tscn").instance()
-	var _err = GameEngine.connect("player_created", self, "on_player_created")
+	fighter = load("res://DandD/Classes/Fighter.tscn").instantiate()
+	var _err = GameEngine.connect("player_created",Callable(self,"on_player_created"))
 	if debugging_startup:
 		call_deferred("debugging_ready")
 
 func debugging_ready():
 	splash_timer.stop()
 	hide_menu()
-	GameEngine.new_game()
+	GameEngine.clear_game()
 	enter_game()
 	var items = GameEngine.player.create_character(fighter)
 	GameEngine.complete_milestone("found-eastern-garrison")
 	GameEngine.player.add_xp(500)
-	GameEngine.player.add_to_inventory(load("res://DandD/Armor/HelmetPlus1.tscn").instance(), true)
-	GameEngine.player.add_to_inventory(load("res://DandD/Weapons/LongSwordPlus1.tscn").instance(), true)
+	GameEngine.player.add_to_inventory(load("res://DandD/Armor/HelmetPlus1.tscn").instantiate(), true)
+	GameEngine.player.add_to_inventory(load("res://DandD/Weapons/LongSwordPlus1.tscn").instantiate(), true)
 	for item in items: GameEngine.player.add_to_inventory(item, true)
 	#GameEngine.enter_scene("res://Town/Town.tscn", "DebugPoint")
 	GameEngine.enter_scene("res://Wilderness/Wilderness.tscn", "DebugPoint")
@@ -61,7 +61,7 @@ func enter_game():
 	GameEngine.modulate(true)
 
 func on_player_created():
-	var _err = GameEngine.player.connect("player_died", self, "on_player_died")
+	var _err = GameEngine.player.connect("player_died",Callable(self,"on_player_died"))
 
 func _unhandled_input(event:InputEvent):
 	if event.is_action_pressed("menu") and game_in_progress:
@@ -71,7 +71,7 @@ func _unhandled_input(event:InputEvent):
 	elif not game_in_progress and event.is_action_pressed("new-game"):
 		_on_NewGame_pressed()
 	else: return
-	get_tree().set_input_as_handled()
+	get_viewport().set_input_as_handled()
 
 func _on_Splash_Timer_timeout():
 	splash_timer.stop()
@@ -80,11 +80,11 @@ func _on_Splash_Timer_timeout():
 
 func _on_NewGame_pressed():
 	hide_menu()
-	GameEngine.new_game()
+	GameEngine.clear_game()
 	enter_game()
 	var items = GameEngine.player.create_character(fighter)
 	GameEngine.enter_scene(GameEngine.config.entry_scene, GameEngine.config.entry_point)
-	yield(get_tree(), "idle_frame")
+	await get_tree().process_frame
 	var item_pos_node = GameEngine.get_scene_node("Home/StartingInventoryPosition")
 	var item_pos = item_pos_node.global_position if item_pos_node else Vector2.ZERO
 	for i in items:

@@ -1,20 +1,28 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=3 uid="uid://v2wkgvtm2u5i"]
 
-[ext_resource path="res://GameEngine/EntryPoint.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Wilderness/KoboldNote.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Wilderness/ForestBattleScene.tscn" type="PackedScene" id=3]
-[ext_resource path="res://DandD/Monsters/Kobold.tscn" type="PackedScene" id=4]
+[ext_resource type="PackedScene" path="res://GameEngine/EntryPoint.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://Wilderness/KoboldNote.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://nwhmgun2a0lu" path="res://Wilderness/ForestBattleScene.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://2g6e2jpu4t3c" path="res://DandD/Monsters/Kobold.tscn" id="4"]
 
-[node name="KoboldAmbushBattleSceneWithNote" instance=ExtResource( 3 )]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_kvxa2"]
+vertices = PackedVector2Array(-215, -8, -65, -173, 59, -179, 211, -8, 69, 171, -68, 176)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-215, -8, -65, -173, 59, -179, 211, -8, 69, 171, -68, 176)])
+
+[node name="KoboldAmbushBattleSceneWithNote" instance=ExtResource("3")]
 entry_message = "You have been ambushed by a kobold."
 exit_message = "You escaped the ambush!"
 keep_items_on_exit = true
 
-[node name="EntryPoint" parent="." index="3" instance=ExtResource( 1 )]
-position = Vector2( 219, 190 )
+[node name="EntryPoint" parent="." index="3" instance=ExtResource("1")]
+position = Vector2(-216, -7)
 
-[node name="Kobold" parent="." index="6" instance=ExtResource( 4 )]
-position = Vector2( 311, 187 )
+[node name="Kobold" parent="." index="6" instance=ExtResource("4")]
+position = Vector2(191, -5)
 
-[node name="KoboldNote" parent="Kobold" index="10" instance=ExtResource( 2 )]
+[node name="KoboldNote" parent="Kobold" index="8" instance=ExtResource("2")]
 visible = false
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="7"]
+navigation_polygon = SubResource("NavigationPolygon_kvxa2")

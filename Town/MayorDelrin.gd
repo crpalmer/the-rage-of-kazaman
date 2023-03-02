@@ -27,7 +27,7 @@ func get_persistent_data():
 	}
 
 func load_persistent_data(p):
-	.load_persistent_data(p)
+	super.load_persistent_data(p)
 	available_quests = p.available_quests
 	waiting_for_yes_for = p.waiting_for_yes_for
 	accepted_quests = p.accepted_quests
@@ -70,10 +70,10 @@ func player_said(what, words):
 			accepted_quests |= waiting_for_yes_for
 			available_quests &= ~waiting_for_yes_for
 			waiting_for_yes_for = 0
-			yield(say([
-				"Thank you.\nTravel East from the main gates.  The Garrison is on the other side of the river.\nTake this potion of healing to help you in the wilderness.",
-				"Please investigate and report back on what you find."
-			]), "completed")
+			await say([
+				"Thank you.\nTravel East from the main gates.  The Garrison is checked the other side of the river.\nTake this potion of healing to help you in the wilderness.",
+				"Please investigate and report back checked what you find."
+			])
 			GameEngine.give_to_player("res://DandD/Potions/PotionOfHealing.tscn")
 		elif words.has("no"):
 			waiting_for_yes_for = 0
@@ -92,7 +92,7 @@ func player_said(what, words):
 			else:
 				say("Thanks again for removing the kobold threat.")
 		else:
-			.player_said(what, words)
+			super.player_said(what, words)
 
 func propose_first_available_quest():
 	if quest_is_available(QUEST_KOBOLDS): propose_quest(QUEST_KOBOLDS, kobolds_quest)

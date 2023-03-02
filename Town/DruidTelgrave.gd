@@ -18,11 +18,11 @@ func player_said(text, words):
 	elif words.has("name"):
 		say_hello()
 	else:
-		.player_said(text, words)
+		super.player_said(text, words)
 
 func is_sale_utterance(text, words):
 	if words.has("spells") or words.has("healing") or words.has("services"): return true
-	return .is_sale_utterance(text, words)
+	return super.is_sale_utterance(text, words)
 
 func heal(dice):
 	var hp = GameEngine.roll(dice)

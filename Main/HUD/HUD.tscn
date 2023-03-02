@@ -1,300 +1,271 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=3 uid="uid://c8sr5bf5bnk3t"]
 
-[ext_resource path="res://GameEngine/Actors/PlayerStat.tscn" type="PackedScene" id=1]
-[ext_resource path="res://GameEngine/Messages.tscn" type="PackedScene" id=2]
-[ext_resource path="res://GameEngine/Clock.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Main/HUD/Messages.png" type="Texture" id=4]
-[ext_resource path="res://Main/HUD/Pong Font.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://Main/HUD/FPS.gd" type="Script" id=6]
+[ext_resource type="PackedScene" uid="uid://bi58s2aor86eo" path="res://Main/HUD/hud_label.tscn" id="1_j0bwb"]
+[ext_resource type="PackedScene" uid="uid://pfiymlp2jke1" path="res://GameEngine/Messages.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://ddp70ght614gx" path="res://Main/HUD/player_stat.tscn" id="2_8gmwn"]
+[ext_resource type="PackedScene" path="res://GameEngine/Clock.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://bvqkphjcwwie1" path="res://Main/HUD/Messages.png" id="4"]
+[ext_resource type="FontFile" uid="uid://xv4t5yvtsu38" path="res://Main/HUD/Pong Font.ttf" id="5"]
+[ext_resource type="FontFile" uid="uid://cr1qh7rdfmxv" path="res://Fonts/Fondamento-Regular.ttf" id="5_khyf1"]
+[ext_resource type="Script" path="res://Main/HUD/FPS.gd" id="6"]
+[ext_resource type="FontFile" uid="uid://btvuhjwbi41er" path="res://Fonts/Fondamento-Italic.ttf" id="6_811ii"]
 
-[sub_resource type="DynamicFont" id=2]
-size = 18
-font_data = ExtResource( 5 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 18
-font_data = ExtResource( 5 )
-
-[sub_resource type="DynamicFont" id=7]
-size = 20
-font_data = ExtResource( 5 )
-
-[sub_resource type="DynamicFont" id=5]
-size = 14
-font_data = ExtResource( 5 )
-
-[sub_resource type="DynamicFont" id=6]
-font_data = ExtResource( 5 )
+[sub_resource type="SystemFont" id="SystemFont_5gqca"]
 
 [node name="HUD" type="CanvasLayer"]
-offset = Vector2( 600, 0 )
-transform = Transform2D( 1, 0, 0, 1, 600, 0 )
+offset = Vector2(600, 0)
+transform = Transform2D(1, 0, 0, 1, 600, 0)
 
 [node name="Stats" type="ColorRect" parent="."]
-margin_top = 428.0
-margin_right = 424.0
-margin_bottom = 600.0
-rect_clip_content = true
-color = Color( 0.0666667, 0.435294, 0.176471, 1 )
+clip_contents = true
+offset_top = 428.0
+offset_right = 424.0
+offset_bottom = 600.0
+color = Color(0.0666667, 0.435294, 0.176471, 1)
 
-[node name="HPLabel" type="Label" parent="Stats"]
-margin_left = 5.0
-margin_top = 4.0
-margin_right = 123.0
-margin_bottom = 28.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 2 )
+[node name="HPLabel" parent="Stats" instance=ExtResource("1_j0bwb")]
+layout_mode = 0
+offset_top = 4.0
+offset_bottom = 31.0
 text = "HP:"
 
-[node name="HPRect" type="ColorRect" parent="Stats/HPLabel"]
-margin_left = 36.0
-margin_top = 1.0
-margin_right = 68.0
-margin_bottom = 23.0
-color = Color( 0.545098, 0.478431, 0.478431, 1 )
+[node name="HPRect" type="ColorRect" parent="Stats"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 4.0
+offset_right = 76.0
+offset_bottom = 28.0
+color = Color(0.545098, 0.478431, 0.478431, 1)
 
-[node name="HP" parent="Stats/HPLabel/HPRect" instance=ExtResource( 1 )]
-margin_right = 32.0
-margin_bottom = 22.0
-custom_fonts/font = SubResource( 4 )
-align = 1
+[node name="HP" parent="Stats/HPRect" instance=ExtResource("2_8gmwn")]
+layout_mode = 0
 
-[node name="MaxHPLabel" type="Label" parent="Stats/HPLabel"]
-margin_left = 74.0
-margin_top = -2.0
-margin_right = 118.0
-margin_bottom = 22.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 7 )
-text = "(      )"
+[node name="MaxHPOpen" parent="Stats" instance=ExtResource("1_j0bwb")]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 4.0
+offset_right = 88.0
+offset_bottom = 31.0
+text = "("
 
-[node name="HPMaxRect" type="ColorRect" parent="Stats/HPLabel/MaxHPLabel"]
-margin_left = 6.0
-margin_top = 3.0
-margin_right = 38.0
-margin_bottom = 25.0
-color = Color( 0.545098, 0.478431, 0.478431, 1 )
+[node name="HPMaxRect" type="ColorRect" parent="Stats"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 4.0
+offset_right = 120.0
+offset_bottom = 28.0
+color = Color(0.545098, 0.478431, 0.478431, 1)
 
-[node name="HPMax" parent="Stats/HPLabel/MaxHPLabel/HPMaxRect" instance=ExtResource( 1 )]
-margin_right = 32.0
-margin_bottom = 22.0
-custom_fonts/font = SubResource( 4 )
-align = 1
-valign = 1
+[node name="HPMax" parent="Stats/HPMaxRect" instance=ExtResource("2_8gmwn")]
+layout_mode = 0
 stat = 2
 
-[node name="ACLabel" type="Label" parent="Stats"]
-margin_left = 136.0
-margin_top = 6.0
-margin_right = 259.0
-margin_bottom = 28.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 2 )
+[node name="MaxHPClose" parent="Stats" instance=ExtResource("1_j0bwb")]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 4.0
+offset_right = 130.0
+offset_bottom = 31.0
+text = ")"
+
+[node name="ACLabel" parent="Stats" instance=ExtResource("1_j0bwb")]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 4.0
+offset_right = 180.0
+offset_bottom = 31.0
 text = "AC:"
 
-[node name="ACRect" type="ColorRect" parent="Stats/ACLabel"]
-margin_left = 34.0
-margin_top = 1.0
-margin_right = 66.0
-margin_bottom = 23.0
-color = Color( 0.545098, 0.478431, 0.478431, 1 )
+[node name="ACRect" type="ColorRect" parent="Stats"]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 4.0
+offset_right = 216.0
+offset_bottom = 28.0
+color = Color(0.545098, 0.478431, 0.478431, 1)
 
-[node name="AC" parent="Stats/ACLabel/ACRect" instance=ExtResource( 1 )]
-margin_right = 32.0
-margin_bottom = 22.0
-custom_fonts/font = SubResource( 4 )
-align = 1
+[node name="AC" parent="Stats/ACRect" instance=ExtResource("2_8gmwn")]
+layout_mode = 0
 stat = 1
 
-[node name="LevelLabel" type="Label" parent="Stats"]
-margin_left = 212.0
-margin_top = 6.0
-margin_right = 335.0
-margin_bottom = 28.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 2 )
+[node name="LevelLabel" parent="Stats" instance=ExtResource("1_j0bwb")]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 4.0
+offset_right = 268.0
+offset_bottom = 31.0
 text = "Level:"
 
-[node name="LevelRect" type="ColorRect" parent="Stats/LevelLabel"]
-margin_left = 60.0
-margin_top = 2.0
-margin_right = 92.0
-margin_bottom = 24.0
-color = Color( 0.545098, 0.478431, 0.478431, 1 )
+[node name="LevelRect" type="ColorRect" parent="Stats"]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 4.0
+offset_right = 304.0
+offset_bottom = 28.0
+color = Color(0.545098, 0.478431, 0.478431, 1)
 
-[node name="Level" parent="Stats/LevelLabel/LevelRect" instance=ExtResource( 1 )]
-margin_right = 32.0
-margin_bottom = 22.0
-custom_fonts/font = SubResource( 4 )
-align = 1
+[node name="Level" parent="Stats/LevelRect" instance=ExtResource("2_8gmwn")]
+layout_mode = 0
 stat = 3
 
-[node name="XPLabel" type="Label" parent="Stats"]
-margin_left = 313.0
-margin_top = 6.0
-margin_right = 436.0
-margin_bottom = 28.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 2 )
+[node name="XPLabel" parent="Stats" instance=ExtResource("1_j0bwb")]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 4.0
+offset_right = 344.0
+offset_bottom = 31.0
 text = "XP:"
 
-[node name="XPRect" type="ColorRect" parent="Stats/XPLabel"]
-margin_left = 34.0
-margin_top = 1.0
-margin_right = 98.0
-margin_bottom = 23.0
-color = Color( 0.545098, 0.478431, 0.478431, 1 )
+[node name="XPRect" type="ColorRect" parent="Stats"]
+layout_mode = 0
+offset_left = 348.0
+offset_top = 4.0
+offset_right = 420.0
+offset_bottom = 28.0
+color = Color(0.545098, 0.478431, 0.478431, 1)
 
-[node name="XP" parent="Stats/XPLabel/XPRect" instance=ExtResource( 1 )]
-margin_right = 64.0
-margin_bottom = 22.0
-custom_fonts/font = SubResource( 4 )
+[node name="XP" parent="Stats/XPRect" instance=ExtResource("2_8gmwn")]
+layout_mode = 0
+offset_right = 68.0
+horizontal_alignment = 2
 stat = 4
 
-[node name="StrLabel" type="Label" parent="Stats"]
-margin_left = 4.0
-margin_top = 40.0
-margin_right = 127.0
-margin_bottom = 62.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 2 )
+[node name="StrLabel" parent="Stats" instance=ExtResource("1_j0bwb")]
+layout_mode = 0
+offset_top = 40.0
+offset_bottom = 67.0
 text = "STR:"
 
-[node name="Rect" type="ColorRect" parent="Stats/StrLabel"]
-margin_left = 43.0
-margin_right = 75.0
-margin_bottom = 22.0
-color = Color( 0.545098, 0.478431, 0.478431, 1 )
+[node name="StrRect" type="ColorRect" parent="Stats"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 40.0
+offset_right = 76.0
+offset_bottom = 64.0
+color = Color(0.545098, 0.478431, 0.478431, 1)
 
-[node name="Ability" parent="Stats/StrLabel/Rect" instance=ExtResource( 1 )]
-margin_right = 32.0
-margin_bottom = 22.0
-custom_fonts/font = SubResource( 4 )
-align = 1
+[node name="Str" parent="Stats/StrRect" instance=ExtResource("2_8gmwn")]
+layout_mode = 0
 stat = 5
 
-[node name="Rect2" type="ColorRect" parent="Stats/StrLabel"]
-margin_left = 85.0
-margin_right = 117.0
-margin_bottom = 22.0
-color = Color( 0.545098, 0.478431, 0.478431, 1 )
+[node name="StrModifierRect" type="ColorRect" parent="Stats"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 40.0
+offset_right = 120.0
+offset_bottom = 64.0
+color = Color(0.545098, 0.478431, 0.478431, 1)
 
-[node name="Modifier" parent="Stats/StrLabel/Rect2" instance=ExtResource( 1 )]
-margin_right = 32.0
-margin_bottom = 22.0
-custom_fonts/font = SubResource( 4 )
-align = 1
+[node name="StrModifier" parent="Stats/StrModifierRect" instance=ExtResource("2_8gmwn")]
+layout_mode = 0
 stat = 8
 
-[node name="DexLabel" type="Label" parent="Stats"]
-margin_left = 4.0
-margin_top = 69.0
-margin_right = 127.0
-margin_bottom = 91.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 2 )
+[node name="DexLabel" parent="Stats" instance=ExtResource("1_j0bwb")]
+layout_mode = 0
+offset_top = 68.0
+offset_bottom = 95.0
 text = "DEX:"
 
-[node name="Rect" type="ColorRect" parent="Stats/DexLabel"]
-margin_left = 43.0
-margin_right = 75.0
-margin_bottom = 22.0
-color = Color( 0.545098, 0.478431, 0.478431, 1 )
+[node name="DexRect" type="ColorRect" parent="Stats"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 68.0
+offset_right = 76.0
+offset_bottom = 92.0
+color = Color(0.545098, 0.478431, 0.478431, 1)
 
-[node name="Ability" parent="Stats/DexLabel/Rect" instance=ExtResource( 1 )]
-margin_right = 32.0
-margin_bottom = 22.0
-custom_fonts/font = SubResource( 4 )
-align = 1
+[node name="Dex" parent="Stats/DexRect" instance=ExtResource("2_8gmwn")]
+layout_mode = 0
 stat = 6
 
-[node name="Rect2" type="ColorRect" parent="Stats/DexLabel"]
-margin_left = 85.0
-margin_right = 117.0
-margin_bottom = 22.0
-color = Color( 0.545098, 0.478431, 0.478431, 1 )
+[node name="DexModifierRect" type="ColorRect" parent="Stats"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 68.0
+offset_right = 120.0
+offset_bottom = 92.0
+color = Color(0.545098, 0.478431, 0.478431, 1)
 
-[node name="Modifier" parent="Stats/DexLabel/Rect2" instance=ExtResource( 1 )]
-margin_right = 32.0
-margin_bottom = 22.0
-custom_fonts/font = SubResource( 4 )
-align = 1
+[node name="DexModifier" parent="Stats/DexModifierRect" instance=ExtResource("2_8gmwn")]
+layout_mode = 0
 stat = 9
 
-[node name="ConLabel" type="Label" parent="Stats"]
-margin_left = 2.0
-margin_top = 98.0
-margin_right = 125.0
-margin_bottom = 120.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 2 )
-text = "CON::"
+[node name="ConLabel" parent="Stats" instance=ExtResource("1_j0bwb")]
+layout_mode = 0
+offset_top = 96.0
+offset_right = 43.0
+offset_bottom = 123.0
+text = "CON:"
 
-[node name="Rect" type="ColorRect" parent="Stats/ConLabel"]
-margin_left = 43.0
-margin_right = 75.0
-margin_bottom = 22.0
-color = Color( 0.545098, 0.478431, 0.478431, 1 )
+[node name="ConRect" type="ColorRect" parent="Stats"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 96.0
+offset_right = 76.0
+offset_bottom = 120.0
+color = Color(0.545098, 0.478431, 0.478431, 1)
 
-[node name="Ability" parent="Stats/ConLabel/Rect" instance=ExtResource( 1 )]
-margin_right = 32.0
-margin_bottom = 22.0
-custom_fonts/font = SubResource( 4 )
-align = 1
+[node name="Con" parent="Stats/ConRect" instance=ExtResource("2_8gmwn")]
+layout_mode = 0
 stat = 7
 
-[node name="Rect2" type="ColorRect" parent="Stats/ConLabel"]
-margin_left = 85.0
-margin_right = 117.0
-margin_bottom = 22.0
-color = Color( 0.545098, 0.478431, 0.478431, 1 )
+[node name="ConModifierRect" type="ColorRect" parent="Stats"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 96.0
+offset_right = 120.0
+offset_bottom = 120.0
+color = Color(0.545098, 0.478431, 0.478431, 1)
 
-[node name="Modifier" parent="Stats/ConLabel/Rect2" instance=ExtResource( 1 )]
-margin_right = 32.0
-margin_bottom = 22.0
-custom_fonts/font = SubResource( 4 )
-align = 1
+[node name="ConModifier" parent="Stats/ConModifierRect" instance=ExtResource("2_8gmwn")]
+layout_mode = 0
 stat = 10
 
 [node name="MessageArea" type="Node2D" parent="."]
-position = Vector2( 0, 31 )
+position = Vector2(0, 31)
 
-[node name="Sprite" type="Sprite" parent="MessageArea"]
+[node name="Sprite2D" type="Sprite2D" parent="MessageArea"]
 light_mask = 0
-scale = Vector2( 0.414, 1.476 )
-texture = ExtResource( 4 )
+scale = Vector2(0.414, 1.476)
+texture = ExtResource("4")
 centered = false
-region_rect = Rect2( 0, 0, 424, 0 )
+region_rect = Rect2(0, 0, 424, 0)
 
-[node name="Messages" parent="MessageArea" instance=ExtResource( 2 )]
-margin_left = 13.0
-margin_top = 19.0
-margin_right = 414.0
-margin_bottom = 379.0
-custom_fonts/normal_font = SubResource( 5 )
+[node name="Messages" parent="MessageArea" instance=ExtResource("2")]
+offset_left = 13.0
+offset_top = 19.0
+offset_right = 414.0
+offset_bottom = 379.0
+theme_override_fonts/normal_font = ExtResource("5_khyf1")
+theme_override_fonts/italics_font = ExtResource("6_811ii")
+theme_override_font_sizes/normal_font_size = 12
 text = "sample message text
 game messages will appear here
 dafjaklfjakl"
 max_messages = 100
-new_message_color = Color( 0, 0, 0, 1 )
-stale_message_color = Color( 0.458824, 0.435294, 0.435294, 1 )
-important_message_color = Color( 0.792157, 0.117647, 0.117647, 1 )
+new_message_color = Color(0, 0, 0, 1)
+stale_message_color = Color(0.25098, 0.25098, 0.25098, 1)
+important_message_color = Color(0.792157, 0.117647, 0.117647, 1)
 
 [node name="Clock" type="ColorRect" parent="."]
-margin_right = 424.0
-margin_bottom = 33.0
-rect_clip_content = true
-color = Color( 0.0666667, 0.435294, 0.176471, 1 )
+clip_contents = true
+offset_right = 424.0
+offset_bottom = 33.0
+color = Color(0.0666667, 0.435294, 0.176471, 1)
 
-[node name="Clock" parent="Clock" instance=ExtResource( 3 )]
-margin_left = 8.0
-margin_right = 408.0
-margin_bottom = 34.0
-custom_fonts/font = SubResource( 6 )
-valign = 1
-autowrap = true
+[node name="Clock" parent="Clock" instance=ExtResource("3")]
+layout_mode = 0
+offset_left = 8.0
+offset_right = 408.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("5")
+theme_override_font_sizes/font_size = 20
+vertical_alignment = 1
 
-[node name="FPS" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
-script = ExtResource( 6 )
+[node name="FPS" parent="." instance=ExtResource("1_j0bwb")]
+offset_left = 364.0
+offset_top = 4.0
+offset_right = 404.0
+offset_bottom = 28.0
+theme_override_fonts/font = SubResource("SystemFont_5gqca")
+script = ExtResource("6")

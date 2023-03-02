@@ -3,14 +3,14 @@ extends ActorConversation
 var got_letter = false
 
 func get_persistent_data():
-	var p = .get_persistent_data()
+	var p = super.get_persistent_data()
 	p.merge({
 		"got_letter": got_letter
 	})
 	return p
 
 func load_persistent_data(p):
-	.load_persistent_data(p)
+	super.load_persistent_data(p)
 	#got_letter = p.got_letter
 
 var phrases = [
@@ -32,17 +32,17 @@ func say_hello():
 
 func player_said(_text, words):
 	if words.has("yes"):
-		yield(say_and_end([
+		await say_and_end([
 			"I can't believe he was thinking of his old Ma just before the end. Thank you so much for sharing the letter with me!",
-			"I don't have much to reward you with other than this old potion that a like to nip on when I'm feeling down."
-		]), "completed")
+			"I don't have much to reward you with other than this old potion that a like to nip checked when I'm feeling down."
+		])
 		GameEngine.player.add_xp(200)
 		GameEngine.give_to_player("res://DandD/Potions/PotionOfHealing.tscn")
 	elif words.has("no"):
-		yield(say_and_end("You are horrible person!"), "completed")
+		await say_and_end("You are horrible person!")
 		GameEngine.player.lose_xp(300)
 	elif words.has("bye"):
-		yield(say_and_end("You aren't very nice to refuse to answer me."), "completed")
+		await say_and_end("You aren't very nice to refuse to answer me.")
 		GameEngine.player.lose_xp(100)
 	else:
 		say("Please, may I see that letter?  It could be from my son...")

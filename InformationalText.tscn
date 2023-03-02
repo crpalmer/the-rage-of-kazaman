@@ -1,18 +1,31 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://bev6es0da37g1"]
 
-[ext_resource path="res://InformationalText.gd" type="Script" id=1]
-[ext_resource path="res://informational-text.png" type="Texture" id=2]
-[ext_resource path="res://close.png" type="Texture" id=3]
-[ext_resource path="res://Fonts/Fondamento-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource type="Script" path="res://InformationalText.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://jgvfjlfbvlrd" path="res://informational-text.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bhyd33gyh8gux" path="res://close.png" id="3"]
 
-[sub_resource type="DynamicFont" id=1]
-size = 20
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 4 )
+[sub_resource type="FontFile" id="FontFile_usgs2"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/glyphs/0/advance = Vector2(0, 0)
+cache/0/16/0/glyphs/0/offset = Vector2(0, 0)
+cache/0/16/0/glyphs/0/size = Vector2(0, 0)
+cache/0/16/0/glyphs/0/uv_rect = Rect2(0, 0, 0, 0)
+cache/0/16/0/glyphs/0/texture_idx = -1
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [node name="InformationalText" type="Area2D"]
 visible = false
-script = ExtResource( 1 )
+script = ExtResource("1")
 message = "You awake in a fright.
 You hear a commotion outside your house.  What could be happening in the middle of the night??
 Maybe it would be wise to go investigate."
@@ -21,29 +34,29 @@ Maybe it would be wise to go investigate."
 layer = 2
 visible = false
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer"]
-position = Vector2( 498.5, 307 )
-scale = Vector2( 2.54762, 0.992629 )
-texture = ExtResource( 2 )
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(498.5, 307)
+scale = Vector2(2.54762, 0.992629)
+texture = ExtResource("2")
 
 [node name="Close" type="Button" parent="CanvasLayer"]
-margin_left = 817.0
-margin_top = 108.0
-margin_right = 853.0
-margin_bottom = 144.0
+offset_left = 817.0
+offset_top = 108.0
+offset_right = 853.0
+offset_bottom = 144.0
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/Close"]
-position = Vector2( 18, 18 )
-scale = Vector2( 0.275, 0.275 )
-texture = ExtResource( 3 )
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Close"]
+position = Vector2(18, 18)
+scale = Vector2(0.275, 0.275)
+texture = ExtResource("3")
 
 [node name="Text" type="RichTextLabel" parent="CanvasLayer"]
-margin_left = 185.0
-margin_top = 130.0
-margin_right = 796.0
-margin_bottom = 481.0
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 1 )
+offset_left = 185.0
+offset_top = 130.0
+offset_right = 796.0
+offset_bottom = 481.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("FontFile_usgs2")
 text = "This is sample text.
 
 akdfjalfdjkfjlkdajlakfj afjl kajl kafj lkasjdl kafjlaj

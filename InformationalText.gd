@@ -1,12 +1,12 @@
 extends Area2D
 
-export(String, MULTILINE) var message
-export(bool) var show_once = true
-export(String) var grants_milestone
+@export_multiline var message # (String, MULTILINE)
+@export var show_once: bool = true
+@export var grants_milestone: String
 
-onready var canvas_layer = $CanvasLayer
-onready var text = $CanvasLayer/Text
-onready var close = $CanvasLayer/Close
+@onready var canvas_layer = $CanvasLayer
+@onready var text = $CanvasLayer/Text
+@onready var close = $CanvasLayer/Close
 
 var may_show = true
 
@@ -21,8 +21,8 @@ func load_persistent_data(p):
 func _ready():
 	add_to_group("PersistentNodes")
 	canvas_layer.visible = false
-	yield(get_tree(), "idle_frame")
-	var _err = connect("body_entered", self, "body_entered")
+	await get_tree().process_frame
+	var _err = connect("body_entered",Callable(self,"body_entered"))
 
 func should_show():
 	return may_show
@@ -40,11 +40,11 @@ func show_message():
 	GameEngine.pause()
 	text.text = message
 	canvas_layer.visible = true
-	yield(close, "pressed")
+	await close.pressed
 	canvas_layer.visible = false
 	GameEngine.resume()
 
 func _unhandled_input(event:InputEvent):
 	if canvas_layer.visible and event.is_action_pressed("exit"):
-		get_tree().set_input_as_handled()
+		get_viewport().set_input_as_handled()
 		close.emit_signal("pressed")

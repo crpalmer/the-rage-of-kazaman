@@ -1,93 +1,89 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=8 format=3 uid="uid://df4lqeakb0ftb"]
 
-[ext_resource path="res://GameEngine/Conversation.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Conversation/dialogue-box.png" type="Texture" id=2]
-[ext_resource path="res://Fonts/Fondamento-Regular.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://Conversation/dialog-box-more-2.png" type="Texture" id=4]
-[ext_resource path="res://Conversation/dialog-box-more-3.png" type="Texture" id=5]
-[ext_resource path="res://Conversation/dialog-box-more-1.png" type="Texture" id=6]
+[ext_resource type="PackedScene" path="res://GameEngine/Conversation.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://cc7m33qga8jmd" path="res://Conversation/dialogue-box.png" id="2"]
+[ext_resource type="FontFile" uid="uid://cr1qh7rdfmxv" path="res://Fonts/Fondamento-Regular.ttf" id="3"]
+[ext_resource type="Texture2D" uid="uid://dq2kqw6sk6v3l" path="res://Conversation/dialog-box-more-2.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://v5rxm6tijihu" path="res://Conversation/dialog-box-more-3.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://phmh2vedxi3e" path="res://Conversation/dialog-box-more-1.png" id="6"]
 
-[sub_resource type="DynamicFont" id=1]
-size = 36
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 24
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 24
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 24
-font_data = ExtResource( 3 )
-
-[sub_resource type="SpriteFrames" id=5]
-animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 6 ) ],
+[sub_resource type="SpriteFrames" id="5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}],
 "loop": true,
-"name": "default",
+"name": &"default",
 "speed": 3.5
-} ]
+}]
 
-[node name="Conversation" instance=ExtResource( 1 )]
-scale = Vector2( 0.5, 0.5 )
-transform = Transform2D( 0.5, 0, 0, 0.5, 0, 0 )
+[node name="Conversation" instance=ExtResource("1")]
+scale = Vector2(0.5, 0.5)
+transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
-texture = ExtResource( 2 )
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+texture = ExtResource("2")
 
 [node name="SpeakerName" parent="." index="1"]
-margin_left = -348.0
-margin_top = -123.0
-margin_right = -43.0
-margin_bottom = -63.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_fonts/font = SubResource( 1 )
-valign = 1
+offset_left = -348.0
+offset_top = -123.0
+offset_right = -43.0
+offset_bottom = -63.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 24
+vertical_alignment = 1
 
 [node name="SpeakerText" parent="." index="2"]
-margin_left = -442.0
-margin_top = -54.0
-margin_right = 435.0
-margin_bottom = 33.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 2 )
+offset_left = -442.0
+offset_top = -54.0
+offset_right = 435.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3
 
 [node name="PlayerPrompt" type="Label" parent="." index="3"]
-margin_left = -471.0
-margin_top = 48.0
-margin_right = -381.0
-margin_bottom = 93.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
+offset_left = -471.0
+offset_top = 48.0
+offset_right = -381.0
+offset_bottom = 93.0
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 20
 text = "You Say:"
-align = 2
-valign = 1
 
 [node name="PlayerText" parent="." index="4"]
-margin_left = -376.0
-margin_top = 51.0
-margin_right = 426.0
-margin_bottom = 91.0
-custom_fonts/font = SubResource( 4 )
+offset_left = -376.0
+offset_top = 51.0
+offset_right = 426.0
+offset_bottom = 91.0
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 20
 
 [node name="More" parent="." index="5"]
+anchors_preset = -1
 anchor_left = 0.255
 anchor_top = 0.033
 anchor_right = 0.255
 anchor_bottom = 0.033
-margin_left = 0.599976
-margin_top = 0.24
-margin_right = 48.6
-margin_bottom = 48.24
+offset_left = 0.599976
+offset_top = 0.24
+offset_right = 48.6
+offset_bottom = 48.24
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="More" index="0"]
-position = Vector2( 24, 24 )
-frames = SubResource( 5 )
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="More" index="0"]
+position = Vector2(24, 24)
+sprite_frames = SubResource("5")
+autoplay = "default"
 frame = 2
-playing = true
 
 [node name="Timer" type="Timer" parent="More" index="1"]
 wait_time = 0.5
