@@ -61,7 +61,7 @@ layer_2/tile_data = PackedInt32Array(-6487954, 655363, 52, -6422418, 655363, 53,
 [node name="RandomEncounters" parent="." index="2"]
 visible = false
 position = Vector2(500, 0)
-monsters = ["res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Wolf.tscn", "res://DandD/Monsters/GiantRat.tscn", "res://DandD/Monsters/GiantRat.tscn", "res://DandD/Monsters/GiantRat.tscn"]
+monsters = ["res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Wolf.tscn", "res://DandD/Monsters/GiantRat.tscn", "res://DandD/Monsters/GiantRat.tscn", "res://DandD/Monsters/GiantRat.tscn", "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Kobold.tscn"]
 check_every_hours = 1.0
 test_roll = 10
 
