@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://c2gitrk2l3bx5"
-path="res://.godot/imported/Dungeon.TTF-a50fea959f1b6fc76f12400329a73e01.fontdata"
+uid="uid://btvuhjwbi41er"
+path="res://.godot/imported/adventure-font-italic.ttf-2181616f33c4053e32ae6dcf915b9dea.fontdata"
 
 [deps]
 
-source_file="res://Fonts/Dungeon.TTF"
-dest_files=["res://.godot/imported/Dungeon.TTF-a50fea959f1b6fc76f12400329a73e01.fontdata"]
+source_file="res://Fonts/adventure-font-italic.ttf"
+dest_files=["res://.godot/imported/adventure-font-italic.ttf-2181616f33c4053e32ae6dcf915b9dea.fontdata"]
 
 [params]
 

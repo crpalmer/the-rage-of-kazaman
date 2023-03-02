@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://btvuhjwbi41er"
-path="res://.godot/imported/Fondamento-Italic.ttf-a04821d8ead132b077d4709dd0ed79a5.fontdata"
+uid="uid://cr1qh7rdfmxv"
+path="res://.godot/imported/adventure-font.ttf-e8f51c87239c8b0f1b3de64a8dfcfe48.fontdata"
 
 [deps]
 
-source_file="res://Fonts/Fondamento-Italic.ttf"
-dest_files=["res://.godot/imported/Fondamento-Italic.ttf-a04821d8ead132b077d4709dd0ed79a5.fontdata"]
+source_file="res://Fonts/adventure-font.ttf"
+dest_files=["res://.godot/imported/adventure-font.ttf-e8f51c87239c8b0f1b3de64a8dfcfe48.fontdata"]
 
 [params]
 

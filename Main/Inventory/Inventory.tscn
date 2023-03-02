@@ -1,195 +1,183 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=8 format=3 uid="uid://v17duolmdbyo"]
 
-[ext_resource path="res://Main/Inventory/body.png" type="Texture2D" id=2]
-[ext_resource path="res://Main/Inventory/InventoryHolder.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Main/Inventory/backpack.png" type="Texture2D" id=4]
-[ext_resource path="res://GameEngine/Inventory/Inventory.tscn" type="PackedScene" id=5]
-[ext_resource path="res://GameEngine/Inventory/InventoryDrop.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Main/HUD/Pong Font.ttf" type="FontFile" id=7]
-[ext_resource path="res://GameEngine/Inventory/CurrencyLabel.tscn" type="PackedScene" id=8]
+[ext_resource type="Texture2D" uid="uid://byte5mquads2j" path="res://Main/Inventory/body.png" id="2"]
+[ext_resource type="PackedScene" path="res://Main/Inventory/InventoryHolder.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://bputy2sc26ubu" path="res://Main/Inventory/backpack.png" id="4"]
+[ext_resource type="PackedScene" path="res://GameEngine/Inventory/Inventory.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://GameEngine/Inventory/InventoryDrop.tscn" id="6"]
+[ext_resource type="FontFile" uid="uid://cr1qh7rdfmxv" path="res://Fonts/adventure-font.ttf" id="6_hp3lf"]
+[ext_resource type="PackedScene" uid="uid://dxm0pds483av2" path="res://Main/Inventory/currency_label.tscn" id="7_qbhay"]
 
-[sub_resource type="FontFile" id=1]
-size = 32
-font_data = ExtResource( 7 )
-
-[sub_resource type="FontFile" id=2]
-size = 24
-font_data = ExtResource( 7 )
-
-[sub_resource type="FontFile" id=3]
-size = 36
-font_data = ExtResource( 7 )
-
-[node name="Inventory" instance=ExtResource( 5 )]
+[node name="Inventory" instance=ExtResource("5")]
 layer = 2
 
 [node name="Backpack" type="Node2D" parent="." index="0"]
-position = Vector2( -33, -17 )
+position = Vector2(-33, -17)
 
 [node name="BackpackSprite" type="Sprite2D" parent="Backpack" index="0"]
-position = Vector2( 428, 251 )
+position = Vector2(428, 251)
 rotation = 0.0174533
-scale = Vector2( 1.09773, 0.992116 )
-texture = ExtResource( 4 )
+scale = Vector2(1.09773, 0.992116)
+texture = ExtResource("4")
 
-[node name="IH1" parent="Backpack" index="1" instance=ExtResource( 3 )]
+[node name="IH1" parent="Backpack" index="1" instance=ExtResource("3")]
+custom_minimum_size = Vector2(36, 36)
 offset_left = 298.0
 offset_top = 203.0
 offset_right = 334.0
 offset_bottom = 239.0
-custom_minimum_size = Vector2( 36, 36 )
 
-[node name="IH2" parent="Backpack" index="2" instance=ExtResource( 3 )]
+[node name="IH2" parent="Backpack" index="2" instance=ExtResource("3")]
+custom_minimum_size = Vector2(36, 36)
 offset_left = 358.0
 offset_top = 203.0
 offset_right = 394.0
 offset_bottom = 239.0
-custom_minimum_size = Vector2( 36, 36 )
 
-[node name="IH3" parent="Backpack" index="3" instance=ExtResource( 3 )]
+[node name="IH3" parent="Backpack" index="3" instance=ExtResource("3")]
+custom_minimum_size = Vector2(36, 36)
 offset_left = 418.0
 offset_top = 203.0
 offset_right = 454.0
 offset_bottom = 239.0
-custom_minimum_size = Vector2( 36, 36 )
 
-[node name="IH4" parent="Backpack" index="4" instance=ExtResource( 3 )]
+[node name="IH4" parent="Backpack" index="4" instance=ExtResource("3")]
+custom_minimum_size = Vector2(36, 36)
 offset_left = 478.0
 offset_top = 203.0
 offset_right = 514.0
 offset_bottom = 239.0
-custom_minimum_size = Vector2( 36, 36 )
 
-[node name="IH5" parent="Backpack" index="5" instance=ExtResource( 3 )]
+[node name="IH5" parent="Backpack" index="5" instance=ExtResource("3")]
+custom_minimum_size = Vector2(36, 36)
 offset_left = 538.0
 offset_top = 203.0
 offset_right = 574.0
 offset_bottom = 239.0
-custom_minimum_size = Vector2( 36, 36 )
 
-[node name="IH6" parent="Backpack" index="6" instance=ExtResource( 3 )]
+[node name="IH6" parent="Backpack" index="6" instance=ExtResource("3")]
+custom_minimum_size = Vector2(36, 36)
 offset_left = 298.0
 offset_top = 263.0
 offset_right = 334.0
 offset_bottom = 299.0
-custom_minimum_size = Vector2( 36, 36 )
 
-[node name="IH7" parent="Backpack" index="7" instance=ExtResource( 3 )]
+[node name="IH7" parent="Backpack" index="7" instance=ExtResource("3")]
+custom_minimum_size = Vector2(36, 36)
 offset_left = 358.0
 offset_top = 263.0
 offset_right = 394.0
 offset_bottom = 299.0
-custom_minimum_size = Vector2( 36, 36 )
 
-[node name="IH8" parent="Backpack" index="8" instance=ExtResource( 3 )]
+[node name="IH8" parent="Backpack" index="8" instance=ExtResource("3")]
+custom_minimum_size = Vector2(36, 36)
 offset_left = 418.0
 offset_top = 263.0
 offset_right = 454.0
 offset_bottom = 299.0
-custom_minimum_size = Vector2( 36, 36 )
 
-[node name="IH9" parent="Backpack" index="9" instance=ExtResource( 3 )]
+[node name="IH9" parent="Backpack" index="9" instance=ExtResource("3")]
+custom_minimum_size = Vector2(36, 36)
 offset_left = 478.0
 offset_top = 263.0
 offset_right = 514.0
 offset_bottom = 299.0
-custom_minimum_size = Vector2( 36, 36 )
 
-[node name="IH10" parent="Backpack" index="10" instance=ExtResource( 3 )]
+[node name="IH10" parent="Backpack" index="10" instance=ExtResource("3")]
+custom_minimum_size = Vector2(36, 36)
 offset_left = 538.0
 offset_top = 263.0
 offset_right = 574.0
 offset_bottom = 299.0
-custom_minimum_size = Vector2( 36, 36 )
 
-[node name="IH11" parent="Backpack" index="11" instance=ExtResource( 3 )]
+[node name="IH11" parent="Backpack" index="11" instance=ExtResource("3")]
+custom_minimum_size = Vector2(36, 36)
 offset_left = 298.0
 offset_top = 323.0
 offset_right = 334.0
 offset_bottom = 359.0
-custom_minimum_size = Vector2( 36, 36 )
 
-[node name="IH12" parent="Backpack" index="12" instance=ExtResource( 3 )]
+[node name="IH12" parent="Backpack" index="12" instance=ExtResource("3")]
+custom_minimum_size = Vector2(36, 36)
 offset_left = 358.0
 offset_top = 323.0
 offset_right = 394.0
 offset_bottom = 359.0
-custom_minimum_size = Vector2( 36, 36 )
 
-[node name="IH13" parent="Backpack" index="13" instance=ExtResource( 3 )]
+[node name="IH13" parent="Backpack" index="13" instance=ExtResource("3")]
+custom_minimum_size = Vector2(36, 36)
 offset_left = 418.0
 offset_top = 323.0
 offset_right = 454.0
 offset_bottom = 359.0
-custom_minimum_size = Vector2( 36, 36 )
 
-[node name="IH14" parent="Backpack" index="14" instance=ExtResource( 3 )]
+[node name="IH14" parent="Backpack" index="14" instance=ExtResource("3")]
+custom_minimum_size = Vector2(36, 36)
 offset_left = 478.0
 offset_top = 323.0
 offset_right = 514.0
 offset_bottom = 359.0
-custom_minimum_size = Vector2( 36, 36 )
 
-[node name="IH15" parent="Backpack" index="15" instance=ExtResource( 3 )]
+[node name="IH15" parent="Backpack" index="15" instance=ExtResource("3")]
+custom_minimum_size = Vector2(36, 36)
 offset_left = 538.0
 offset_top = 323.0
 offset_right = 574.0
 offset_bottom = 359.0
-custom_minimum_size = Vector2( 36, 36 )
 
-[node name="IH16" parent="Backpack" index="16" instance=ExtResource( 3 )]
+[node name="IH16" parent="Backpack" index="16" instance=ExtResource("3")]
+custom_minimum_size = Vector2(36, 36)
 offset_left = 298.0
 offset_top = 383.0
 offset_right = 334.0
 offset_bottom = 419.0
-custom_minimum_size = Vector2( 36, 36 )
 
-[node name="IH17" parent="Backpack" index="17" instance=ExtResource( 3 )]
+[node name="IH17" parent="Backpack" index="17" instance=ExtResource("3")]
+custom_minimum_size = Vector2(36, 36)
 offset_left = 358.0
 offset_top = 383.0
 offset_right = 394.0
 offset_bottom = 419.0
-custom_minimum_size = Vector2( 36, 36 )
 
-[node name="IH18" parent="Backpack" index="18" instance=ExtResource( 3 )]
+[node name="IH18" parent="Backpack" index="18" instance=ExtResource("3")]
+custom_minimum_size = Vector2(36, 36)
 offset_left = 418.0
 offset_top = 383.0
 offset_right = 454.0
 offset_bottom = 419.0
-custom_minimum_size = Vector2( 36, 36 )
 
-[node name="IH19" parent="Backpack" index="19" instance=ExtResource( 3 )]
+[node name="IH19" parent="Backpack" index="19" instance=ExtResource("3")]
+custom_minimum_size = Vector2(36, 36)
 offset_left = 478.0
 offset_top = 383.0
 offset_right = 514.0
 offset_bottom = 419.0
-custom_minimum_size = Vector2( 36, 36 )
 
-[node name="IH20" parent="Backpack" index="20" instance=ExtResource( 3 )]
+[node name="IH20" parent="Backpack" index="20" instance=ExtResource("3")]
+custom_minimum_size = Vector2(36, 36)
 offset_left = 538.0
 offset_top = 383.0
 offset_right = 574.0
 offset_bottom = 419.0
-custom_minimum_size = Vector2( 36, 36 )
 
 [node name="Body" type="Node2D" parent="." index="1"]
 
 [node name="BodySprite" type="Sprite2D" parent="Body" index="0"]
-position = Vector2( 112, 221 )
+position = Vector2(112, 221)
 rotation = 0.0174533
-scale = Vector2( 0.562263, 0.613092 )
-texture = ExtResource( 2 )
+scale = Vector2(0.562263, 0.613092)
+texture = ExtResource("2")
 
-[node name="LeftHand" parent="Body" index="1" instance=ExtResource( 3 )]
+[node name="LeftHand" parent="Body" index="1" instance=ExtResource("3")]
 offset_left = 182.0
 offset_top = 225.0
 offset_right = 218.0
 offset_bottom = 261.0
-pivot_offset = Vector2( 16, 32 )
+pivot_offset = Vector2(16, 32)
 is_equipped = true
 requires = 1
 
-[node name="RightHand" parent="Body" index="2" instance=ExtResource( 3 )]
+[node name="RightHand" parent="Body" index="2" instance=ExtResource("3")]
 offset_left = 1.0
 offset_top = 221.0
 offset_right = 37.0
@@ -197,7 +185,7 @@ offset_bottom = 257.0
 is_equipped = true
 requires = 1
 
-[node name="Head" parent="Body" index="3" instance=ExtResource( 3 )]
+[node name="Head" parent="Body" index="3" instance=ExtResource("3")]
 offset_left = 89.0
 offset_top = 18.0
 offset_right = 125.0
@@ -205,7 +193,7 @@ offset_bottom = 54.0
 is_equipped = true
 requires = 2
 
-[node name="Neck" parent="Body" index="4" instance=ExtResource( 3 )]
+[node name="Neck" parent="Body" index="4" instance=ExtResource("3")]
 offset_left = 89.0
 offset_top = 85.0
 offset_right = 125.0
@@ -213,7 +201,7 @@ offset_bottom = 121.0
 is_equipped = true
 requires = 16
 
-[node name="Body" parent="Body" index="5" instance=ExtResource( 3 )]
+[node name="Body" parent="Body" index="5" instance=ExtResource("3")]
 offset_left = 89.0
 offset_top = 155.0
 offset_right = 125.0
@@ -221,7 +209,7 @@ offset_bottom = 191.0
 is_equipped = true
 requires = 4
 
-[node name="Feet" parent="Body" index="6" instance=ExtResource( 3 )]
+[node name="Feet" parent="Body" index="6" instance=ExtResource("3")]
 offset_left = 86.0
 offset_top = 389.0
 offset_right = 122.0
@@ -229,7 +217,7 @@ offset_bottom = 425.0
 is_equipped = true
 requires = 8
 
-[node name="InventoryDrop" parent="." index="2" instance=ExtResource( 6 )]
+[node name="InventoryDrop" parent="." index="2" instance=ExtResource("6")]
 offset_left = 350.0
 offset_top = 65.0
 offset_right = 473.0
@@ -237,69 +225,72 @@ offset_bottom = 150.0
 border_width = 7.0
 
 [node name="Label" type="Label" parent="InventoryDrop" index="0"]
+layout_mode = 0
 offset_left = -1.0
 offset_top = -1.0
 offset_right = 123.0
 offset_bottom = 85.0
-custom_colors/font_color = Color( 1, 0, 0, 1 )
-custom_fonts/font = SubResource( 1 )
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_hp3lf")
+theme_override_font_sizes/font_size = 48
 text = "Drop"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Money" type="Node2D" parent="." index="3"]
-position = Vector2( -314, 2 )
+position = Vector2(280, 448)
 
-[node name="GoldLabel" type="Label" parent="Money" index="0"]
-offset_left = 350.0
-offset_top = 500.0
-offset_right = 421.0
-offset_bottom = 529.0
-custom_fonts/font = SubResource( 2 )
+[node name="ColorRect" type="ColorRect" parent="Money" index="0"]
+offset_right = 256.0
+offset_bottom = 182.0
+color = Color(0.678431, 0.54902, 0.215686, 1)
+
+[node name="Gold" type="Label" parent="Money" index="1"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 104.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("6_hp3lf")
+theme_override_font_sizes/font_size = 24
 text = "Gold:"
+horizontal_alignment = 2
+vertical_alignment = 1
 
-[node name="Gold" parent="Money" index="1" instance=ExtResource( 8 )]
-offset_left = 415.0
-offset_top = 475.0
-offset_right = 535.0
-offset_bottom = 555.0
-custom_fonts/font = SubResource( 3 )
-align = 1
-valign = 1
+[node name="CurrencyLabel" parent="Money/Gold" index="0" instance=ExtResource("7_qbhay")]
+layout_mode = 0
+offset_left = 96.0
+offset_right = 224.0
 currency = "res://DandD/Currency/GoldPiece.tscn"
 
-[node name="SilverLabel" type="Label" parent="Money" index="2"]
-offset_left = 573.0
-offset_top = 506.0
-offset_right = 711.0
-offset_bottom = 563.0
-custom_fonts/font = SubResource( 2 )
+[node name="Silver" type="Label" parent="Money" index="2"]
+offset_left = 16.0
+offset_top = 72.0
+offset_right = 104.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("6_hp3lf")
+theme_override_font_sizes/font_size = 24
 text = "Silver:"
+horizontal_alignment = 2
+vertical_alignment = 1
 
-[node name="Silver" parent="Money" index="3" instance=ExtResource( 8 )]
-offset_left = 646.0
-offset_top = 500.0
-offset_right = 772.0
-offset_bottom = 543.0
-custom_fonts/font = SubResource( 3 )
-align = 1
-valign = 1
+[node name="CurrencyLabel" parent="Money/Silver" index="0" instance=ExtResource("7_qbhay")]
+layout_mode = 0
+offset_left = 96.0
+offset_right = 224.0
 currency = "res://DandD/Currency/SilverPiece.tscn"
 
-[node name="CopperLabel" type="Label" parent="Money" index="4"]
-offset_left = 772.0
-offset_top = 505.0
-offset_right = 870.0
-offset_bottom = 545.0
-custom_fonts/font = SubResource( 2 )
+[node name="Copper" type="Label" parent="Money" index="3"]
+offset_left = 16.0
+offset_top = 120.0
+offset_right = 104.0
+offset_bottom = 168.0
+theme_override_fonts/font = ExtResource("6_hp3lf")
+theme_override_font_sizes/font_size = 24
 text = "Copper:"
+horizontal_alignment = 2
+vertical_alignment = 1
 
-[node name="Copper" parent="Money" index="5" instance=ExtResource( 8 )]
-offset_left = 871.0
-offset_top = 503.0
-offset_right = 997.0
-offset_bottom = 546.0
-custom_fonts/font = SubResource( 3 )
-align = 1
-valign = 1
-currency = "res://DandD/Currency/CopperPiece.tscn"
+[node name="CurrencyLabel" parent="Money/Copper" index="0" instance=ExtResource("7_qbhay")]
+layout_mode = 0
+offset_left = 96.0
+offset_right = 224.0

@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bi58s2aor86eo"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="FontFile" uid="uid://cr1qh7rdfmxv" path="res://Fonts/Fondamento-Regular.ttf" id="1_x23mh"]
+[ext_resource type="FontFile" uid="uid://cr1qh7rdfmxv" path="res://Fonts/adventure-font.ttf" id="1_x23mh"]
 
 [node name="HUDLabel" type="Label"]
 offset_right = 40.0
