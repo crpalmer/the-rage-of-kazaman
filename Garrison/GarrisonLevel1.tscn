@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" path="res://DandD/Things/Bed.tscn" id="11"]
 [ext_resource type="PackedScene" path="res://DandD/Things/Desk.tscn" id="12"]
 [ext_resource type="PackedScene" path="res://Garrison/LetterToMom.tscn" id="13"]
-[ext_resource type="PackedScene" path="res://GameEngine/MessageArea.tscn" id="14"]
+[ext_resource type="PackedScene" uid="uid://dsjwkosb1bo11" path="res://GameEngine/MessageArea.tscn" id="14"]
 [ext_resource type="PackedScene" path="res://DandD/Things/Toilet.tscn" id="15"]
 [ext_resource type="PackedScene" uid="uid://bsdoh2ykse30w" path="res://DandD/Monsters/KoboldWarrior.tscn" id="16"]
 [ext_resource type="PackedScene" uid="uid://canwxvecyg23x" path="res://GameEngine/Actors/ActorConversation.tscn" id="17"]
@@ -321,7 +321,7 @@ visible = false
 position = Vector2(140, -72)
 rotation = 1.5708
 
-[node name="DoorToBathroom" parent="Barracks" index="3" instance=ExtResource("6")]
+[node name="DoorToBathroom" parent="Barracks" index="3" instance=ExtResource("5")]
 position = Vector2(176, -32)
 rotation = -1.5708
 scale = Vector2(2, 2)
@@ -380,7 +380,7 @@ position = Vector2(228, 72)
 
 [node name="GarrisonKitchenKey" parent="LeaderOffice" index="5" instance=ExtResource("25")]
 visible = false
-position = Vector2(56, 24)
+position = Vector2(49, 34)
 rotation = 1.5708
 reveal_text = "In one of the desk drawers, you find a silver key."
 

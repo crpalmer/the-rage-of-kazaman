@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3]
+[gd_scene load_steps=11 format=3 uid="uid://dy3gtokubh6g4"]
 
 [ext_resource type="PackedScene" path="res://Main/HUD/hud_label.tscn" id="1_j0bwb"]
 [ext_resource type="PackedScene" uid="uid://pfiymlp2jke1" path="res://GameEngine/Messages.tscn" id="2"]

@@ -38,6 +38,8 @@ func finish(text, n_guards, xp = 0):
 func player_said(_text, words):
 	if words.has("fuck") and words.has("off"):
 		finish("Well, that is a very stupid attitude.  Destroy the rude intruder!", 8)
+	elif words.has("work"):
+		finish("You think I would believe a smelly human would work for me?  Ha!  Die you pathetic fool!", 4)
 	elif (words.has("walk") or words.has("walked")) and words.has("bar"):
 		finish("Funny joke.  But, now you must die.", 1, 50)
 	elif words.has("inspection") or words.has("inspect"):
@@ -49,7 +51,7 @@ func player_said(_text, words):
 	else:
 		say("That doesn't sound entirely believable.")
 		bad_answers += 1
-		if bad_answers >= 5:
+		if bad_answers >= 4:
 			finish("I think you're trying to trick me.  Guards!", 2)
 
 func spawn_guards(n):

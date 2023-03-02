@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=8 format=3 uid="uid://qor4heq5mmfg"]
 
 [ext_resource type="PackedScene" path="res://GameEngine/Conversation.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://cc7m33qga8jmd" path="res://Conversation/dialogue-box.png" id="2"]
@@ -56,9 +56,12 @@ offset_left = -471.0
 offset_top = 48.0
 offset_right = -381.0
 offset_bottom = 93.0
+theme_override_colors/font_color = Color(0.278431, 0.278431, 0.278431, 1)
 theme_override_fonts/font = ExtResource("3")
 theme_override_font_sizes/font_size = 20
 text = "You Say:"
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="PlayerText" parent="." index="4"]
 offset_left = -376.0
