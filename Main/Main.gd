@@ -10,19 +10,22 @@ var fighter
 @onready var hud = $HUD
 @onready var main_menu = $MainMenu
 @onready var save = $MainMenu/Save
-@onready var died = $MainMenu/Died
+@onready var died = $Died
+@onready var died_timer = died.get_node("Timer")
 
 func _ready():
 	get_window().mode = Window.MODE_MAXIMIZED if (true) else Window.MODE_WINDOWED
 	splash.show()
 	hud.hide()
 	main_menu.hide()
+	died.hide()
 	died.visible = false
 #	splash_music.play(10)
 	splash_timer.start(0.5)
 	GameEngine.modulate(false)
 	fighter = load("res://DandD/Classes/Fighter.tscn").instantiate()
 	var _err = GameEngine.connect("player_created",Callable(self,"on_player_created"))
+	_err = died_timer.connect("timeout", Callable(self, "on_player_died_timeout"))
 	if debugging_startup:
 		call_deferred("debugging_ready")
 
@@ -49,6 +52,7 @@ func show_menu():
 
 func hide_menu():
 	main_menu.hide()
+	died.hide()
 	splash_music.stop()
 	splash.hide()
 	GameEngine.resume()
@@ -109,5 +113,8 @@ func on_player_died():
 	save.disabled = true
 	game_in_progress = false
 	died.set_deferred("visible", true)
-	call_deferred("show_menu")
+	died_timer.start()
+
+func on_player_died_timeout():
+	show_menu()
 	GameEngine.modulate(false)

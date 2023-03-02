@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c46cmrgmfm3d3"]
+[gd_scene load_steps=8 format=3 uid="uid://c46cmrgmfm3d3"]
 
-[ext_resource type="PackedScene" path="res://Main/HUD/HUD.tscn" id="1"]
-[ext_resource type="PackedScene" path="res://Conversation/Conversation.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://dy3gtokubh6g4" path="res://Main/HUD/HUD.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://qor4heq5mmfg" path="res://Conversation/Conversation.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://ot6f8q0oyu7k" path="res://GameEngine/Main.tscn" id="4"]
 [ext_resource type="Script" path="res://Main/Main.gd" id="5"]
+[ext_resource type="FontFile" uid="uid://cr1qh7rdfmxv" path="res://Fonts/adventure-font.ttf" id="5_6ha3e"]
 [ext_resource type="Texture2D" uid="uid://by0nrn4xh0r2w" path="res://Main/splash.png" id="6"]
 [ext_resource type="AudioStream" uid="uid://dpj8640jqd2on" path="res://Main/theme-music.mp3" id="7"]
 
@@ -54,16 +55,30 @@ offset_right = 1009.0
 offset_bottom = 303.0
 text = "Save Game"
 
-[node name="Died" type="Label" parent="MainMenu" index="3"]
-offset_left = 346.0
-offset_top = 104.0
-offset_right = 668.0
-offset_bottom = 260.0
+[node name="Died" type="CanvasLayer" parent="." index="4"]
+layer = 3
+
+[node name="Label" type="Label" parent="Died" index="0"]
+offset_left = 362.0
+offset_top = 179.0
+offset_right = 666.0
+offset_bottom = 302.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("5_6ha3e")
+theme_override_font_sizes/font_size = 48
 text = "You died!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="HUD" parent="." index="4" instance=ExtResource("1")]
+[node name="Timer" type="Timer" parent="Died" index="1"]
+wait_time = 5.0
+one_shot = true
 
-[node name="Conversation" parent="." index="5" instance=ExtResource("2")]
+[node name="HUD" parent="." index="5" instance=ExtResource("1")]
+
+[node name="Conversation" parent="." index="6" instance=ExtResource("2")]
 offset = Vector2(515, 499)
 scale = Vector2(1, 1)
 transform = Transform2D(1, 0, 0, 1, 515, 499)
