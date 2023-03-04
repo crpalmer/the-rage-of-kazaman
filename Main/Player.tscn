@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://gjb81jap5e4p"]
 
 [ext_resource type="PackedScene" uid="uid://b2nbugu2ysu1h" path="res://GameEngine/Actors/Player.tscn" id="1"]
-[ext_resource type="PackedScene" path="res://Main/Inventory/Inventory.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://v17duolmdbyo" path="res://Main/Inventory/Inventory.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://cu541vbci21r5" path="res://GameEngine/light.png" id="2_onbwf"]
 [ext_resource type="Texture2D" uid="uid://cr6ebnf8caqx0" path="res://Main/player.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://dv07xn1ub84fi" path="res://Main/player1.png" id="4"]
@@ -26,12 +26,6 @@ animations = [{
 
 [node name="Player" instance=ExtResource("1")]
 
-[node name="Camera2D" parent="." index="0"]
-offset = Vector2(212, 0)
-
-[node name="LightSource" parent="Camera2D" index="1"]
-texture = ExtResource("2_onbwf")
-
 [node name="Node3D" type="NavigationAgent2D" parent="." index="4"]
 path_desired_distance = 1.0
 target_desired_distance = 1.0
@@ -53,3 +47,9 @@ texture = ExtResource("3")
 scale = Vector2(0.9, 0.45)
 sprite_frames = SubResource("6")
 animation = &"walk"
+
+[node name="Camera2D" parent="." index="9"]
+offset = Vector2(212, 0)
+
+[node name="LightSource" parent="Camera2D" index="1"]
+texture = ExtResource("2_onbwf")
