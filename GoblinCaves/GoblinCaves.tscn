@@ -55,10 +55,10 @@ vertices = PackedVector2Array(40, 53.3333, -48, 44.4445, -32, 35.5556, 72, 53.33
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 5, 6, 7), PackedInt32Array(6, 8, 9, 7), PackedInt32Array(9, 10, 11, 7), PackedInt32Array(2, 4, 3), PackedInt32Array(0, 3, 12, 13)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-40, -17.7778, -40, -71.1111, 64, -71.1111, 64, -115.556, 88, -115.556, 88, 44.4445, 72, 53.3333, 72, 115.556, 40, 115.556, 40, 53.3333, -48, 44.4445, -32, 35.5556, -40, 0, -64, -17.7778)])
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_6gwtc"]
-vertices = PackedVector2Array(-64, -72, -64, -288, -48, -288, -48, -72, -80, 48, 104, -24, 152, -24, 152, 88, -96, 64, -224, 80, -224, 64, -96, -48, -224, -48, -224, -64, -96, -64, 88, -72, -96, 24, -96, -8, -88, -24, -24, -64)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8), PackedInt32Array(9, 10, 8, 7), PackedInt32Array(11, 12, 13, 14), PackedInt32Array(15, 5, 4, 16, 17, 18), PackedInt32Array(15, 18, 11, 19), PackedInt32Array(11, 14, 0, 3, 19), PackedInt32Array(15, 19, 15)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-224, -64, -224, -48, -96, -48, -88, -24, -96, -8, -96, 24, -80, 48, -96, 64, -224, 64, -224, 80, 152, 88, 152, -24, 104, -24, 88, -72, 88, -72, -24, -64, -48, -72, -48, -288, -64, -288, -64, -72, -96, -64)])
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_06gtf"]
+vertices = PackedVector2Array(-64, -280, -48, -280, -48, -64, -64, -64, 144, 80, -224, 80, -224, 64, -96, 64, 80, -64, 144, -16, -96, -40, -224, -64, -224, -40)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(2, 8, 9, 4, 7, 10), PackedInt32Array(3, 2, 10), PackedInt32Array(11, 3, 10, 12)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-64, -280, -64, -64, -224, -64, -224, -40, -96, -40, -96, 64, -224, 64, -224, 80, 144, 80, 144, -16, 80, -64, -48, -64, -48, -280)])
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mimjb"]
 closed = false
@@ -119,10 +119,10 @@ color = Color(0, 0, 0, 1)
 position = Vector2(16, -336)
 
 [node name="Kobold" parent="EntranceHall" index="0" instance=ExtResource("1")]
-position = Vector2(-112, 160)
+position = Vector2(-112, 152)
 
 [node name="Kobold2" parent="EntranceHall" index="1" instance=ExtResource("1")]
-position = Vector2(112, 160)
+position = Vector2(112, 152)
 
 [node name="Orc" parent="EntranceHall" index="2" instance=ExtResource("2")]
 position = Vector2(128, -96)
@@ -153,7 +153,7 @@ position = Vector2(152, -71.1111)
 n_units = 50
 
 [node name="Kobold" parent="GateAmbush" index="2" instance=ExtResource("1")]
-position = Vector2(-48, 44.4445)
+position = Vector2(-48, 35.5556)
 
 [node name="Kobold2" parent="GateAmbush" index="3" instance=ExtResource("1")]
 position = Vector2(96, 17.7778)
@@ -206,7 +206,6 @@ scale = Vector2(0.5, 0.5)
 visible = false
 position = Vector2(6, 6.6667)
 n_units = 5
-reveal_text = "You find some gold hidden in the barrel."
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="GateAmbush" index="15"]
 navigation_polygon = SubResource("NavigationPolygon_7dai1")
@@ -250,7 +249,7 @@ position = Vector2(48, 64)
 position = Vector2(104, -16)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="Prison" index="8"]
-navigation_polygon = SubResource("NavigationPolygon_6gwtc")
+navigation_polygon = SubResource("NavigationPolygon_06gtf")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Prison" index="9"]
 occluder = SubResource("OccluderPolygon2D_mimjb")
