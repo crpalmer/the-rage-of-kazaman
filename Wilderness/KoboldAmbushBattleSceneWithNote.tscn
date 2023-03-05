@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" path="res://GameEngine/EntryPoint.tscn" id="1"]
 [ext_resource type="PackedScene" path="res://Wilderness/KoboldNote.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://nwhmgun2a0lu" path="res://Wilderness/ForestBattleScene.tscn" id="3"]
-[ext_resource type="PackedScene" uid="uid://2g6e2jpu4t3c" path="res://DandD/Monsters/Kobold.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://bjjvjqp2sjqdw" path="res://DandD/Monsters/Kobold.tscn" id="4"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_kvxa2"]
 vertices = PackedVector2Array(-215, -8, -65, -173, 59, -179, 211, -8, 69, 171, -68, 176)
@@ -16,10 +16,10 @@ exit_message = "You escaped the ambush!"
 keep_items_on_exit = true
 
 [node name="EntryPoint" parent="." index="3" instance=ExtResource("1")]
-position = Vector2(-216, -7)
+position = Vector2(-62, -54)
 
 [node name="Kobold" parent="." index="6" instance=ExtResource("4")]
-position = Vector2(191, -5)
+position = Vector2(54, 67)
 
 [node name="KoboldNote" parent="Kobold" index="8" instance=ExtResource("2")]
 visible = false

@@ -16,6 +16,7 @@ func load_persistent_data(p):
 	teleported = p.teleported
 
 func _ready():
+	super()
 	transport = actor.get_node("../LeaderTransportPoint")
 	add_to_group("PersistentNodes")
 

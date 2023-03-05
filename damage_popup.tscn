@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3]
 
-[ext_resource type="PackedScene" uid="uid://coa53ryui42t7" path="res://GameEngine/Actors/DamagePopup.tscn" id="1_4voxs"]
+[ext_resource type="PackedScene" path="res://GameEngine/Actors/DamagePopup.tscn" id="1_4voxs"]
 [ext_resource type="FontFile" uid="uid://xv4t5yvtsu38" path="res://Main/HUD/Pong Font.ttf" id="2_2ldpf"]
 [ext_resource type="FontFile" uid="uid://cr1qh7rdfmxv" path="res://Fonts/adventure-font.ttf" id="3_r41tg"]
 

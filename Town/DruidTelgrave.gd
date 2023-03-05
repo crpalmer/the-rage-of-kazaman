@@ -1,6 +1,7 @@
 extends ActorConversation
 
 func _ready():
+	super()
 	services_for_sale = [
 		{ "name": "cure light wounds", "cost": 10.23 },
 		{ "name": "cure serious wounds", "cost": 50.01 },

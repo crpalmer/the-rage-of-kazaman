@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://cmc2apvm36xd2"]
 
-[ext_resource type="PackedScene" uid="uid://2g6e2jpu4t3c" path="res://DandD/Monsters/Kobold.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://bjjvjqp2sjqdw" path="res://DandD/Monsters/Kobold.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://d32hdei1r2s38" path="res://DandD/Monsters/Orc.tscn" id="2"]
 [ext_resource type="TileSet" uid="uid://bgsl5od7jjx0i" path="res://DandD/Tilesets/tileset.tres" id="3"]
 [ext_resource type="PackedScene" path="res://GameEngine/EntryPoint.tscn" id="4"]

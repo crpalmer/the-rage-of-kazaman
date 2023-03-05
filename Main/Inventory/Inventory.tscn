@@ -294,3 +294,4 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = 96.0
 offset_right = 224.0
+currency = "res://DandD/Currency/CopperPiece.tscn"

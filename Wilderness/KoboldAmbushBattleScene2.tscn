@@ -3,3 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://bbfdb1ejrdb0r" path="res://Wilderness/KoboldAmbushBattleScene.tscn" id="1"]
 
 [node name="KoboldAmbushBattleScene2" instance=ExtResource("1")]
+
+[node name="EntryPoint" parent="." index="3"]
+position = Vector2(1, -73)
+
+[node name="Kobold" parent="." index="6"]
+position = Vector2(0, 51)

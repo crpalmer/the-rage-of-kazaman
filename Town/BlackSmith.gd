@@ -1,6 +1,7 @@
 extends ActorConversation
 
 func _ready():
+	super()
 	things_for_sale = []
 	for c in get_children():
 		if c is InventoryThing: things_for_sale.push_back(c)

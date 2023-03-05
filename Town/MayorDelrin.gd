@@ -34,6 +34,7 @@ func load_persistent_data(p):
 	completed_quests = p.completed_quests
 
 func _ready():
+	super()
 	add_to_group("PersistentNodes")
 
 func wants_to_initiate_conversation():
@@ -45,8 +46,12 @@ func say_hello():
 	elif not quest_is_accepted(QUEST_KOBOLD_NOTE) and GameEngine.player.has_a("kobold note"):
 		accept_quest(QUEST_KOBOLD_NOTE)
 		GameEngine.message("You show the mayor the kobold note.", true)
+		await say([
+			"Oh, that note is very interesting.  The kobolds sound like an organized group.  Please investigate the Garrison and see if you can find out who's behind it all.",
+			"Take another potion of healing to help you survive back in the wilderness."
+		])
 		GameEngine.player.add_xp(100)
-		say("Oh, that note is very interesting.  The kobolds sound like an organized group.  Please investigate the Garrison and see if you can find out who's behind it all.")
+		GameEngine.give_to_player("res://DandD/Potions/PotionOfHealing.tscn")
 	elif not quest_is_accepted(QUEST_KOBOLDS_DIE) and GameEngine.has_completed_milestone("found-eastern-garrison"):
 		accept_quest(QUEST_KOBOLDS_DIE)
 		GameEngine.message("You tell the mayor about the kobolds and their military demeanor.", true)

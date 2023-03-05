@@ -1,7 +1,14 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://pka7vwrgg3km"]
 
-[ext_resource path="res://DandD/Items/SilverKey.tscn" type="PackedScene" id=1]
+[ext_resource type="PackedScene" path="res://DandD/Items/SilverKey.tscn" id="1"]
 
-[node name="GarrisonKitchenKey" instance=ExtResource( 1 )]
-display_name = "silver key"
+[sub_resource type="CircleShape2D" id="CircleShape2D_o86uo"]
+resource_local_to_scene = true
+radius = 13.0
+
+[node name="GarrisonKitchenKey" instance=ExtResource("1")]
 group = "GarrisonKitchenKey"
+display_name = "silver key"
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CircleShape2D_o86uo")

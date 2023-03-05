@@ -8,11 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://cpibqvwwaq31y" path="res://DandD/Things/Door-32-flipped.tscn" id="6"]
 [ext_resource type="Texture2D" uid="uid://cercxo8fphnkb" path="res://Garrison/carpet.png" id="7"]
 [ext_resource type="PackedScene" path="res://DandD/Things/Chair.tscn" id="8"]
-[ext_resource type="PackedScene" uid="uid://2g6e2jpu4t3c" path="res://DandD/Monsters/Kobold.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://bjjvjqp2sjqdw" path="res://DandD/Monsters/Kobold.tscn" id="9"]
 [ext_resource type="PackedScene" uid="uid://col46dls31egg" path="res://GameEngine/Objects/StaticThing.tscn" id="10"]
 [ext_resource type="PackedScene" path="res://DandD/Things/Bed.tscn" id="11"]
 [ext_resource type="PackedScene" path="res://DandD/Things/Desk.tscn" id="12"]
-[ext_resource type="PackedScene" path="res://Garrison/LetterToMom.tscn" id="13"]
+[ext_resource type="PackedScene" uid="uid://cwvaei8jn7nbg" path="res://Garrison/LetterToMom.tscn" id="13"]
 [ext_resource type="PackedScene" uid="uid://dsjwkosb1bo11" path="res://GameEngine/MessageArea.tscn" id="14"]
 [ext_resource type="PackedScene" path="res://DandD/Things/Toilet.tscn" id="15"]
 [ext_resource type="PackedScene" uid="uid://bsdoh2ykse30w" path="res://DandD/Monsters/KoboldWarrior.tscn" id="16"]
@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://bs11kruspc31b" path="res://DandD/Armor/ChainmailPlus1.tscn" id="22"]
 [ext_resource type="PackedScene" uid="uid://bev6es0da37g1" path="res://InformationalText.tscn" id="23"]
 [ext_resource type="PackedScene" path="res://DandD/Things/KitchenCounter.tscn" id="24"]
-[ext_resource type="PackedScene" path="res://Garrison/GarrisonKitchenKey.tscn" id="25"]
+[ext_resource type="PackedScene" uid="uid://pka7vwrgg3km" path="res://Garrison/GarrisonKitchenKey.tscn" id="25"]
 [ext_resource type="Texture2D" uid="uid://d0i52u0oyekny" path="res://Garrison/hole.png" id="26"]
 
 [sub_resource type="OccluderPolygon2D" id="3"]
@@ -380,7 +380,7 @@ position = Vector2(228, 72)
 
 [node name="GarrisonKitchenKey" parent="LeaderOffice" index="5" instance=ExtResource("25")]
 visible = false
-position = Vector2(49, 34)
+position = Vector2(54, 39)
 rotation = 1.5708
 reveal_text = "In one of the desk drawers, you find a silver key."
 
@@ -504,7 +504,7 @@ position = Vector2(640, 16)
 
 [node name="RandomEncounters" parent="." index="10"]
 visible = false
-monsters = ["res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/GiantRat.tscn"]
+monsters = Array[String](["res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/GiantRat.tscn"])
 check_every_hours = 1.0
 test_roll = 15
 
