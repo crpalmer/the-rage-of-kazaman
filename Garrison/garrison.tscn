@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" path="res://GameEngine/message_area.tscn" id="14"]
 [ext_resource type="PackedScene" path="res://DandD/Things/toilet.tscn" id="15"]
 [ext_resource type="PackedScene" uid="uid://bsdoh2ykse30w" path="res://DandD/Monsters/kobold_warrior.tscn" id="16"]
-[ext_resource type="PackedScene" path="res://GameEngine/Actors/actor_conversation.tscn" id="17"]
+[ext_resource type="PackedScene" uid="uid://cyqmhab1p03bt" path="res://GameEngine/Actors/actor_conversation.tscn" id="17"]
 [ext_resource type="Script" path="res://Garrison/garrison_leader_conversation.gd" id="18"]
 [ext_resource type="PackedScene" path="res://Garrison/secret_door_stone.tscn" id="19"]
 [ext_resource type="PackedScene" uid="uid://ll520l8jxvhx" path="res://DandD/Currency/gold_piece.tscn" id="20"]
