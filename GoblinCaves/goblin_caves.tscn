@@ -1,14 +1,14 @@
-[gd_scene load_steps=30 format=3]
+[gd_scene load_steps=30 format=3 uid="uid://dci7sxobwwmrd"]
 
 [ext_resource type="PackedScene" uid="uid://r5plohk1mwui" path="res://DandD/Monsters/kobold.tscn" id="1"]
-[ext_resource type="PackedScene" path="res://DandD/Monsters/orc.tscn" id="2"]
 [ext_resource type="TileSet" uid="uid://bgsl5od7jjx0i" path="res://DandD/Tilesets/tileset.tres" id="3"]
 [ext_resource type="PackedScene" path="res://GameEngine/entry_point.tscn" id="4"]
 [ext_resource type="PackedScene" path="res://GameEngine/Scenes/scene.tscn" id="5"]
 [ext_resource type="PackedScene" path="res://GameEngine/Objects/portal.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://DandD/Monsters/goblin.tscn" id="6_lr5fg"]
 [ext_resource type="PackedScene" path="res://GoblinCaves/gate_blocking_tunnel_to_town.tscn" id="7"]
 [ext_resource type="PackedScene" path="res://GoblinCaves/secret_door_cave.tscn" id="8"]
-[ext_resource type="PackedScene" path="res://DandD/Currency/gold_piece.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://ll520l8jxvhx" path="res://DandD/Currency/gold_piece.tscn" id="9"]
 [ext_resource type="PackedScene" path="res://GoblinCaves/note_to_guard_gate.tscn" id="10"]
 [ext_resource type="PackedScene" path="res://DandD/Things/bed.tscn" id="11"]
 [ext_resource type="PackedScene" path="res://DandD/Things/desk.tscn" id="12"]
@@ -84,7 +84,7 @@ day_light = 0.0
 night_light = 0.0
 
 [node name="RandomEncounters" parent="." index="1"]
-monsters = ["res://DandD/Monsters/GiantRat.tscn", "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Orc.tscn"]
+monsters = Array[String](["res://DandD/Monsters/GiantRat.tscn", "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Kobold.tscn", "res://DandD/Monsters/Orc.tscn"])
 check_every_hours = 1.0
 test_roll = 15
 
@@ -101,7 +101,7 @@ layer_0/tile_data = PackedInt32Array(524288, 0, 1, 458751, 589824, 2, 524287, 58
 
 [node name="Portal" parent="TileMap" index="0" instance=ExtResource("6")]
 position = Vector2(17, 142)
-scene = "res://Garrison/GarrisonLevel1.tscn"
+scene = "res://Garrison/garrison.tscn"
 entry_point = "Kitchen/FromGoblinCaves"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Portal" index="0"]
@@ -124,7 +124,7 @@ position = Vector2(-112, 152)
 [node name="Kobold2" parent="EntranceHall" index="1" instance=ExtResource("1")]
 position = Vector2(112, 152)
 
-[node name="Orc" parent="EntranceHall" index="2" instance=ExtResource("2")]
+[node name="Goblin" parent="EntranceHall" index="2" instance=ExtResource("6_lr5fg")]
 position = Vector2(128, -96)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="EntranceHall" index="3"]
@@ -158,10 +158,10 @@ position = Vector2(-48, 35.5556)
 [node name="Kobold2" parent="GateAmbush" index="3" instance=ExtResource("1")]
 position = Vector2(96, 17.7778)
 
-[node name="Orc" parent="GateAmbush" index="4" instance=ExtResource("2")]
+[node name="Goblin" parent="GateAmbush" index="4" instance=ExtResource("6_lr5fg")]
 position = Vector2(-64, -17.7778)
 
-[node name="Orc2" parent="GateAmbush" index="5" instance=ExtResource("2")]
+[node name="Goblin2" parent="GateAmbush" index="5" instance=ExtResource("6_lr5fg")]
 position = Vector2(80, -71.1111)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="GateAmbush" index="6"]
@@ -202,7 +202,7 @@ long_description = "Looking in the barrel, you see some dark slimey liquid and a
 position = Vector2(-88, 41.1111)
 scale = Vector2(0.5, 0.5)
 
-[node name="GoldPiece2" parent="GateAmbush/Barrel3" index="2" instance=ExtResource("9")]
+[node name="GoldPiece_x5" parent="GateAmbush/Barrel3" index="2" instance=ExtResource("9")]
 visible = false
 position = Vector2(6, 6.6667)
 n_units = 5
