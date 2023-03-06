@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" path="res://GameEngine/Actors/actor_conversation.tscn" id="17"]
 [ext_resource type="Script" path="res://Garrison/garrison_leader_conversation.gd" id="18"]
 [ext_resource type="PackedScene" path="res://Garrison/secret_door_stone.tscn" id="19"]
-[ext_resource type="PackedScene" path="res://DandD/Currency/gold_piece.tscn" id="20"]
+[ext_resource type="PackedScene" uid="uid://ll520l8jxvhx" path="res://DandD/Currency/gold_piece.tscn" id="20"]
 [ext_resource type="PackedScene" path="res://DandD/Currency/silver_piece.tscn" id="21"]
 [ext_resource type="PackedScene" path="res://DandD/Armor/chainmail_plus_1.tscn" id="22"]
 [ext_resource type="PackedScene" path="res://informational_text.tscn" id="23"]
@@ -29,7 +29,7 @@
 
 [sub_resource type="OccluderPolygon2D" id="3"]
 closed = false
-polygon = PackedVector2Array(-128, 40, -128, 152, -16, 152)
+polygon = PackedVector2Array(-128, 56, -128, 152, -16, 152)
 
 [sub_resource type="OccluderPolygon2D" id="4"]
 closed = false
@@ -41,7 +41,7 @@ polygon = PackedVector2Array(160, -24, 160, -168, 48, -168)
 
 [sub_resource type="OccluderPolygon2D" id="6"]
 closed = false
-polygon = PackedVector2Array(-16, -168, -128, -168, -128, -56)
+polygon = PackedVector2Array(-16, -168, -128, -168, -128, -72)
 
 [sub_resource type="RectangleShape2D" id="2"]
 size = Vector2(168, 128)
@@ -218,13 +218,13 @@ position = Vector2(96, 88)
 position = Vector2(104, -104)
 
 [node name="FrontDoorBottom" parent="Entryway" index="5" instance=ExtResource("5")]
-position = Vector2(-128, 16)
+position = Vector2(-128, 32)
 rotation = -1.5708
 scale = Vector2(1.5, 1.5)
 is_closed = false
 
 [node name="FrontDoorTop" parent="Entryway" index="6" instance=ExtResource("6")]
-position = Vector2(-128, -32)
+position = Vector2(-128, -48)
 rotation = -1.5708
 scale = Vector2(1.5, 1.5)
 is_closed = false
