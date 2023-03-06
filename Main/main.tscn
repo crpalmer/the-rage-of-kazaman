@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://q1ko4jalsk8x"]
 
-[ext_resource type="PackedScene" path="res://Main/HUD/hud.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://bycoxevtu8dou" path="res://Main/HUD/hud.tscn" id="1"]
 [ext_resource type="PackedScene" path="res://Conversation/conversation.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://ot6f8q0oyu7k" path="res://GameEngine/main.tscn" id="4"]
 [ext_resource type="Script" path="res://Main/main.gd" id="5"]
