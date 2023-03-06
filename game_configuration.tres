@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="GameConfiguration" load_steps=2 format=3 uid="uid://bb3ygoowtk70d"]
+
+[ext_resource type="Script" path="res://GameEngine/game_configuration.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+root = "res://GameEngine"
+player = "res://Main/player.tscn"
+damage_popup = "res://damage_popup.tscn"
+entry_scene = "res://Town/town.tscn"
+entry_point = "Home/ByBed"
+fade_color = Color(0, 0, 0, 1)
+rest_time_accelerator = 600.0
+resting_alpha = 0.75
+pixels_per_foot = 10.666
+game_start_time_in_hours = 2.0
+currency = ["res://DandD/Currency/silver_piece.tscn", "res://DandD/Currency/copper_piece.tscn", "res://DandD/Currency/gold_piece.tscn"]

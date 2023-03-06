@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://gjb81jap5e4p"]
+[gd_scene load_steps=9 format=3]
 
-[ext_resource type="PackedScene" uid="uid://b2nbugu2ysu1h" path="res://GameEngine/Actors/Player.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://GameEngine/Actors/player.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://v17duolmdbyo" path="res://Main/Inventory/Inventory.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://cu541vbci21r5" path="res://GameEngine/light.png" id="2_onbwf"]
 [ext_resource type="Texture2D" uid="uid://cr6ebnf8caqx0" path="res://Main/player.png" id="3"]

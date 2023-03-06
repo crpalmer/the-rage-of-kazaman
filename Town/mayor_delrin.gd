@@ -51,7 +51,7 @@ func say_hello():
 			"Take another potion of healing to help you survive back in the wilderness."
 		])
 		GameEngine.player.add_xp(100)
-		GameEngine.give_to_player("res://DandD/Potions/PotionOfHealing.tscn")
+		GameEngine.give_to_player("res://DandD/Potions/potion_of_healing.tscn")
 	elif not quest_is_accepted(QUEST_KOBOLDS_DIE) and GameEngine.has_completed_milestone("found-eastern-garrison"):
 		accept_quest(QUEST_KOBOLDS_DIE)
 		GameEngine.message("You tell the mayor about the kobolds and their military demeanor.", true)
@@ -59,8 +59,8 @@ func say_hello():
 			"These kobolds must be trying to muster an army to invade the village.  You must enter the Garrison and eradicate the threat!",
 			"Take this magic sword and helmet to help you in your battles."
 		])
-		GameEngine.give_to_player("res://DandD/Armor/HelmetPlus1.tscn")
-		GameEngine.give_to_player("res://DandD/Weapons/LongSwordPlus1.tscn")
+		GameEngine.give_to_player("res://DandD/Armor/helmet_plus_1.tscn")
+		GameEngine.give_to_player("res://DandD/Weapons/long_sword_plus_1.tscn")
 	elif GameEngine.has_completed_milestone("explored-garrison") and not GameEngine.has_completed_milestone("sent-into-the-tunnels"):
 		GameEngine.message("You tell the major about the Kobold Warrior and the tunnel that the kobolds dug.")
 		say("Our brave garrison members must be kobold prisoners.  You must return to the Garrison and search the tunnels for the garrison team.")
@@ -79,7 +79,7 @@ func player_said(what, words):
 				"Thank you.\nTravel East from the main gates.  The Garrison is checked the other side of the river.\nTake this potion of healing to help you in the wilderness.",
 				"Please investigate and report back checked what you find."
 			])
-			GameEngine.give_to_player("res://DandD/Potions/PotionOfHealing.tscn")
+			GameEngine.give_to_player("res://DandD/Potions/potion_of_healing.tscn")
 		elif words.has("no"):
 			waiting_for_yes_for = 0
 			say_and_end("Sorry to hear that you're too afraid to help.", 1)

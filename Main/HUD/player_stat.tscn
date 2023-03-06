@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddp70ght614gx"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="PackedScene" uid="uid://brik8d5m2tl2s" path="res://GameEngine/Actors/PlayerStat.tscn" id="1_licd1"]
+[ext_resource type="PackedScene" path="res://GameEngine/Actors/player_stat.tscn" id="1_licd1"]
 [ext_resource type="FontFile" uid="uid://xv4t5yvtsu38" path="res://Main/HUD/Pong Font.ttf" id="2_bepbj"]
 
 [node name="PlayerStat" instance=ExtResource("1_licd1")]

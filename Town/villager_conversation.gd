@@ -37,7 +37,7 @@ func player_said(_text, words):
 			"I don't have much to reward you with other than this old potion that a like to nip checked when I'm feeling down."
 		])
 		GameEngine.player.add_xp(200)
-		GameEngine.give_to_player("res://DandD/Potions/PotionOfHealing.tscn")
+		GameEngine.give_to_player("res://DandD/Potions/potion_of_healing.tscn")
 	elif words.has("no"):
 		await say_and_end("You are horrible person!")
 		GameEngine.player.lose_xp(300)

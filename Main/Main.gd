@@ -23,7 +23,7 @@ func _ready():
 #	splash_music.play(10)
 	splash_timer.start(0.5)
 	GameEngine.modulate(false)
-	fighter = load("res://DandD/Classes/Fighter.tscn").instantiate()
+	fighter = load("res://DandD/Classes/fighter.tscn").instantiate()
 	var _err = GameEngine.connect("player_created",Callable(self,"on_player_created"))
 	_err = died_timer.connect("timeout", Callable(self, "on_player_died_timeout"))
 	if debugging_startup:
@@ -37,12 +37,12 @@ func debugging_ready():
 	var items = GameEngine.player.create_character(fighter)
 	GameEngine.complete_milestone("found-eastern-garrison")
 	GameEngine.player.add_xp(500)
-	GameEngine.player.add_to_inventory(load("res://DandD/Armor/HelmetPlus1.tscn").instantiate(), true)
-	GameEngine.player.add_to_inventory(load("res://DandD/Weapons/LongSwordPlus1.tscn").instantiate(), true)
+	GameEngine.player.add_to_inventory(load("res://DandD/Armor/helmet_plus_1.tscn").instantiate(), true)
+	GameEngine.player.add_to_inventory(load("res://DandD/Weapons/long_sword_plus_1.tscn").instantiate(), true)
 	for item in items: GameEngine.player.add_to_inventory(item, true)
-	#GameEngine.enter_scene("res://Town/Town.tscn", "DebugPoint")
-	GameEngine.enter_scene("res://Wilderness/Wilderness.tscn", "DebugPoint")
-	#GameEngine.enter_scene("res://Garrison/GarrisonLevel1.tscn", "DebugPoint")
+	#GameEngine.enter_scene("res://Town/town.tscn", "DebugPoint")
+	GameEngine.enter_scene("res://Wilderness/wilderness.tscn", "DebugPoint")
+	#GameEngine.enter_scene("res://Garrison/garrison.tscn", "DebugPoint")
 
 func show_menu():
 	main_menu.show()

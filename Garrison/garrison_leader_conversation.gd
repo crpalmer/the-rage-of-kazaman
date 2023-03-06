@@ -58,4 +58,4 @@ func player_said(_text, words):
 func spawn_guards(n):
 	transport.teleport(actor)
 	teleported = true
-	GameEngine.spawn_near_player("res://DandD/Monsters/Kobold.tscn", n)
+	GameEngine.spawn_near_player("res://DandD/Monsters/kobold.tscn", n)

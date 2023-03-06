@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1hdo0jdnwpk4"]
+[gd_scene load_steps=7 format=3]
 
-[ext_resource type="PackedScene" path="res://GameEngine/Objects/StaticThing.tscn" id="2"]
-[ext_resource type="PackedScene" uid="uid://cpibqvwwaq31y" path="res://DandD/Things/Door-32-flipped.tscn" id="3"]
-[ext_resource type="PackedScene" path="res://GameEngine/EntryPoint.tscn" id="4"]
-[ext_resource type="PackedScene" uid="uid://c3bas6gnm42jv" path="res://DandD/Things/Door-32.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://GameEngine/Objects/static_thing.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://cpibqvwwaq31y" path="res://DandD/Things/door_32_flipped.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://GameEngine/entry_point.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://DandD/Things/door_32.tscn" id="5"]
 [ext_resource type="Texture2D" uid="uid://bdlxuxxi2wsfs" path="res://Town/bed.png" id="8"]
 
 [sub_resource type="RectangleShape2D" id="4"]

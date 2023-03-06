@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5oay810b44sd"]
+[gd_scene load_steps=6 format=3]
 
-[ext_resource type="PackedScene" uid="uid://c8uqn5d1bgmkb" path="res://GameEngine/Actors/Actor.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://GameEngine/Actors/actor.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://bxphk3q1syhf4" path="res://Lively_NPCs_v3.0/individual sprites/medieval/villager_01/villager_01_00.png" id="2"]
-[ext_resource type="Script" path="res://Town/VillagerConversation.gd" id="4"]
-[ext_resource type="PackedScene" uid="uid://canwxvecyg23x" path="res://GameEngine/Actors/ActorConversation.tscn" id="5"]
+[ext_resource type="Script" path="res://Town/villager_conversation.gd" id="4"]
+[ext_resource type="PackedScene" path="res://GameEngine/Actors/actor_conversation.tscn" id="5"]
 
 [sub_resource type="CircleShape2D" id="1"]
 radius = 16.0

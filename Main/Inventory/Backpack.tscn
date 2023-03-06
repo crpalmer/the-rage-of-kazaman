@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource path="res://Main/Inventory/backpack.png" type="Texture2D" id=1]
-[ext_resource path="res://GameEngine/Inventory/Inventory.tscn" type="PackedScene" id=2]
+[ext_resource type="Texture2D" uid="uid://bputy2sc26ubu" path="res://Main/Inventory/backpack.png" id="1"]
+[ext_resource type="PackedScene" path="res://GameEngine/Inventory/inventory.tscn" id="2"]
 
 [node name="Backpack" instance=ExtResource( 2 )]
 

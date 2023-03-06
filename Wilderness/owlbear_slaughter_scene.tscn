@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://17ks7a0dqyio"]
+[gd_scene load_steps=5 format=3]
 
-[ext_resource type="PackedScene" uid="uid://co6xw61g0dd" path="res://DandD/Monsters/OwlBear.tscn" id="1"]
-[ext_resource type="PackedScene" uid="uid://nwhmgun2a0lu" path="res://Wilderness/ForestBattleScene.tscn" id="2"]
-[ext_resource type="PackedScene" path="res://GameEngine/EntryPoint.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://DandD/Monsters/owl_bear.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://nwhmgun2a0lu" path="res://Wilderness/forest_battle_scene.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://GameEngine/entry_point.tscn" id="3"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_gny3j"]
 vertices = PackedVector2Array(-127, -132, 23, -307, 139, -311, 284, -150, 150, 36, 3, 36)

@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://nwhmgun2a0lu"]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="TileSet" uid="uid://bgsl5od7jjx0i" path="res://DandD/Tilesets/tileset.tres" id="1"]
-[ext_resource type="PackedScene" uid="uid://bd88ca1u5w33h" path="res://GameEngine/Scenes/BattleScene.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://GameEngine/Scenes/battle_scene.tscn" id="2"]
 
 [node name="ForestBattleScene" instance=ExtResource("2")]
 

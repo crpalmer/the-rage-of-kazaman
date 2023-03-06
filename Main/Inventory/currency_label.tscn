@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxm0pds483av2"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="PackedScene" uid="uid://bovr8nqcrmnra" path="res://GameEngine/Inventory/CurrencyLabel.tscn" id="1_u3urm"]
+[ext_resource type="PackedScene" path="res://GameEngine/Inventory/currency_label.tscn" id="1_u3urm"]
 [ext_resource type="FontFile" uid="uid://xv4t5yvtsu38" path="res://Main/HUD/Pong Font.ttf" id="2_snoqj"]
 
 [node name="CurrencyLabel" instance=ExtResource("1_u3urm")]

@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbfdb1ejrdb0r"]
+[gd_scene load_steps=5 format=3]
 
-[ext_resource type="PackedScene" uid="uid://nwhmgun2a0lu" path="res://Wilderness/ForestBattleScene.tscn" id="1"]
-[ext_resource type="PackedScene" uid="uid://bjjvjqp2sjqdw" path="res://DandD/Monsters/Kobold.tscn" id="2"]
-[ext_resource type="PackedScene" path="res://GameEngine/EntryPoint.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://nwhmgun2a0lu" path="res://Wilderness/forest_battle_scene.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://DandD/Monsters/kobold.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://GameEngine/entry_point.tscn" id="3"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_0l8fp"]
 vertices = PackedVector2Array(192, 99, 308, 94, 380, 175, 306, 256, 207, 255, 159, 177)

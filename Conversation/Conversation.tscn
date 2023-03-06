@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://qor4heq5mmfg"]
+[gd_scene load_steps=8 format=3]
 
-[ext_resource type="PackedScene" path="res://GameEngine/Conversation.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://GameEngine/conversation.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://cc7m33qga8jmd" path="res://Conversation/dialogue-box.png" id="2"]
 [ext_resource type="FontFile" uid="uid://cr1qh7rdfmxv" path="res://Fonts/adventure-font.ttf" id="3"]
 [ext_resource type="Texture2D" uid="uid://dq2kqw6sk6v3l" path="res://Conversation/dialog-box-more-2.png" id="4"]

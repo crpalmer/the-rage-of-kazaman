@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwvaei8jn7nbg"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="PackedScene" uid="uid://c2yac1rc75u75" path="res://DandD/Things/Note.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://c2yac1rc75u75" path="res://DandD/Things/note.tscn" id="1"]
 
 [sub_resource type="CircleShape2D" id="1"]
 resource_local_to_scene = true

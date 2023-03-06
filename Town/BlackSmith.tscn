@@ -1,13 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://brk12phc2h7pj"]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="Texture2D" uid="uid://cm0ey2qcevyp8" path="res://Lively_NPCs_v3.0/individual sprites/medieval/blacksmith/blacksmith_01.png" id="1"]
-[ext_resource type="Script" path="res://Town/Blacksmith.gd" id="2"]
-[ext_resource type="PackedScene" uid="uid://c8uqn5d1bgmkb" path="res://GameEngine/Actors/Actor.tscn" id="3"]
-[ext_resource type="PackedScene" path="res://DandD/Weapons/LongSword.tscn" id="4"]
-[ext_resource type="PackedScene" uid="uid://canwxvecyg23x" path="res://GameEngine/Actors/ActorConversation.tscn" id="5"]
-[ext_resource type="PackedScene" path="res://DandD/Weapons/Dagger.tscn" id="6"]
-[ext_resource type="PackedScene" path="res://DandD/Armor/Chainmail.tscn" id="7"]
-[ext_resource type="PackedScene" path="res://DandD/Armor/PaddedArmor.tscn" id="8"]
+[ext_resource type="Script" path="res://Town/blacksmith.gd" id="2"]
+[ext_resource type="PackedScene" path="res://GameEngine/Actors/actor.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://DandD/Weapons/long_sword.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://GameEngine/Actors/actor_conversation.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://DandD/Weapons/dagger.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://DandD/Armor/chainmail.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://DandD/Armor/padded_armor.tscn" id="8"]
 
 [sub_resource type="CapsuleShape2D" id="1"]
 radius = 5.0

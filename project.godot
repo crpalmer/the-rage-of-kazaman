@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="The-rage-of-kazaman"
-run/main_scene="res://Main/Main.tscn"
+run/main_scene="res://Main/main.tscn"
 config/features=PackedStringArray("4.0")
 config/icon="res://icon.png"
 
 [autoload]
 
-GameEngine="*res://GameEngine/GameEngine.gd"
+GameEngine="*res://GameEngine/game_engine.gd"
 
 [display]
 

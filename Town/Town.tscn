@@ -1,21 +1,21 @@
-[gd_scene load_steps=23 format=3 uid="uid://buvait8dpxg1s"]
+[gd_scene load_steps=23 format=3 uid="uid://bq1t055u4wav8"]
 
-[ext_resource type="PackedScene" path="res://GameEngine/EntryPoint.tscn" id="1"]
-[ext_resource type="PackedScene" uid="uid://cpibqvwwaq31y" path="res://DandD/Things/Door-32-flipped.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://GameEngine/entry_point.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://cpibqvwwaq31y" path="res://DandD/Things/door_32_flipped.tscn" id="2"]
 [ext_resource type="TileSet" uid="uid://bgsl5od7jjx0i" path="res://DandD/Tilesets/tileset.tres" id="2_nyyfo"]
-[ext_resource type="PackedScene" uid="uid://c3bas6gnm42jv" path="res://DandD/Things/Door-32.tscn" id="3"]
-[ext_resource type="Script" path="res://GameEngine/Actors/ActorRandomMovement.gd" id="5"]
-[ext_resource type="PackedScene" uid="uid://ccudas4rc1wjh" path="res://DandD/Things/WoodSign.tscn" id="7"]
-[ext_resource type="PackedScene" path="res://DandD/Things/Desk.tscn" id="8"]
-[ext_resource type="PackedScene" path="res://DandD/Things/Chair.tscn" id="9"]
-[ext_resource type="PackedScene" uid="uid://m2apkbw4qjtv" path="res://Town/MayorDelrin.tscn" id="10"]
-[ext_resource type="PackedScene" uid="uid://dukc5ce5ye5up" path="res://GameEngine/Objects/Portal.tscn" id="11"]
-[ext_resource type="PackedScene" uid="uid://bqc6nk8kki2ww" path="res://Town/DruidTelgrave.tscn" id="12"]
-[ext_resource type="PackedScene" uid="uid://brk12phc2h7pj" path="res://Town/Blacksmith.tscn" id="13"]
-[ext_resource type="PackedScene" path="res://GameEngine/Scenes/Scene.tscn" id="14"]
-[ext_resource type="PackedScene" uid="uid://bev6es0da37g1" path="res://InformationalText.tscn" id="15"]
-[ext_resource type="PackedScene" uid="uid://b5oay810b44sd" path="res://Town/Villager.tscn" id="16"]
-[ext_resource type="PackedScene" path="res://DandD/Things/Bed.tscn" id="17"]
+[ext_resource type="PackedScene" path="res://DandD/Things/door_32.tscn" id="3"]
+[ext_resource type="Script" path="res://GameEngine/Actors/actor_random_movement.gd" id="5"]
+[ext_resource type="PackedScene" path="res://DandD/Things/wood_sign.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://DandD/Things/desk.tscn" id="8"]
+[ext_resource type="PackedScene" path="res://DandD/Things/chair.tscn" id="9"]
+[ext_resource type="PackedScene" path="res://Town/mayor_delrin.tscn" id="10"]
+[ext_resource type="PackedScene" path="res://GameEngine/Objects/portal.tscn" id="11"]
+[ext_resource type="PackedScene" path="res://Town/druid_telgrave.tscn" id="12"]
+[ext_resource type="PackedScene" path="res://Town/blacksmith.tscn" id="13"]
+[ext_resource type="PackedScene" path="res://GameEngine/Scenes/scene.tscn" id="14"]
+[ext_resource type="PackedScene" path="res://informational_text.tscn" id="15"]
+[ext_resource type="PackedScene" path="res://Town/villager.tscn" id="16"]
+[ext_resource type="PackedScene" path="res://DandD/Things/bed.tscn" id="17"]
 
 [sub_resource type="OccluderPolygon2D" id="2"]
 closed = false
@@ -150,7 +150,7 @@ motion_mode = 0
 
 [node name="EastGatePortal" parent="." index="6" instance=ExtResource("11")]
 position = Vector2(488, 336)
-scene = "res://Wilderness/Wilderness.tscn"
+scene = "res://Wilderness/wilderness.tscn"
 entry_point = "EnterFromTownEastGate"
 
 [node name="ReturnPoint" type="Marker2D" parent="EastGatePortal" index="0"]
