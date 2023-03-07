@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dxhec5yp1t8ww"]
 
 [ext_resource type="PackedScene" path="res://GameEngine/Actors/player.tscn" id="1"]
-[ext_resource type="PackedScene" path="res://Main/Inventory/Inventory.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://mnrgtq12ofo8" path="res://Main/Inventory/inventory.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://cu541vbci21r5" path="res://GameEngine/light.png" id="2_onbwf"]
 [ext_resource type="Texture2D" uid="uid://dv07xn1ub84fi" path="res://Main/player1.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://biiy6j4d5bxa0" path="res://Main/player2.png" id="5"]
