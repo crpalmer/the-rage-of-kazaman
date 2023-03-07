@@ -44,9 +44,7 @@ func debugging_ready():
 	GameEngine.time_in_minutes = 8*60
 	var items = GameEngine.player.create_character(fighter)
 	if true:
-		GameEngine.player.strength = 20
-		GameEngine.player.dexterity = 20
-		GameEngine.player.constitution = 20
+		GameEngine.abilities = [20, 20, 20]
 	GameEngine.player.add_xp(2700)
 	for m in milestones: GameEngine.complete_milestone(m)
 	for i in inventory: GameEngine.player.add_to_inventory(load(i).instantiate(), false, true)
