@@ -1,37 +1,39 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=6 format=3 uid="uid://clek8y3d6xb63"]
 
 [ext_resource type="PackedScene" path="res://GameEngine/Objects/door.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://bor64hh7m47ka" path="res://DandD/Tilesets/gate-open.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://bcu4bh7lx52b" path="res://DandD/Tilesets/gate-closed.png" id="3"]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id="1"]
 resource_local_to_scene = true
-extents = Vector2( 15.5, 5 )
+size = Vector2(31, 10)
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 16, 4.25 )
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(32, 8.5)
 
-[node name="PrisonGate" instance=ExtResource( 1 )]
-display_name = "gate"
-long_description = "A sturdy gate with an iron lock."
+[node name="PrisonGate" instance=ExtResource("1")]
+collision_layer = 2
+collision_mask = 7
 is_locked = true
 key_group = "prison-gate-key"
+display_name = "gate"
+long_description = "A sturdy gate with an iron lock."
 
 [node name="BlockerOpen" parent="." index="0"]
-position = Vector2( -11.5, 27 )
-shape = SubResource( 1 )
+position = Vector2(-11.5, 27)
+shape = SubResource("1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlockerOpen" index="0"]
-position = Vector2( 0.5, -54.75 )
-shape = SubResource( 2 )
+position = Vector2(0.5, -54.75)
+shape = SubResource("2")
 
 [node name="BlockerClosed" parent="." index="1"]
 rotation = 1.5708
-scale = Vector2( 2, 1 )
-shape = SubResource( 1 )
+scale = Vector2(2, 1)
+shape = SubResource("1")
 
 [node name="Closed" parent="." index="2"]
-texture = ExtResource( 3 )
+texture = ExtResource("3")
 
 [node name="Open" parent="." index="4"]
-texture = ExtResource( 2 )
+texture = ExtResource("2")

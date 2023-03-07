@@ -1,41 +1,39 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=10 format=3 uid="uid://jdfi2vbe6a78"]
 
 [ext_resource type="Texture2D" uid="uid://cm0ey2qcevyp8" path="res://Lively_NPCs_v3.0/individual sprites/medieval/blacksmith/blacksmith_01.png" id="1"]
 [ext_resource type="Script" path="res://Town/blacksmith.gd" id="2"]
-[ext_resource type="PackedScene" path="res://GameEngine/Actors/actor.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://cmu0tfy7nku11" path="res://GameEngine/Actors/actor.tscn" id="3"]
 [ext_resource type="PackedScene" path="res://DandD/Weapons/long_sword.tscn" id="4"]
-[ext_resource type="PackedScene" path="res://GameEngine/Actors/actor_conversation.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://cyqmhab1p03bt" path="res://GameEngine/Actors/actor_conversation.tscn" id="5"]
 [ext_resource type="PackedScene" path="res://DandD/Weapons/dagger.tscn" id="6"]
 [ext_resource type="PackedScene" path="res://DandD/Armor/chainmail.tscn" id="7"]
 [ext_resource type="PackedScene" path="res://DandD/Armor/padded_armor.tscn" id="8"]
 
-[sub_resource type="CapsuleShape2D" id="1"]
-radius = 5.0
-height = 10.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1mv7k"]
+radius = 8.0
 
 [node name="Blacksmith" instance=ExtResource("3")]
 display_name = "blacksmith"
 long_description = "a strong man weilding a hammer over an anvil"
 
-[node name="ActorConversation" parent="." index="0" instance=ExtResource("5")]
-script = ExtResource("2")
-seconds_per_interation = 15
-
-[node name="LongSword" parent="ActorConversation" index="4" instance=ExtResource("4")]
-visible = false
-
-[node name="Dagger" parent="ActorConversation" index="5" instance=ExtResource("6")]
-visible = false
-
-[node name="Chainmail" parent="ActorConversation" index="6" instance=ExtResource("7")]
-visible = false
-
-[node name="PaddedArmor" parent="ActorConversation" index="7" instance=ExtResource("8")]
-visible = false
-
-[node name="Sprite2D" type="Sprite2D" parent="." index="5"]
+[node name="Sprite2Dfoo" parent="." index="3"]
 position = Vector2(1, -2)
 texture = ExtResource("1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="6"]
-shape = SubResource("1")
+[node name="CollisionShape2Dfoo" parent="." index="4"]
+shape = SubResource("CapsuleShape2D_1mv7k")
+
+[node name="ActorConversation" parent="." index="6" instance=ExtResource("5")]
+script = ExtResource("2")
+
+[node name="LongSword" parent="ActorConversation" index="0" instance=ExtResource("4")]
+visible = false
+
+[node name="Dagger" parent="ActorConversation" index="1" instance=ExtResource("6")]
+visible = false
+
+[node name="Chainmail" parent="ActorConversation" index="2" instance=ExtResource("7")]
+visible = false
+
+[node name="PaddedArmor" parent="ActorConversation" index="3" instance=ExtResource("8")]
+visible = false

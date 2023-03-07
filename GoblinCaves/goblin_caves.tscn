@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dci7sxobwwmrd"]
+[gd_scene load_steps=35 format=3 uid="uid://dci7sxobwwmrd"]
 
 [ext_resource type="PackedScene" uid="uid://r5plohk1mwui" path="res://DandD/Monsters/kobold.tscn" id="1"]
 [ext_resource type="TileSet" uid="uid://bgsl5od7jjx0i" path="res://DandD/Tilesets/tileset.tres" id="3"]
@@ -11,9 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://ll520l8jxvhx" path="res://DandD/Currency/gold_piece.tscn" id="9"]
 [ext_resource type="PackedScene" path="res://GoblinCaves/note_to_guard_gate.tscn" id="10"]
 [ext_resource type="PackedScene" path="res://DandD/Things/bed.tscn" id="11"]
-[ext_resource type="PackedScene" path="res://DandD/Things/desk.tscn" id="12"]
-[ext_resource type="PackedScene" path="res://GoblinCaves/prison_gate.tscn" id="13"]
+[ext_resource type="PackedScene" uid="uid://d0qqjl0ahrki6" path="res://DandD/Things/desk.tscn" id="12"]
+[ext_resource type="PackedScene" uid="uid://clek8y3d6xb63" path="res://GoblinCaves/prison_gate.tscn" id="13"]
 [ext_resource type="PackedScene" path="res://DandD/Things/barrel.tscn" id="14"]
+[ext_resource type="PackedScene" uid="uid://bpepk3qcjnl21" path="res://GoblinCaves/prisoner.tscn" id="14_34xpp"]
+[ext_resource type="PackedScene" uid="uid://dsr3vhd4vqj3c" path="res://GameEngine/Actors/actor_random_movement.tscn" id="14_p5ged"]
+[ext_resource type="PackedScene" uid="uid://cyqmhab1p03bt" path="res://GameEngine/Actors/actor_conversation.tscn" id="16_muw8j"]
+[ext_resource type="Script" path="res://GoblinCaves/prisoner_conversation.gd" id="17_4r15u"]
 
 [sub_resource type="RectangleShape2D" id="2"]
 size = Vector2(2000, 2000)
@@ -55,6 +59,11 @@ vertices = PackedVector2Array(40, 53.3333, -48, 44.4445, -32, 35.5556, 72, 53.33
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 5, 6, 7), PackedInt32Array(6, 8, 9, 7), PackedInt32Array(9, 10, 11, 7), PackedInt32Array(2, 4, 3), PackedInt32Array(0, 3, 12, 13)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-40, -17.7778, -40, -71.1111, 64, -71.1111, 64, -115.556, 88, -115.556, 88, 44.4445, 72, 53.3333, 72, 115.556, 40, 115.556, 40, 53.3333, -48, 44.4445, -32, 35.5556, -40, 0, -64, -17.7778)])
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_d1ypw"]
+vertices = PackedVector2Array(4, -12, 4, 12, -4, 12, -4, -12)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(4, -12, 4, 12, -4, 12, -4, -12)])
+
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_06gtf"]
 vertices = PackedVector2Array(-64, -280, -48, -280, -48, -64, -64, -64, 144, 80, -224, 80, -224, 64, -96, 64, 80, -64, 144, -16, -96, -40, -224, -64, -224, -40)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(2, 8, 9, 4, 7, 10), PackedInt32Array(3, 2, 10), PackedInt32Array(11, 3, 10, 12)])
@@ -89,6 +98,7 @@ check_every_hours = 1.0
 test_roll = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RandomEncounters" index="0"]
+position = Vector2(0, 8)
 shape = SubResource("2")
 
 [node name="FromGarrison" parent="." index="2" instance=ExtResource("4")]
@@ -150,6 +160,7 @@ scale = Vector2(1, 1.14)
 
 [node name="GoldPiece" parent="GateAmbush" index="1" instance=ExtResource("9")]
 position = Vector2(152, -71.1111)
+collision_layer = 2
 n_units = 50
 
 [node name="Kobold" parent="GateAmbush" index="2" instance=ExtResource("1")]
@@ -187,6 +198,7 @@ position = Vector2(8, -115.556)
 
 [node name="NoteToGuardGate" parent="GateAmbush/Desk" index="2" instance=ExtResource("10")]
 position = Vector2(0, 6.66667)
+collision_layer = 2
 
 [node name="Barrel" parent="GateAmbush" index="12" instance=ExtResource("14")]
 position = Vector2(-88, 0)
@@ -205,6 +217,7 @@ scale = Vector2(0.5, 0.5)
 [node name="GoldPiece_x5" parent="GateAmbush/Barrel3" index="2" instance=ExtResource("9")]
 visible = false
 position = Vector2(6, 6.6667)
+collision_layer = 2
 n_units = 5
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="GateAmbush" index="15"]
@@ -220,38 +233,55 @@ long_description = "An impenatrable gates blocks the way forward.  A large brass
 [node name="Prison" type="Node2D" parent="." index="7"]
 position = Vector2(440, -8)
 
-[node name="PrisonGate" parent="Prison" index="0" instance=ExtResource("13")]
+[node name="PrisonerRandomMovement" parent="Prison" index="0" instance=ExtResource("14_p5ged")]
+only_see_player_when_in_area = false
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Prison/PrisonerRandomMovement" index="0"]
+position = Vector2(-144, -56)
+navigation_polygon = SubResource("NavigationPolygon_d1ypw")
+
+[node name="Prisoner" parent="Prison" index="1" instance=ExtResource("14_34xpp")]
+position = Vector2(-144, -55)
+random_movement_path = "../PrisonerRandomMovement"
+
+[node name="ActorConversation2" parent="Prison/Prisoner" index="6" instance=ExtResource("16_muw8j")]
+script = ExtResource("17_4r15u")
+
+[node name="Prisoner2" parent="Prison" index="2" instance=ExtResource("14_34xpp")]
+position = Vector2(-144, 74)
+
+[node name="PrisonGate" parent="Prison" index="3" instance=ExtResource("13")]
 position = Vector2(-128, -56)
 rotation = 3.14159
 
-[node name="PrisonGate2" parent="Prison" index="1" instance=ExtResource("13")]
+[node name="PrisonGate2" parent="Prison" index="4" instance=ExtResource("13")]
 position = Vector2(-128, 72)
 rotation = 3.14159
 
-[node name="Barrel" parent="Prison" index="2" instance=ExtResource("14")]
+[node name="Barrel" parent="Prison" index="5" instance=ExtResource("14")]
 position = Vector2(128, -56)
 display_name = "large barrel"
 long_description = "A half full barrel containing moldy and rotting rations that look like they are intended for humans."
 
-[node name="Kobold" parent="Prison" index="3" instance=ExtResource("1")]
+[node name="Kobold" parent="Prison" index="6" instance=ExtResource("1")]
 position = Vector2(96, 24)
 
-[node name="Kobold2" parent="Prison" index="4" instance=ExtResource("1")]
+[node name="Kobold2" parent="Prison" index="7" instance=ExtResource("1")]
 position = Vector2(32, -32)
 
-[node name="Kobold3" parent="Prison" index="5" instance=ExtResource("1")]
+[node name="Kobold3" parent="Prison" index="8" instance=ExtResource("1")]
 position = Vector2(-56, -24)
 
-[node name="Kobold4" parent="Prison" index="6" instance=ExtResource("1")]
+[node name="Kobold4" parent="Prison" index="9" instance=ExtResource("1")]
 position = Vector2(48, 64)
 
-[node name="Kobold5" parent="Prison" index="7" instance=ExtResource("1")]
+[node name="Kobold5" parent="Prison" index="10" instance=ExtResource("1")]
 position = Vector2(104, -16)
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Prison" index="8"]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Prison" index="11"]
 navigation_polygon = SubResource("NavigationPolygon_06gtf")
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Prison" index="9"]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Prison" index="12"]
 occluder = SubResource("OccluderPolygon2D_mimjb")
 
 [node name="Hallways" type="Node2D" parent="." index="8"]
@@ -266,3 +296,6 @@ occluder = SubResource("OccluderPolygon2D_j4abh")
 
 [node name="ToGateAmbusBottomOccluder" type="LightOccluder2D" parent="Hallways" index="2"]
 occluder = SubResource("OccluderPolygon2D_00l37")
+
+[node name="DebugPoint" parent="." index="9" instance=ExtResource("4")]
+position = Vector2(346, -308)

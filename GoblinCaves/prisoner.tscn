@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpepk3qcjnl21"]
+
+[ext_resource type="PackedScene" uid="uid://cmu0tfy7nku11" path="res://GameEngine/Actors/actor.tscn" id="1_s5eqj"]
+[ext_resource type="Texture2D" uid="uid://cgcyjbgaiyqrc" path="res://GoblinCaves/prisoner.png" id="2_olgm5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t7trh"]
+radius = 6.0
+height = 32.0
+
+[node name="Prisoner" instance=ExtResource("1_s5eqj")]
+display_name = "prisoner"
+long_description = "a soldier wearing tattered clothes with many cuts and bruises covering his body"
+random_movement_path = "ActorRandomMovement"
+hp = 20
+max_hp = 20
+attack_modifier = 4
+speed_feet_per_round = 10
+vision_radius = 30
+
+[node name="NavigationAgent2D" parent="." index="2"]
+path_desired_distance = 2.0
+target_desired_distance = 2.0
+
+[node name="Sprite2D" parent="." index="3"]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("2_olgm5")
+
+[node name="CollisionShape2D" parent="." index="4"]
+shape = SubResource("CapsuleShape2D_t7trh")

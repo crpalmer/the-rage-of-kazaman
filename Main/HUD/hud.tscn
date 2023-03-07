@@ -258,7 +258,6 @@ color = Color(0.545098, 0.478431, 0.478431, 1)
 [node name="LongRestAt" parent="LongRestAtRect" instance=ExtResource("2_8gmwn")]
 layout_mode = 0
 offset_right = 72.0
-horizontal_alignment = 2
 stat = 13
 
 [node name="MessageArea" type="Node2D" parent="."]

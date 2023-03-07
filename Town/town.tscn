@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" path="res://DandD/Things/door_32.tscn" id="3"]
 [ext_resource type="Script" path="res://GameEngine/Actors/actor_random_movement.gd" id="5"]
 [ext_resource type="PackedScene" path="res://DandD/Things/wood_sign.tscn" id="7"]
-[ext_resource type="PackedScene" path="res://DandD/Things/desk.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://d0qqjl0ahrki6" path="res://DandD/Things/desk.tscn" id="8"]
 [ext_resource type="PackedScene" path="res://DandD/Things/chair.tscn" id="9"]
 [ext_resource type="PackedScene" path="res://Town/mayor_delrin.tscn" id="10"]
 [ext_resource type="PackedScene" path="res://GameEngine/Objects/portal.tscn" id="11"]
@@ -177,7 +177,7 @@ position = Vector2(-32, 72)
 script = ExtResource("5")
 only_see_player_when_in_area = false
 
-[node name="NavigationPolygon2D" type="NavigationRegion2D" parent="VillagerRandomMovement" index="0"]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="VillagerRandomMovement" index="0"]
 navigation_polygon = SubResource("7")
 
 [node name="Villager" parent="." index="9" instance=ExtResource("16")]

@@ -1,23 +1,22 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=6 format=3 uid="uid://daxgm3kf75gkj"]
 
-[ext_resource type="PackedScene" path="res://GameEngine/Actors/actor.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://cmu0tfy7nku11" path="res://GameEngine/Actors/actor.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://bxphk3q1syhf4" path="res://Lively_NPCs_v3.0/individual sprites/medieval/villager_01/villager_01_00.png" id="2"]
 [ext_resource type="Script" path="res://Town/villager_conversation.gd" id="4"]
-[ext_resource type="PackedScene" path="res://GameEngine/Actors/actor_conversation.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://cyqmhab1p03bt" path="res://GameEngine/Actors/actor_conversation.tscn" id="5"]
 
-[sub_resource type="CircleShape2D" id="1"]
-radius = 16.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bg38s"]
+radius = 8.0
 
 [node name="Villager" instance=ExtResource("1")]
 speed_feet_per_round = 20
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="4"]
+[node name="Sprite2Dfoo" parent="." index="3"]
 position = Vector2(2, -2)
-scale = Vector2(1.2, 1.2)
 texture = ExtResource("2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="5"]
-shape = SubResource("1")
+[node name="CollisionShape2Dfoo" parent="." index="4"]
+shape = SubResource("CapsuleShape2D_bg38s")
 
-[node name="ConversationalActor" parent="." index="6" instance=ExtResource("5")]
+[node name="ActorConversation" parent="." index="6" instance=ExtResource("5")]
 script = ExtResource("4")

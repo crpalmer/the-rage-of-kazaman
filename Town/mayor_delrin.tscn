@@ -1,24 +1,22 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=6 format=3 uid="uid://cd5i5stv6pnrm"]
 
 [ext_resource type="Texture2D" uid="uid://c7l87cy3erc4m" path="res://Lively_NPCs_v3.0/individual sprites/medieval/merchant/merchant_00.png" id="1"]
-[ext_resource type="PackedScene" path="res://GameEngine/Actors/actor.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://cmu0tfy7nku11" path="res://GameEngine/Actors/actor.tscn" id="2"]
 [ext_resource type="Script" path="res://Town/mayor_delrin.gd" id="3"]
-[ext_resource type="PackedScene" path="res://GameEngine/Actors/actor_conversation.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://cyqmhab1p03bt" path="res://GameEngine/Actors/actor_conversation.tscn" id="4"]
 
-[sub_resource type="CircleShape2D" id="1"]
-radius = 16.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fyk6v"]
 
 [node name="MayorDelrin" instance=ExtResource("2")]
 display_name = "Mayor Delrin"
 long_description = "an obese middle aged man wearing fancy clothes"
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="4"]
-position = Vector2(0, -1)
+[node name="Sprite2Dfoo" parent="." index="3"]
+position = Vector2(0.75, -1)
 texture = ExtResource("1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="5"]
-shape = SubResource("1")
+[node name="CollisionShape2Dfoo" parent="." index="4"]
+shape = SubResource("CapsuleShape2D_fyk6v")
 
 [node name="ActorConversation" parent="." index="6" instance=ExtResource("4")]
 script = ExtResource("3")
-seconds_per_interation = 15

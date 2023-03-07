@@ -115,6 +115,12 @@ new-game={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="full_blockers"
+2d_physics/layer_2="transparent_blockers"
+2d_physics/layer_3="visible_things"
+
 [navigation]
 
 2d/default_edge_connection_margin=16.0

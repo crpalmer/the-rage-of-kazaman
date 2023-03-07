@@ -30,21 +30,33 @@ func _ready():
 		call_deferred("debugging_ready")
 
 func debugging_ready():
+	var milestones = [ "found-eastern-garrison" ]
+	var inventory = [
+		"res://DandD/Armor/helmet_plus_1.tscn",
+		"res://DandD/Weapons/long_sword_plus_1.tscn",
+		"res://DandD/Armor/chainmail_plus_1.tscn",
+		"res://DandD/Potions/potion_of_healing.tscn"
+	]
 	splash_timer.stop()
 	hide_menu()
 	GameEngine.clear_game()
 	enter_game()
 	GameEngine.time_in_minutes = 8*60
 	var items = GameEngine.player.create_character(fighter)
-	GameEngine.complete_milestone("found-eastern-garrison")
-	GameEngine.player.add_xp(500)
-	GameEngine.player.add_to_inventory(load("res://DandD/Armor/helmet_plus_1.tscn").instantiate(), false, true)
-	GameEngine.player.add_to_inventory(load("res://DandD/Weapons/long_sword_plus_1.tscn").instantiate(), false, true)
-	GameEngine.player.add_to_inventory(load("res://DandD/Potions/potion_of_healing.tscn").instantiate(), false, true)
-	for item in items: GameEngine.player.add_to_inventory(item, false, true)
+	if true:
+		GameEngine.player.strength = 20
+		GameEngine.player.dexterity = 20
+		GameEngine.player.constitution = 20
+	GameEngine.player.add_xp(2700)
+	for m in milestones: GameEngine.complete_milestone(m)
+	for i in inventory: GameEngine.player.add_to_inventory(load(i).instantiate(), false, true)
+	for i in items: GameEngine.player.add_to_inventory(i)
+	GameEngine.player.on_player_stats_changed()
+	GameEngine.player.on_inventory_changed()
 	#GameEngine.enter_scene("res://Town/town.tscn", "DebugPoint")
-	GameEngine.enter_scene("res://Wilderness/wilderness.tscn", "DebugPoint")
+	#GameEngine.enter_scene("res://Wilderness/wilderness.tscn", "DebugPoint")
 	#GameEngine.enter_scene("res://Garrison/garrison.tscn", "DebugPoint")
+	GameEngine.enter_scene("res://GoblinCaves/goblin_caves.tscn", "DebugPoint")
 
 func show_menu():
 	main_menu.show()
