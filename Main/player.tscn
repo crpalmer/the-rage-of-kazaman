@@ -8,7 +8,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kxlbo"]
 resource_local_to_scene = true
-radius = 16.0
+radius = 13.0
 
 [sub_resource type="SpriteFrames" id="6"]
 animations = [{
