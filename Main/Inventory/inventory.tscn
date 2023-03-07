@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=8 format=3 uid="uid://mnrgtq12ofo8"]
 
 [ext_resource type="Texture2D" uid="uid://byte5mquads2j" path="res://Main/Inventory/body.png" id="2"]
 [ext_resource type="PackedScene" path="res://Main/Inventory/inventory_holder.tscn" id="3"]
@@ -260,7 +260,7 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = 96.0
 offset_right = 224.0
-currency = "res://DandD/Currency/GoldPiece.tscn"
+currency = "res://DandD/Currency/gold_piece.tscn"
 
 [node name="Silver" type="Label" parent="Money" index="2"]
 offset_left = 16.0
@@ -277,7 +277,7 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = 96.0
 offset_right = 224.0
-currency = "res://DandD/Currency/SilverPiece.tscn"
+currency = "res://DandD/Currency/silver_piece.tscn"
 
 [node name="Copper" type="Label" parent="Money" index="3"]
 offset_left = 16.0
@@ -294,4 +294,4 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = 96.0
 offset_right = 224.0
-currency = "res://DandD/Currency/CopperPiece.tscn"
+currency = "res://DandD/Currency/copper_piece.tscn"
