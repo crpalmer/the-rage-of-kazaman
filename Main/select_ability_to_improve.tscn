@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwj5bximlc2xn"]
+
+[ext_resource type="Script" path="res://Main/select_ability_to_improve.gd" id="1_c68qq"]
+[ext_resource type="FontFile" uid="uid://cr1qh7rdfmxv" path="res://Fonts/adventure-font.ttf" id="1_meoxd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_viwun"]
+bg_color = Color(0.282353, 0.282353, 0.282353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="SelectAbilityToImprove" type="CanvasLayer"]
+layer = 3
+script = ExtResource("1_c68qq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 100.0
+offset_top = 50.0
+offset_right = 544.0
+offset_bottom = 468.0
+color = Color(0.121569, 0.121569, 0.121569, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 20.0
+offset_right = 468.0
+offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("1_meoxd")
+theme_override_font_sizes/font_size = 24
+text = "You have earned an ability improvement.
+Select the ability to increase:"
+
+[node name="Strength" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 128.0
+offset_right = 344.0
+offset_bottom = 192.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_meoxd")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_viwun")
+text = "Strength"
+
+[node name="Dexterity" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 224.0
+offset_right = 344.0
+offset_bottom = 288.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_meoxd")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_viwun")
+text = "Dexterity"
+
+[node name="Constitution" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 326.0
+offset_right = 344.0
+offset_bottom = 390.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_meoxd")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_viwun")
+text = "Constitution"

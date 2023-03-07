@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://q1ko4jalsk8x"]
+[gd_scene load_steps=10 format=3 uid="uid://q1ko4jalsk8x"]
 
 [ext_resource type="PackedScene" uid="uid://bycoxevtu8dou" path="res://Main/HUD/hud.tscn" id="1"]
 [ext_resource type="PackedScene" path="res://Conversation/conversation.tscn" id="2"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://by0nrn4xh0r2w" path="res://Main/splash.png" id="6"]
 [ext_resource type="StyleBox" uid="uid://bp6q1qokehnen" path="res://Main/button_style.tres" id="6_hvlal"]
 [ext_resource type="AudioStream" uid="uid://dpj8640jqd2on" path="res://Main/theme-music.mp3" id="7"]
+[ext_resource type="PackedScene" uid="uid://dwj5bximlc2xn" path="res://Main/select_ability_to_improve.tscn" id="9_fiikv"]
 
 [node name="Main" instance=ExtResource("4")]
 script = ExtResource("5")
@@ -93,6 +94,9 @@ one_shot = true
 offset = Vector2(515, 499)
 scale = Vector2(1, 1)
 transform = Transform2D(1, 0, 0, 1, 515, 499)
+
+[node name="SelectAbilityToImprove" parent="." index="7" instance=ExtResource("9_fiikv")]
+visible = false
 
 [connection signal="timeout" from="Splash/Timer" to="." method="_on_Splash_Timer_timeout"]
 [connection signal="pressed" from="MainMenu/NewGame" to="." method="_on_NewGame_pressed"]
