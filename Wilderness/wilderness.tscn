@@ -194,6 +194,7 @@ scale = Vector2(1.5, 1.5)
 
 [node name="KoboldRandomMovement" parent="GarrisonClearing" index="6" instance=ExtResource("9")]
 position = Vector2(2040, -1376)
+only_see_player_when_in_area = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="GarrisonClearing/KoboldRandomMovement" index="0"]
 position = Vector2(-2040, 1376)
