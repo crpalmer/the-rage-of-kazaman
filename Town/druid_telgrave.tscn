@@ -17,10 +17,10 @@ hp = 50
 max_hp = 50
 xp_value = 500
 
-[node name="Sprite2Dfoo" parent="." index="3"]
+[node name="Sprite2D" parent="." index="3"]
 texture = ExtResource("2")
 
-[node name="CollisionShape2Dfoo" parent="." index="4"]
+[node name="CollisionShape2D" parent="." index="4"]
 shape = SubResource("CapsuleShape2D_l50sd")
 
 [node name="ActorConversation" parent="." index="6" instance=ExtResource("5")]

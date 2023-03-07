@@ -16,11 +16,11 @@ radius = 8.0
 display_name = "blacksmith"
 long_description = "a strong man weilding a hammer over an anvil"
 
-[node name="Sprite2Dfoo" parent="." index="3"]
+[node name="Sprite2D" parent="." index="3"]
 position = Vector2(1, -2)
 texture = ExtResource("1")
 
-[node name="CollisionShape2Dfoo" parent="." index="4"]
+[node name="CollisionShape2D" parent="." index="4"]
 shape = SubResource("CapsuleShape2D_1mv7k")
 
 [node name="ActorConversation" parent="." index="6" instance=ExtResource("5")]

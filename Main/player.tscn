@@ -33,7 +33,7 @@ offset = Vector2(212, 0)
 [node name="LightSource" parent="Camera2D" index="1"]
 texture = ExtResource("2_onbwf")
 
-[node name="CollisionShape2Dfoo" parent="." index="5"]
+[node name="CollisionShape2D" parent="." index="5"]
 shape = SubResource("CircleShape2D_kxlbo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="7"]
