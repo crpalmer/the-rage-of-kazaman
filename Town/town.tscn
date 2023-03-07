@@ -8,13 +8,13 @@
 [ext_resource type="PackedScene" path="res://DandD/Things/wood_sign.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://d0qqjl0ahrki6" path="res://DandD/Things/desk.tscn" id="8"]
 [ext_resource type="PackedScene" path="res://DandD/Things/chair.tscn" id="9"]
-[ext_resource type="PackedScene" path="res://Town/mayor_delrin.tscn" id="10"]
+[ext_resource type="PackedScene" uid="uid://cd5i5stv6pnrm" path="res://Town/mayor_delrin.tscn" id="10"]
 [ext_resource type="PackedScene" path="res://GameEngine/Objects/portal.tscn" id="11"]
-[ext_resource type="PackedScene" path="res://Town/druid_telgrave.tscn" id="12"]
-[ext_resource type="PackedScene" path="res://Town/blacksmith.tscn" id="13"]
+[ext_resource type="PackedScene" uid="uid://c6o5jplgrb64u" path="res://Town/druid_telgrave.tscn" id="12"]
+[ext_resource type="PackedScene" uid="uid://jdfi2vbe6a78" path="res://Town/blackSmith.tscn" id="13"]
 [ext_resource type="PackedScene" path="res://GameEngine/Scenes/scene.tscn" id="14"]
 [ext_resource type="PackedScene" path="res://informational_text.tscn" id="15"]
-[ext_resource type="PackedScene" path="res://Town/villager.tscn" id="16"]
+[ext_resource type="PackedScene" uid="uid://daxgm3kf75gkj" path="res://Town/villager.tscn" id="16"]
 [ext_resource type="PackedScene" path="res://DandD/Things/bed.tscn" id="17"]
 
 [sub_resource type="OccluderPolygon2D" id="2"]
@@ -175,7 +175,6 @@ long_description = "a  very strong man wearing a leather apron"
 [node name="VillagerRandomMovement" type="Area2D" parent="." index="8"]
 position = Vector2(-32, 72)
 script = ExtResource("5")
-only_see_player_when_in_area = false
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="VillagerRandomMovement" index="0"]
 navigation_polygon = SubResource("7")
