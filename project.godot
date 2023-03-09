@@ -125,11 +125,6 @@ new-game={
 
 2d/default_edge_connection_margin=16.0
 
-[physics]
-
-common/enable_pause_aware_picking=true
-
 [rendering]
 
 textures/lossless_compression/force_png=true
-environment/default_environment="res://default_env.tres"
