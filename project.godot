@@ -123,7 +123,7 @@ new-game={
 
 [navigation]
 
-2d/default_edge_connection_margin=16.0
+2d/default_edge_connection_margin=32.0
 
 [rendering]
 

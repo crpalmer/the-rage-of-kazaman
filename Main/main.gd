@@ -3,7 +3,7 @@ extends Node2D
 var game_in_progress = false
 var fighter
 
-@export var debugging_startup = false
+@export var debugging_startup = true
 @onready var splash = $Splash
 @onready var splash_timer = $Splash/Timer
 @onready var splash_music = $Splash/Music
@@ -30,12 +30,17 @@ func _ready():
 		call_deferred("debugging_ready")
 
 func debugging_ready():
-	var milestones = [ "found-eastern-garrison" ]
+	var milestones = [
+		"found-eastern-garrison",
+		"explored-garrison",
+		"sent-into-the-tunnels"
+	]
 	var inventory = [
 		"res://DandD/Armor/helmet_plus_1.tscn",
 		"res://DandD/Weapons/long_sword_plus_1.tscn",
 		"res://DandD/Armor/chainmail_plus_1.tscn",
-		"res://DandD/Potions/potion_of_healing.tscn"
+		"res://DandD/Potions/potion_of_healing.tscn",
+		"res://Garrison/garrison_kitchen_key.tscn"
 	]
 	splash_timer.stop()
 	hide_menu()
@@ -43,12 +48,12 @@ func debugging_ready():
 	enter_game()
 	GameEngine.time_in_minutes = 8*60
 	var items = GameEngine.player.create_character(fighter)
-	if true:
+	if false:
 		GameEngine.abilities = [20, 20, 20]
-	GameEngine.player.add_xp(2700)
+	GameEngine.player.add_xp(2200)
 	for m in milestones: GameEngine.complete_milestone(m)
 	for i in inventory: GameEngine.player.add_to_inventory(load(i).instantiate(), false, true)
-	for i in items: GameEngine.player.add_to_inventory(i)
+	for i in items: GameEngine.player.add_to_inventory(i, false, true)
 	GameEngine.player.on_player_stats_changed()
 	GameEngine.player.on_inventory_changed()
 	#GameEngine.enter_scene("res://Town/town.tscn", "DebugPoint")
