@@ -5,8 +5,10 @@ func say_hello(): say("Help!  You need to get us out of here before they eat us!
 func say_bye(): say("Please, save us!", false)
 
 func player_said(text:String, words:Array):
-	if one_word_in(words, [ "key", "lock", "save", "help", "rescue" ]):
+	if one_word_in(words, [ "key", "lock", "save", "help", "rescue", "free", "how" ]):
 		say("The head jailer has the key, he doesn't come here very often though.")
+	elif words.has("eat"):
+		say("Sometimes the goblins and kobolds smack their lips when they look at us.  Even the head jailer.")
 	elif words.has("jailer"):
 		say("The head jailer is a very large and mean goblin who doesn't feed us well.")
 	elif one_word_in(words, [ "food", "feed" ]):
